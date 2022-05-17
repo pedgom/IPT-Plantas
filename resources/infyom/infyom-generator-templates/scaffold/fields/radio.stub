@@ -1,0 +1,9 @@
+<div class="mb-10">
+    <div class="form-check form-check-custom form-check-solid {{ ($errors->has('$FIELD_NAME$') ? 'is-invalid' : '') }}">
+        {!! Form::radio('$FIELD_NAME$', "$VALUE$", null, ['class' => 'form-check-input']) !!}
+        {!! Form::label('$FIELD_NAME$', $$MODEL_NAME_CAMEL$->getAttributeLabel('$FIELD_NAME$'), ['class' => 'form-check-label']) !!}
+    </div>
+    @error('$FIELD_NAME$')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>

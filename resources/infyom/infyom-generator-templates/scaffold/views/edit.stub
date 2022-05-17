@@ -1,0 +1,30 @@
+<?php
+/**
+ *
+ * @var $$MODEL_NAME_CAMEL$ \$NAMESPACE_MODEL$\$MODEL_NAME$
+ * @var $errors Illuminate\View\Middleware\ShareErrorsFromSession
+ */
+view()->share('pageTitle', $$MODEL_NAME_CAMEL$->id);
+view()->share('hideSubHeader', true);
+?>
+<x-base-layout>
+    @section('breadcrumbs')
+        {{ Breadcrumbs::render('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.edit', $$MODEL_NAME_CAMEL$) }}
+    @endsection
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ $$MODEL_NAME_CAMEL$->id }}
+            </h3>
+        </div>
+        {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.update', $$MODEL_NAME_CAMEL$], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"$FILES$]) !!}
+            <div class="card-body">
+                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+             </div>
+            <div class="card-footer d-flex justify-content-end py-6 px-9">
+                <!--<button type="reset" class="btn btn-light btn-active-light-primary me-2">{{ __('Cancel') }}</button>-->
+                <button type="submit" class="btn btn-primary" >{{ __('Save') }}</button>
+            </div>
+        {!! Form::close() !!}
+    </div>
+</x-base-layout>

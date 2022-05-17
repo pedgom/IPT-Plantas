@@ -1,0 +1,8 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="mb-10">
+    {!! Form::label('$FIELD_NAME$', $$MODEL_NAME_CAMEL$->getAttributeLabel('$FIELD_NAME$'), ['class' => 'form-label']) !!}
+    {!! Form::select('$FIELD_NAME$', $INPUT_ARR$ , null , ['class' => 'form-select form-select-solid '.($errors->has('$FIELD_NAME$') ? 'is-invalid' : '')]) !!}
+    @error('$FIELD_NAME$')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>

@@ -1,0 +1,11 @@
+<!-- 'bootstrap / Toggle Switch $FIELD_NAME_TITLE$ Field' -->
+<div class="mb-10">
+    <div class="form-check form-switch form-check-custom form-check-solid {{ ($errors->has('$FIELD_NAME$') ? 'is-invalid' : '') }}">
+        {!! Form::hidden('$FIELD_NAME$', 0) !!}
+        {!! Form::checkbox('$FIELD_NAME$', 1, null, ['class'=> 'form-check-input']) !!}
+        {!! Form::label('$FIELD_NAME$', $$MODEL_NAME_CAMEL$->getAttributeLabel('$FIELD_NAME$'), ['class' => 'form-check-label']) !!}
+    </div>
+    @error('$FIELD_NAME$')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>

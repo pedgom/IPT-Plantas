@@ -1,0 +1,16 @@
+//
+// Footer
+//
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+    .aside-enabled {
+        .footer {
+            .container,
+            .container-xxl,
+            .container-fluid {
+                padding-left: get($aside-config, width) + 2 * get($content-spacing, desktop) !important;
+            }
+        }
+    }    
+}

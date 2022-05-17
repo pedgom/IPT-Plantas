@@ -1,0 +1,207 @@
+//
+// Header
+//
+
+// Header
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	position: relative;
+	z-index: 3;
+	background-color: get($header-config, bg-color);
+
+	// Header navs
+	.header-navs {
+		background-color: get($header-config, navs-bg-color);
+	}
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	// Header
+	.header {			
+		flex-direction: column;
+		height: get($header-config, height, desktop, default);
+		
+		// Fixed header mode
+		.header-fixed & {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: get($header-config, z-index);
+			padding: 0;	
+		}	
+
+		// Extended header mode
+		.header-extended & {
+			height: get($header-config, height, desktop, extended);	
+		}
+
+		// Extended and fixed header modes
+		.header-extended.header-fixed & {
+			box-shadow: get($header-config, box-shadow);	
+		}
+		
+		// Header menu
+		.header-menu {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}		
+
+		// Header search
+		.header-search {
+			form {
+				.svg-icon {
+					color: $white;
+				}
+
+				.form-control {
+					color: $white;
+					border: 1px solid #49485E;
+					@include placeholder(#A1A5B7);
+				}
+			}
+		}
+
+		// Header top
+		.header-top {			
+			flex-grow: 1;
+		}
+		
+		// Header tabs
+		.header-tabs {
+			align-self: flex-end;
+			align-items: flex-end;
+
+			.nav-link {
+				border: 0;
+				@include border-top-radius($border-radius);
+				color: get($header-config, navs-tab-color, default);
+				font-size: 1.1rem;
+				font-weight: $font-weight-bolder;
+				padding: 1rem 1.5rem;
+				margin-right: 0.25rem;
+
+				&:hover {
+					color: get($header-config, navs-tab-color, hover);
+				}
+
+				&.active {
+					color: get($header-config, navs-tab-color, active);					
+					background-color: $page-bg;
+				}
+			}
+		}
+
+		// Header extended
+		.header-extended & {
+			.header-tabs {
+				.nav-link {
+					&.active {				
+						background-color: get($header-config, navs-bg-color);
+					}
+				}
+			}
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Header
+	.header {
+		height: get($header-config, height, tablet-and-mobile);
+
+		// Fixed header and header sticky modes
+		.header-tablet-and-mobile-fixed & {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: get($header-config, z-index);
+			height: get($header-config, height, tablet-and-mobile);
+			box-shadow: get($header-config, box-shadow);
+
+			// Header Logo
+			.header-logo {
+				// Logos
+				.logo-default {
+					display: none;
+				}
+
+				.logo-sticky {
+					display: inline-block;
+				}
+			}	
+		}		 	
+
+		.header-tabs {
+			display: none !important;
+		}
+
+		// Header menu
+		.header-menu {
+			display: none;
+			z-index: get($header-config, z-index) - 1;
+		}
+
+		// Header navs
+		.header-navs {
+			display: none !important;
+		}
+	}
+
+	// Header navs
+	.header-navs {
+		display: none;
+
+		// Header tabs
+		.header-tabs {
+			.nav-link {
+				@include border-radius($border-radius);
+				color: $gray-700;
+				font-size: 1.1rem;
+				font-weight: $font-weight-bolder;
+				padding: 0.65rem 1rem;
+				margin-right: 0.25rem;
+
+				&:hover {
+					color: $primary;
+				}
+
+				&.active {
+					color: $primary;
+					background-color: $page-bg;
+				}
+			}
+		}
+
+		// Header menu
+		.header-menu {
+			// Menu
+			.menu {
+				// Link padding x
+				@include menu-link-padding-x(get($header-config, menu, padding-x));
+
+				// Menu indention
+				@include menu-link-indention(get($header-config, menu, indention), get($header-config, menu, padding-x));
+			}
+		}
+
+		// Tab content
+		.tab-content {
+			overflow: auto;
+		}
+
+		// Containers
+		> .container,
+		> .container-xxl,
+		> .container-fluid {
+			padding: 0 !important;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<!-- 'Boolean FIELD_NAME_TITLE$ Field' checked by default -->
+<div class="mb-10">
+    <div class="form-check form-switch form-check-custom form-check-solid">
+        {!! Form::checkbox('$FIELD_NAME$', 1, true, ['class'=> 'form-check-input']) !!}
+        {!! Form::label('$FIELD_NAME$', $$MODEL_NAME_CAMEL$->getAttributeLabel('$FIELD_NAME$'), ['class' => 'form-check-label']) !!}
+    </div>
+</div>

@@ -1,0 +1,2 @@
+- ## Manual super administrador
+    - [Início](/{{route}}/{{version}}/overview)
