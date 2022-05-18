@@ -111,21 +111,22 @@ Breadcrumbs::for('demos.edit', function ($trail, $model) {
     $trail->push(__('Update'), route('demos.edit', $model));
 });
 
-/*
-// Home > Blog
-Breadcrumbs::for('blog', function ($trail) {
+
+
+// Home > Plantas
+Breadcrumbs::for('plantas.index', function ($trail) {
     $trail->parent('home');
-    $trail->push('Blog', route('blog'));
+    $trail->push(__('Plantas'), route('plantas.index'));
 });
-
-// Home > Blog > [Category]
-Breadcrumbs::for('category', function ($trail, $category) {
-    $trail->parent('blog');
-    $trail->push($category->title, route('category', $category->id));
+Breadcrumbs::for('plantas.create', function ($trail) {
+    $trail->parent('plantas.index');
+    $trail->push(__('Create'), route('plantas.create'));
 });
-
-// Home > Blog > [Category] > [Post]
-Breadcrumbs::for('post', function ($trail, $post) {
-    $trail->parent('category', $post->category);
-    $trail->push($post->title, route('post', $post->id));
-});*/
+Breadcrumbs::for('plantas.show', function ($trail, $model) {
+    $trail->parent('plantas.index');
+    $trail->push($model->name, route('plantas.show', $model));
+});
+Breadcrumbs::for('plantas.edit', function ($trail, $model) {
+    $trail->parent('plantas.show', $model);
+    $trail->push(__('Update'), route('plantas.edit', $model));
+});

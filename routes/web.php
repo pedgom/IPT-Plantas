@@ -28,7 +28,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/renew-model-lock', [HomeController::class,'renewModelLock'])->name('home.renew_model_lock');
 
-
     Route::get('/users', [UserController::class,'index'])->name('users.index');
     Route::post('/users', [UserController::class,'store'])->name('users.store');
     Route::get('/users/create', [UserController::class,'create'])->name('users.create');
@@ -37,7 +36,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/users/{user}/edit', [UserController::class,'edit'])->name('users.edit');
     Route::patch('/users/{user}', [UserController::class,'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class,'destroy'])->name('users.destroy');
-    Route::delete('/users/{user}/delete', [UserController::class,'delete'])->name('users.delete');
+
     //Route::middleware('can:adminApp')->group(function () { // dava problemas no leave impersonation
     Route::impersonate();
     //});
@@ -58,6 +57,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/demos/get-demos', [App\Http\Controllers\DemoController::class,'getDemos'])->name('demos.get_demos');
     Route::resource('demos', App\Http\Controllers\DemoController::class);
 
+    Route::resource('plantas', App\Http\Controllers\PlantaController::class)->except('index');
+
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('plantas', [App\Http\Controllers\PlantaController::class,'index'])->name('plantas.index');

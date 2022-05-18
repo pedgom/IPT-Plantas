@@ -155,14 +155,6 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function delete(User $user)
-    {
-        $this->authorize('delete', $user);
-        if($user->delete())
-            return ['success' => true];
-        else
-            return ['success' => false];
-    }
 
     /**
      * @return array
