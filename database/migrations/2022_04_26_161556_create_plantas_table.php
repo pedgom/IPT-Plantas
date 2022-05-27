@@ -47,7 +47,8 @@ return new class extends Migration {
 
         });
     }
-//comentário do branch Gabriel
+//comentário do branch Gabriel teste
+
 
     /**
      * Reverse the migrations.
