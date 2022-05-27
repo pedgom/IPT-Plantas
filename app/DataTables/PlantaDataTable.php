@@ -90,21 +90,6 @@ class PlantaDataTable extends DataTable
             Column::make('tempo_crescimento')->title($model->getAttributeLabel('tempo_crescimento')),
             Column::make('notas')->title($model->getAttributeLabel('notas')),
             Column::make('curiosidades')->title($model->getAttributeLabel('curiosidades')),
-            Column::make('descritor_atributo_id')->title($model->getAttributeLabel('descritor_atributo_id')),
-            Column::make('ordem_atributo_id')->title($model->getAttributeLabel('ordem_atributo_id')),
-            Column::make('familia_atributo_id')->title($model->getAttributeLabel('familia_atributo_id')),
-            Column::make('genero_atributo_id')->title($model->getAttributeLabel('genero_atributo_id')),
-            Column::make('situacao_ecologica_atributo_id')->title($model->getAttributeLabel('situacao_ecologica_atributo_id')),
-            Column::make('persistencia_atributo_id')->title($model->getAttributeLabel('persistencia_atributo_id')),
-            Column::make('o_relacao_atributo_id')->title($model->getAttributeLabel('o_relacao_atributo_id')),
-            Column::make('usos_atributo_id')->title($model->getAttributeLabel('usos_atributo_id')),
-            Column::make('aplicacoes_atributo_id')->title($model->getAttributeLabel('aplicacoes_atributo_id')),
-            Column::make('colecoes_atributo_id')->title($model->getAttributeLabel('colecoes_atributo_id')),
-            Column::make('forma_arv_atributo_id')->title($model->getAttributeLabel('forma_arv_atributo_id')),
-            Column::make('forma_arb_atributo_id')->title($model->getAttributeLabel('forma_arb_atributo_id')),
-            Column::make('forma_herb_atributo_id')->title($model->getAttributeLabel('forma_herb_atributo_id')),
-            Column::make('cor_sintese_atributo_id')->title($model->getAttributeLabel('cor_sintese_atributo_id')),
-            Column::make('estacao_sintese_atributo_id')->title($model->getAttributeLabel('estacao_sintese_atributo_id')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

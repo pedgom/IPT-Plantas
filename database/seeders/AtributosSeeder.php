@@ -68,7 +68,7 @@ class AtributosSeeder extends Seeder
         ]);
 
 
-        DB::table('phsolo_atributos')->insert([
+        DB::table('ph_solo_atributos')->insert([
             [
                 'name' => 'Ácido',
                 'created_at' => date("Y-m-d H:i:s"),
@@ -117,7 +117,7 @@ class AtributosSeeder extends Seeder
 
 
 
-        DB::table('resis_atributos')->insert([
+        DB::table('resistencia_atributos')->insert([
             [
                 'name' => 'Sal',
                 'created_at' => date("Y-m-d H:i:s"),
@@ -327,7 +327,7 @@ class AtributosSeeder extends Seeder
 
         DB::table('descritor_atributos');
         DB::table('situacao_ecologica_atributos');
-        DB::table('o_relacao_atributos');
+        DB::table('ordem_relacao_atributos');
         DB::table('usos_atributos');
         DB::table('aplicacoes_atributos');
         DB::table('colecoes_atributos');
@@ -344,17 +344,6 @@ class AtributosSeeder extends Seeder
         DB::table('origem_atributos');
         DB::table('diametro_atributos');
         DB::table('densidade_atributos');
-
-
-
-
-
-
-
-
-
-
-
 
 
 

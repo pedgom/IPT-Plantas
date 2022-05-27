@@ -112,7 +112,6 @@ Breadcrumbs::for('demos.edit', function ($trail, $model) {
 });
 
 
-
 // Home > Plantas
 Breadcrumbs::for('plantas.index', function ($trail) {
     $trail->parent('home');

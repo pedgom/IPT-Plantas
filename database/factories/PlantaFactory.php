@@ -29,22 +29,7 @@ class PlantaFactory extends Factory
         'nome_comum' => $this->faker->word,
         'tempo_crescimento' => $this->faker->word,
         'notas' => $this->faker->word,
-        'curiosidades' => $this->faker->word,
-        'descritor_atributo_id' => $this->faker->word,
-        'ordem_atributo_id' => $this->faker->word,
-        'familia_atributo_id' => $this->faker->word,
-        'genero_atributo_id' => $this->faker->word,
-        'situacao_ecologica_atributo_id' => $this->faker->word,
-        'persistencia_atributo_id' => $this->faker->word,
-        'o_relacao_atributo_id' => $this->faker->word,
-        'usos_atributo_id' => $this->faker->word,
-        'aplicacoes_atributo_id' => $this->faker->word,
-        'colecoes_atributo_id' => $this->faker->word,
-        'forma_arv_atributo_id' => $this->faker->word,
-        'forma_arb_atributo_id' => $this->faker->word,
-        'forma_herb_atributo_id' => $this->faker->word,
-        'cor_sintese_atributo_id' => $this->faker->word,
-        'estacao_sintese_atributo_id' => $this->faker->word
+        'curiosidades' => $this->faker->word
         ];
     }
 }
