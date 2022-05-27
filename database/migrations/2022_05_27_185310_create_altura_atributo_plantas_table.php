@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('altura_atributo_plantas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('altura_atributo_id')->constrained()->onDelete('cascade');
             $table->foreignId('planta_id')->constrained()->onDelete('cascade');
+            $table->foreignId('altura_atributo_id')->constrained()->onDelete('cascade');
             $table->timestamps();
 
             $table->unique(['altura_atributo_id', 'planta_id']);

@@ -90,6 +90,7 @@ class PlantaDataTable extends DataTable
             Column::make('tempo_crescimento')->title($model->getAttributeLabel('tempo_crescimento')),
             Column::make('notas')->title($model->getAttributeLabel('notas')),
             Column::make('curiosidades')->title($model->getAttributeLabel('curiosidades')),
+            Column::make('altura_atributo_planta_id')->title($model->getAttributeLabel('altura_atributo_planta_id')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

@@ -123,7 +123,7 @@ Breadcrumbs::for('plantas.create', function ($trail) {
 });
 Breadcrumbs::for('plantas.show', function ($trail, $model) {
     $trail->parent('plantas.index');
-    $trail->push($model->name, route('plantas.show', $model));
+    $trail->push($model->nome_botanico, route('plantas.show', $model));
 });
 Breadcrumbs::for('plantas.edit', function ($trail, $model) {
     $trail->parent('plantas.show', $model);

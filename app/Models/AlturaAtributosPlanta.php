@@ -7,26 +7,29 @@ use App\Models\Traits\LoadDefaults;
 use OwenIt\Auditing\Contracts\Auditable;
 
 /**
- * Class AlturaAtributo
+ * Class AlturaAtributosPlanta
  * @package App\Models
- * @version May 27, 2022, 6:36 pm WEST
+ * @version May 27, 2022, 6:33 pm WEST
  *
- * @property \Illuminate\Database\Eloquent\Collection $alturaAtributoPlantas
- * @property string $name
+ * @property \App\Models\AlturaAtributo $alturaAtributo
+ * @property \App\Models\Planta $planta
+ * @property integer $altura_atributo_id
+ * @property integer $planta_id
  */
-class AlturaAtributo extends Model implements Auditable
+class AlturaAtributosPlanta extends Model implements Auditable
 {
     use LoadDefaults;
     use \OwenIt\Auditing\Auditable;
 
-    public $table = 'altura_atributos';
+    public $table = 'altura_atributo_plantas';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
 
     public $fillable = [
-        'name'
+        'altura_atributo_id',
+        'planta_id'
     ];
 
     /**
@@ -36,7 +39,8 @@ class AlturaAtributo extends Model implements Auditable
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'altura_atributo_id' => 'integer',
+        'planta_id' => 'integer'
     ];
 
     /**
@@ -46,12 +50,12 @@ class AlturaAtributo extends Model implements Auditable
      */
     public static function rules(){
         return [
-            'name' => 'required|string|max:255',
+            'altura_atributo_id' => 'required',
+        'planta_id' => 'required',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
         ];
     }
-
 
     /**
      * Attribute labels
@@ -62,7 +66,8 @@ class AlturaAtributo extends Model implements Auditable
     {
         return [
             'id' => __('Id'),
-        'name' => __('Name'),
+        'altura_atributo_id' => __('Altura Atributo Id'),
+        'planta_id' => __('Planta Id'),
         'created_at' => __('Created At'),
         'updated_at' => __('Updated At')
         ];
@@ -79,10 +84,18 @@ class AlturaAtributo extends Model implements Auditable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function alturaAtributoPlantas()
+    public function alturaAtributo()
     {
-        return $this->hasMany(\App\Models\AlturaAtributoPlanta::class, 'altura_atributo_id');
+        return $this->belongsTo(\App\Models\AlturaAtributo::class, 'altura_atributo_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function planta()
+    {
+        return $this->belongsTo(\App\Models\Planta::class, 'planta_id');
     }
 }

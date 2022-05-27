@@ -26,6 +26,8 @@ return new class extends Migration {
 
             $table->id();
             $table->timestamps();                   // data de criaçao
+            $table->softDeletes();                  //flag delete
+
 
             //IDENTIFICAÇÃO
             $table->string('abreviatura');       //
@@ -38,19 +40,13 @@ return new class extends Migration {
             $table->string('curiosidades');
 
             //atributos 1-N
-            /*
-             * $table->foreignId('descritor_atributo_id')
-                 ->nullable()
-                 ->constrained()
-                 ->onDelete('set null');
-            */
+
 
         });
     }
 //comentário do branch Gabriel teste
 //comentario Pedro
 //conflito
-
 
     /**
      * Reverse the migrations.
@@ -62,6 +58,7 @@ return new class extends Migration {
         Schema::dropIfExists('plantas');
     }
 };
+
 
 
 //php artisan infyom:scaffold  --factory --fromTable --skip=scaffold_requests
