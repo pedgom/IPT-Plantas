@@ -48,6 +48,8 @@ return new class extends Migration {
         });
     }
 //comentário do branch Gabriel teste
+//Comentario Gabriel 2
+//conflito
 
 
     /**
