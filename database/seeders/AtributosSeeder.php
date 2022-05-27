@@ -67,7 +67,6 @@ class AtributosSeeder extends Seeder
             ]
         ]);
 
-
         DB::table('ph_solo_atributos')->insert([
             [
                 'name' => 'Ácido',
@@ -115,8 +114,6 @@ class AtributosSeeder extends Seeder
 
         ]);
 
-
-
         DB::table('resistencia_atributos')->insert([
             [
                 'name' => 'Sal',
@@ -158,7 +155,6 @@ class AtributosSeeder extends Seeder
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
-
         ]);
 
         DB::table('categoria_atributos')->insert([

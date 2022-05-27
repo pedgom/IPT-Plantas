@@ -19,6 +19,7 @@ class PlantaFactory extends Factory
      *
      * @return array
      */
+
     public function definition()
     {
         return [

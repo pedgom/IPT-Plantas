@@ -37,7 +37,9 @@ return new class extends Migration {
             $table->string('notas');
             $table->string('curiosidades');
 
-            /* $table->foreignId('descritor_atributo_id')
+            //atributos 1-N
+            /*
+             * $table->foreignId('descritor_atributo_id')
                  ->nullable()
                  ->constrained()
                  ->onDelete('set null');
@@ -45,7 +47,7 @@ return new class extends Migration {
 
         });
     }
-
+//comentário do branch Gabriel
 
     /**
      * Reverse the migrations.
