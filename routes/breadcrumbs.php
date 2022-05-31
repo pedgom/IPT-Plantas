@@ -131,3 +131,23 @@ Breadcrumbs::for('plantas.edit', function ($trail, $model) {
 });
 
 
+
+
+Breadcrumbs::for('altura-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Altura'), route('altura-atributos.index'));
+});
+Breadcrumbs::for('altura-atributos.create', function ($trail) {
+    $trail->parent('altura-atributos.index');
+    $trail->push(__('Create'), route('altura-atributos.create'));
+});
+Breadcrumbs::for('altura-atributos.show', function ($trail, $model) {
+    $trail->parent('altura-atributos.index');
+    $trail->push($model->nome_botanico, route('altura-atributos.show', $model));
+});
+Breadcrumbs::for('altura-atributos.edit', function ($trail, $model) {
+    $trail->parent('altura-atributos.show', $model);
+    $trail->push(__('Update'), route('altura-atributos.edit', $model));
+});
+
+
