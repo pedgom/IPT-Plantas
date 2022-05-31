@@ -129,3 +129,5 @@ Breadcrumbs::for('plantas.edit', function ($trail, $model) {
     $trail->parent('plantas.show', $model);
     $trail->push(__('Update'), route('plantas.edit', $model));
 });
+
+

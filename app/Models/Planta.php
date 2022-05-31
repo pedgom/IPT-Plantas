@@ -28,7 +28,7 @@ class Planta extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'plantas';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -99,7 +99,7 @@ class Planta extends Model implements Auditable
         'tempo_crescimento' => __('Tempo Crescimento'),
         'notas' => __('Notas'),
         'curiosidades' => __('Curiosidades'),
-        'altura_atributo_planta_id' => __('Altura Atributo Planta Id')
+        'altura_atributo_id' => __('Altura')
         ];
     }
 

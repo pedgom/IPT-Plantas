@@ -8,6 +8,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SettingController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
