@@ -10,8 +10,7 @@ return new class extends Migration {
      * @return void
      */
 
-    //colocar plural no nome das tabelas "plantas"
-    //migration por tabela
+
     //model por tabela
     // tentar adicionar um planta
 
