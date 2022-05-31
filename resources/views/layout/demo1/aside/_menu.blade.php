@@ -63,9 +63,6 @@
 
 
 
-
-
-
         @can('adminFullApp')
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('demos.*') ? "active" : "" }}" href="{{ route('demos.index') }}">
