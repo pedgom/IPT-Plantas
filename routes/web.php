@@ -65,3 +65,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('plantas', [App\Http\Controllers\PlantaController::class,'index'])->name('plantas.index');
+
+
+Route::resource('altura-atributos', App\Http\Controllers\AlturaAtributoController::class)->except('index');
+Route::get('alturaAtributos', [App\Http\Controllers\AlturaAtributoController::class,'index'])->name('altura-atributos.index');
+
+
+
