@@ -98,6 +98,7 @@ class DatabaseSeeder extends Seeder
         }
         if ($this->command->confirm('Do you want to apply all seeds? [y|N]', true)) {
             $this->call(SettingSeeder::class);
+            $this->call(AtributosSeeder::class);
         }
     }
 

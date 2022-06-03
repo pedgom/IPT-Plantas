@@ -47,6 +47,7 @@ class PlantaController extends Controller
         $validatedAttributes = $this->validateForm($request);
 
         if(($model = Planta::create($validatedAttributes)) ) {
+            $model->alturaAtributos()->sync($validatedAttributes['altura']);
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
             return redirect(route('plantas.show', $model));
@@ -73,6 +74,7 @@ class PlantaController extends Controller
      */
     public function edit(Planta $planta)
     {
+        $planta->altura=$planta->alturaAtributos()->pluck( 'altura_atributos.id')->toArray();
         return view('plantas.edit', compact('planta'));
     }
 
@@ -90,6 +92,8 @@ class PlantaController extends Controller
         if($planta->save()) {
             //flash('Planta updated successfully.');
             //Flash::success('Planta updated successfully.');
+
+            $planta->alturaAtributos()->sync($validatedAttributes['altura']);
             return redirect(route('plantas.show', $planta));
         }else{
             return redirect()->back();

@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\Planta;
+use App\Models\AlturaAtributoPlanta;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\Html\Column;
 use App\DataTables\Traits\DatatableColumnSearch;
 
-class PlantaDataTable extends DataTable
+class AlturaAtributoPlantaDataTable extends DataTable
 {
     use DatatableColumnSearch;
 
@@ -22,10 +22,10 @@ class PlantaDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
-            ->addColumn('action', function ($planta) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.show', $planta) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.edit', $planta) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $planta->id .'" data-delete-url="'. route('plantas.destroy', $planta) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+            ->addColumn('action', function ($alturaAtributoPlanta) {
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('altura-atributo-plantas.show', $alturaAtributoPlanta) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('altura-atributo-plantas.edit', $alturaAtributoPlanta) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $alturaAtributoPlanta->id .'" data-delete-url="'. route('altura-atributo-plantas.destroy', $alturaAtributoPlanta) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')
@@ -37,10 +37,10 @@ class PlantaDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Planta $model
+     * @param \App\Models\AlturaAtributoPlanta $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Planta $model)
+    public function query(AlturaAtributoPlanta $model)
     {
         return $model->newQuery();
     }
@@ -53,7 +53,7 @@ class PlantaDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->setTableId('plantas-table')
+            ->setTableId('altura_atributo_plantas-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom("tr<'row'<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'li><'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>>")
@@ -82,16 +82,10 @@ class PlantaDataTable extends DataTable
      */
     protected function getColumns()
     {
-        $model = new Planta();
+        $model = new AlturaAtributoPlanta();
         return [
-            Column::make('abreviatura')->title($model->getAttributeLabel('abreviatura')),
-            Column::make('nome_botanico')->title($model->getAttributeLabel('nome_botanico')),
-            Column::make('nome_comum')->title($model->getAttributeLabel('nome_comum')),
-            Column::make('tempo_crescimento')->title($model->getAttributeLabel('tempo_crescimento')),
-
-            // Column::make('notas')->title($model->getAttributeLabel('notas')),
-           // Column::make('curiosidades')->title($model->getAttributeLabel('curiosidades')),
-
+            Column::make('planta_id')->title($model->getAttributeLabel('planta_id')),
+            Column::make('altura_atributo_id')->title($model->getAttributeLabel('altura_atributo_id')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
@@ -109,6 +103,6 @@ class PlantaDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'plantas_' . date('YmdHis');
+        return 'altura_atributo_plantas_' . date('YmdHis');
     }
 }

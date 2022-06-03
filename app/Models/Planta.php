@@ -9,18 +9,24 @@ use OwenIt\Auditing\Contracts\Auditable;
 /**
  * Class Planta
  * @package App\Models
- * @version May 27, 2022, 7:09 pm WEST
+ * @version June 1, 2022, 5:22 pm WEST
  *
- * @property \App\Models\AlturaAtributoPlanta $alturaAtributoPlanta
- * @property \Illuminate\Database\Eloquent\Collection $alturaAtributoPlanta1s
+ * @property \Illuminate\Database\Eloquent\Collection $aguaAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $alturaAtributoPlantas
  * @property \Illuminate\Database\Eloquent\Collection $categoriaAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $densidadeAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $diametroAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $luzAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $origemAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $phSoloAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $resistenciaAtributoPlantas
+ * @property \Illuminate\Database\Eloquent\Collection $soloAtributoPlantas
  * @property string $abreviatura
  * @property string $nome_botanico
  * @property string $nome_comum
  * @property string $tempo_crescimento
  * @property string $notas
  * @property string $curiosidades
- * @property integer $altura_atributo_planta_id
  */
 class Planta extends Model implements Auditable
 {
@@ -28,6 +34,7 @@ class Planta extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'plantas';
+    public $altura= [];
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -41,8 +48,7 @@ class Planta extends Model implements Auditable
         'nome_comum',
         'tempo_crescimento',
         'notas',
-        'curiosidades',
-        'altura_atributo_planta_id'
+        'curiosidades'
     ];
 
     /**
@@ -57,8 +63,7 @@ class Planta extends Model implements Auditable
         'nome_comum' => 'string',
         'tempo_crescimento' => 'string',
         'notas' => 'string',
-        'curiosidades' => 'string',
-        'altura_atributo_planta_id' => 'integer'
+        'curiosidades' => 'string'
     ];
 
     /**
@@ -77,7 +82,7 @@ class Planta extends Model implements Auditable
         'tempo_crescimento' => 'required|string|max:255',
         'notas' => 'required|string|max:255',
         'curiosidades' => 'required|string|max:255',
-        'altura_atributo_planta_id' => 'nullable'
+            'altura'=>'required|array|min:1'
         ];
     }
 
@@ -98,8 +103,7 @@ class Planta extends Model implements Auditable
         'nome_comum' => __('Nome Comum'),
         'tempo_crescimento' => __('Tempo Crescimento'),
         'notas' => __('Notas'),
-        'curiosidades' => __('Curiosidades'),
-        'altura_atributo_id' => __('Altura')
+        'curiosidades' => __('Curiosidades')
         ];
     }
 
@@ -114,19 +118,27 @@ class Planta extends Model implements Auditable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function alturaAtributoPlanta()
+    public function aguaAtributoPlantas()
     {
-        return $this->belongsTo(\App\Models\AlturaAtributoPlanta::class, 'altura_atributo_planta_id');
+        return $this->hasMany(\App\Models\AguaAtributoPlanta::class, 'planta_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function alturaAtributoPlanta1s()
+    public function alturaAtributoPlantas()
     {
         return $this->hasMany(\App\Models\AlturaAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function alturaAtributos()
+    {
+        return $this->belongsToMany(\App\Models\AlturaAtributo::class);
     }
 
     /**
@@ -135,5 +147,71 @@ class Planta extends Model implements Auditable
     public function categoriaAtributoPlantas()
     {
         return $this->hasMany(\App\Models\CategoriaAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function densidadeAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\DensidadeAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function diametroAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\DiametroAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function luzAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\LuzAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function origemAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\OrigemAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function phSoloAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\PhSoloAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function resistenciaAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\ResistenciaAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function soloAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\SoloAtributoPlanta::class, 'planta_id');
+    }
+
+    //melhorar
+    public function alturasToString()
+    {
+        $string = '';
+        foreach ($this->alturaAtributos as $altura){
+            $string.=$altura->name.', ';
+        }
+        return trim($string, ', ');
     }
 }

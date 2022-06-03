@@ -38,7 +38,7 @@ return new class extends Migration {
             $table->string('notas');
             $table->string('curiosidades');
 
-            //atributos 1-N
+
 
 
         });

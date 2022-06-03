@@ -71,4 +71,5 @@ Route::resource('altura-atributos', App\Http\Controllers\AlturaAtributoControlle
 Route::get('alturaAtributos', [App\Http\Controllers\AlturaAtributoController::class,'index'])->name('altura-atributos.index');
 
 
-
+Route::resource('altura-atributo-plantas', App\Http\Controllers\AlturaAtributoPlantaController::class)->except('index');;
+Route::get('alturaAtributoPlantas', [App\Http\Controllers\AlturaAtributoPlantaController::class,'index'])->name('altura-atributo-plantas.index');

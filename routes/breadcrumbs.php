@@ -130,9 +130,6 @@ Breadcrumbs::for('plantas.edit', function ($trail, $model) {
     $trail->push(__('Update'), route('plantas.edit', $model));
 });
 
-
-
-
 Breadcrumbs::for('altura-atributos.index', function ($trail) {
     $trail->parent('home');
     $trail->push(__('Altura'), route('altura-atributos.index'));
@@ -143,11 +140,28 @@ Breadcrumbs::for('altura-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('altura-atributos.show', function ($trail, $model) {
     $trail->parent('altura-atributos.index');
-    $trail->push($model->nome_botanico, route('altura-atributos.show', $model));
+    $trail->push($model->planta_id, route('altura-atributos.show', $model));
 });
 Breadcrumbs::for('altura-atributos.edit', function ($trail, $model) {
     $trail->parent('altura-atributos.show', $model);
     $trail->push(__('Update'), route('altura-atributos.edit', $model));
 });
 
+
+Breadcrumbs::for('altura-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Alturas'), route('altura-atributo-plantas.index'));
+});
+Breadcrumbs::for('altura-atributo-plantas.create', function ($trail) {
+    $trail->parent('altura-atributos.index');
+    $trail->push(__('Create'), route('altura-atributo-plantas.create'));
+});
+Breadcrumbs::for('altura-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('altura-atributo-plantas.index');
+    $trail->push($model->planta_id, route('altura-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('altura-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('altura-atributo-plantas', $model);
+    $trail->push(__('Update'), route('altura-atributo-plantas.edit', $model));
+});
 

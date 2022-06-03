@@ -7,7 +7,6 @@
     @enderror
 </div>
 
-
 <!-- Nome Botanico Field -->
 <div class="mb-10">
     {!! Form::label('nome_botanico', $planta->getAttributeLabel('nome_botanico'), ['class' => 'form-label ']) !!}
@@ -57,12 +56,24 @@
     @enderror
 </div>
 
-
-<!-- Altura Atributo Planta Id Field -->
+<!-- User Id Field -->
 <div class="mb-10">
-    {!! Form::label('altura_atributo_planta_id', $planta->getAttributeLabel('altura_atributo_planta_id'), ['class' => 'form-label']) !!}
-    {!! Form::number('altura_atributo_planta_id', null, ['class' => 'form-control form-control-solid '.($errors->has('altura_atributo_planta_id') ? 'is-invalid' : '')]) !!}
-    @error('altura_atributo_planta_id')
-        <div class="invalid-feedback">{{ $message }}</div>
+    {!! Form::label('altura[]', $planta->getAttributeLabel('altura'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('altura[]',\App\Models\AlturaAtributo::valoresArray(), null , ['id' => 'altura','class' => 'form-select form-select-solid ' .($errors->has('altura') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('altura')
+    <div class="error invalid-feedback">{{ $message }}</div>
     @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#altura").select2({
+                    placeholder: '{{ __('Selecione uma ou mais alturas') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
 </div>
