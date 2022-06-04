@@ -165,3 +165,40 @@ Breadcrumbs::for('altura-atributo-plantas.edit', function ($trail, $model) {
     $trail->push(__('Update'), route('altura-atributo-plantas.edit', $model));
 });
 
+
+
+Breadcrumbs::for('categoria-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Categorias'), route('categoria-atributos.index'));
+});
+Breadcrumbs::for('categoria-atributos.create', function ($trail) {
+    $trail->parent('categoria-atributos.index');
+    $trail->push(__('Create'), route('categoria-atributos.create'));
+});
+Breadcrumbs::for('categoria-atributos.show', function ($trail, $model) {
+    $trail->parent('categoria-atributos.index');
+    $trail->push($model->planta_id, route('categoria-atributos.show', $model));
+});
+Breadcrumbs::for('categoria-atributos.edit', function ($trail, $model) {
+    $trail->parent('categoria-atributos.show', $model);
+    $trail->push(__('Update'), route('categoria-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('categoria-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Categorias'), route('categoria-atributo-plantas.index'));
+});
+Breadcrumbs::for('categoria-atributo-plantas.create', function ($trail) {
+    $trail->parent('categoria-atributos.index');
+    $trail->push(__('Create'), route('categoria-atributo-plantas.create'));
+});
+Breadcrumbs::for('categoria-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('categoria-atributo-plantas.index');
+    $trail->push($model->planta_id, route('categoria-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('categoria-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('categoria-atributo-plantas', $model);
+    $trail->push(__('Update'), route('categoria-atributo-plantas.edit', $model));
+});
+

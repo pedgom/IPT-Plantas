@@ -73,3 +73,14 @@ Route::get('alturaAtributos', [App\Http\Controllers\AlturaAtributoController::cl
 
 Route::resource('altura-atributo-plantas', App\Http\Controllers\AlturaAtributoPlantaController::class)->except('index');;
 Route::get('alturaAtributoPlantas', [App\Http\Controllers\AlturaAtributoPlantaController::class,'index'])->name('altura-atributo-plantas.index');
+
+Route::resource('categoria-atributos', App\Http\Controllers\CategoriaAtributoController::class)->except('index');
+Route::get('categoriaAtributos', [App\Http\Controllers\CategoriaAtributoController::class,'index'])->name('categoria-atributos.index');
+
+
+Route::resource('categoria-atributo-plantas', App\Http\Controllers\CategoriaAtributoPlantaController::class)->except('index');;
+Route::get('categoriaAtributoPlantas', [App\Http\Controllers\CategoriaAtributoPlantaController::class,'index'])->name('categoria-atributo-plantas.index');
+
+
+
+

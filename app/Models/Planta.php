@@ -35,6 +35,9 @@ class Planta extends Model implements Auditable
 
     public $table = 'plantas';
     public $altura= [];
+    public $categoria= [];
+
+
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -82,7 +85,9 @@ class Planta extends Model implements Auditable
         'tempo_crescimento' => 'required|string|max:255',
         'notas' => 'required|string|max:255',
         'curiosidades' => 'required|string|max:255',
-            'altura'=>'required|array|min:1'
+            'altura'=>'required|array|min:1',
+            'categoria'=>'required|array|min:1'
+
         ];
     }
 
@@ -133,6 +138,8 @@ class Planta extends Model implements Auditable
         return $this->hasMany(\App\Models\AlturaAtributoPlanta::class, 'planta_id');
     }
 
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -147,6 +154,14 @@ class Planta extends Model implements Auditable
     public function categoriaAtributoPlantas()
     {
         return $this->hasMany(\App\Models\CategoriaAtributoPlanta::class, 'planta_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categoriaAtributos()
+    {
+        return $this->belongsToMany(\App\Models\CategoriaAtributo::class);
     }
 
     /**
@@ -211,6 +226,16 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->alturaAtributos as $altura){
             $string.=$altura->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+
+    public function categoriasToString()
+    {
+        $string = '';
+        foreach ($this->categoriaAtributos as $categoria){
+            $string.=$categoria->name.', ';
         }
         return trim($string, ', ');
     }
