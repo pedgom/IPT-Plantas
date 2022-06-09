@@ -202,3 +202,41 @@ Breadcrumbs::for('categoria-atributo-plantas.edit', function ($trail, $model) {
     $trail->push(__('Update'), route('categoria-atributo-plantas.edit', $model));
 });
 
+
+
+Breadcrumbs::for('luz-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Luz'), route('luz-atributos.index'));
+});
+Breadcrumbs::for('luz-atributos.create', function ($trail) {
+    $trail->parent('luz-atributos.index');
+    $trail->push(__('Create'), route('luz-atributos.create'));
+});
+Breadcrumbs::for('luz-atributos.show', function ($trail, $model) {
+    $trail->parent('luz-atributos.index');
+    $trail->push($model->planta_id, route('luz-atributos.show', $model));
+});
+Breadcrumbs::for('luz-atributos.edit', function ($trail, $model) {
+    $trail->parent('luz-atributos.show', $model);
+    $trail->push(__('Update'), route('luz-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('luz-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Luz'), route('luz-atributo-plantas.index'));
+});
+Breadcrumbs::for('luz-atributo-plantas.create', function ($trail) {
+    $trail->parent('luz-atributos.index');
+    $trail->push(__('Create'), route('luz-atributo-plantas.create'));
+});
+Breadcrumbs::for('luz-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('luz-atributo-plantas.index');
+    $trail->push($model->planta_id, route('luz-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('luz-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('luz-atributo-plantas', $model);
+    $trail->push(__('Update'), route('luz-atributo-plantas.edit', $model));
+});
+
+

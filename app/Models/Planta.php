@@ -36,6 +36,7 @@ class Planta extends Model implements Auditable
     public $table = 'plantas';
     public $altura= [];
     public $categoria= [];
+    public $luz= [];
 
 
 
@@ -86,7 +87,8 @@ class Planta extends Model implements Auditable
         'notas' => 'required|string|max:255',
         'curiosidades' => 'required|string|max:255',
             'altura'=>'required|array|min:1',
-            'categoria'=>'required|array|min:1'
+            'categoria'=>'required|array|min:1',
+            'luz'=>'required|array|min:1'
 
         ];
     }
@@ -189,6 +191,14 @@ class Planta extends Model implements Auditable
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function luzAtributos()
+    {
+        return $this->belongsToMany(\App\Models\LuzAtributo::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
     public function origemAtributoPlantas()
@@ -236,6 +246,16 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->categoriaAtributos as $categoria){
             $string.=$categoria->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+
+    public function luzToString()
+    {
+        $string = '';
+        foreach ($this->luzAtributos as $luz){
+            $string.=$luz->name.', ';
         }
         return trim($string, ', ');
     }

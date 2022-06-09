@@ -83,4 +83,12 @@ Route::get('categoriaAtributoPlantas', [App\Http\Controllers\CategoriaAtributoPl
 
 
 
+Route::resource('luz-atributos', App\Http\Controllers\LuzAtributoController::class)->except('index');
+Route::get('luzAtributos', [App\Http\Controllers\LuzAtributoController::class,'index'])->name('luz-atributos.index');
+
+
+Route::resource('luz-atributo-plantas', App\Http\Controllers\LuzAtributoPlantaController::class)->except('index');;
+Route::get('luzAtributoPlantas', [App\Http\Controllers\LuzAtributoPlantaController::class,'index'])->name('luz-atributo-plantas.index');
+
+
 
