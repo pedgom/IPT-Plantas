@@ -130,6 +130,10 @@ Breadcrumbs::for('plantas.edit', function ($trail, $model) {
     $trail->push(__('Update'), route('plantas.edit', $model));
 });
 
+
+//**************************************************************************************
+//ALTURAS       ************************************************************************
+//**************************************************************************************
 Breadcrumbs::for('altura-atributos.index', function ($trail) {
     $trail->parent('home');
     $trail->push(__('Altura'), route('altura-atributos.index'));
@@ -167,6 +171,12 @@ Breadcrumbs::for('altura-atributo-plantas.edit', function ($trail, $model) {
 
 
 
+
+
+
+//**************************************************************************************
+//CATEGORIAS       *********************************************************************
+//**************************************************************************************
 Breadcrumbs::for('categoria-atributos.index', function ($trail) {
     $trail->parent('home');
     $trail->push(__('Categorias'), route('categoria-atributos.index'));
@@ -204,6 +214,12 @@ Breadcrumbs::for('categoria-atributo-plantas.edit', function ($trail, $model) {
 
 
 
+
+
+
+//**************************************************************************************
+//LUZ           ************************************************************************
+//**************************************************************************************
 Breadcrumbs::for('luz-atributos.index', function ($trail) {
     $trail->parent('home');
     $trail->push(__('Luz'), route('luz-atributos.index'));
@@ -242,6 +258,11 @@ Breadcrumbs::for('luz-atributo-plantas.edit', function ($trail, $model) {
 
 
 
+
+
+//**************************************************************************************
+//DIAMETRO      ************************************************************************
+//**************************************************************************************
 Breadcrumbs::for('diametro-atributos.index', function ($trail) {
     $trail->parent('home');
     $trail->push(__('Diametro'), route('diametro-atributos.index'));
@@ -275,4 +296,47 @@ Breadcrumbs::for('diametro-atributo-plantas.show', function ($trail, $model) {
 Breadcrumbs::for('diametro-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('diametro-atributo-plantas', $model);
     $trail->push(__('Update'), route('diametro-atributo-plantas.edit', $model));
+});
+
+
+
+
+
+
+//**************************************************************************************
+//DENSIDADE     ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('densidade-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Densidade'), route('densidade-atributos.index'));
+});
+Breadcrumbs::for('densidade-atributos.create', function ($trail) {
+    $trail->parent('densidade-atributos.index');
+    $trail->push(__('Create'), route('densidade-atributos.create'));
+});
+Breadcrumbs::for('densidade-atributos.show', function ($trail, $model) {
+    $trail->parent('densidade-atributos.index');
+    $trail->push($model->planta_id, route('densidade-atributos.show', $model));
+});
+Breadcrumbs::for('densidade-atributos.edit', function ($trail, $model) {
+    $trail->parent('densidade-atributos.show', $model);
+    $trail->push(__('Update'), route('densidade-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('densidade-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Densidade'), route('densidade-atributo-plantas.index'));
+});
+Breadcrumbs::for('densidade-atributo-plantas.create', function ($trail) {
+    $trail->parent('densidade-atributos.index');
+    $trail->push(__('Create'), route('densidade-atributo-plantas.create'));
+});
+Breadcrumbs::for('densidade-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('densidade-atributo-plantas.index');
+    $trail->push($model->planta_id, route('densidade-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('densidade-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('densidade-atributo-plantas', $model);
+    $trail->push(__('Update'), route('densidade-atributo-plantas.edit', $model));
 });

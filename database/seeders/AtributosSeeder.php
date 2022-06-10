@@ -359,9 +359,23 @@ class AtributosSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s")
             ]
            ]);
-        DB::table('densidade_atributos');
+        DB::table('densidade_atributos')->insert([
 
-
-
+            [
+                'name' => '1un/m2',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => '2un/m2',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => '3un/m2',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+        ]);
     }
 }

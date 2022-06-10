@@ -99,4 +99,12 @@ Route::get('diametroAtributoPlantas', [App\Http\Controllers\DiametroAtributoPlan
 
 
 
+Route::resource('densidade-atributos', App\Http\Controllers\DensidadeAtributoController::class)->except('index');
+Route::get('densidadeAtributos', [App\Http\Controllers\DensidadeAtributoController::class,'index'])->name('densidade-atributos.index');
+
+
+Route::resource('densidade-atributo-plantas', App\Http\Controllers\DensidadeAtributoPlantaController::class)->except('index');;
+Route::get('densidadeAtributoPlantas', [App\Http\Controllers\DensidadeAtributoPlantaController::class,'index'])->name('densidade-atributo-plantas.index');
+
+
 

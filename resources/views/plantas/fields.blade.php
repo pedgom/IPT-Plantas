@@ -146,3 +146,26 @@
         </script>
     @endpush
 </div>
+
+
+
+<div class="mb-10">
+    {!! Form::label('densidade[]', $planta->getAttributeLabel('densidade'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('densidade[]',\App\Models\DensidadeAtributo::valoresArray(), null , ['id' => 'densidade','class' => 'form-select form-select-solid ' .($errors->has('densidade') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('densidade')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#densidade").select2({
+                    placeholder: '{{ __('Selecione um ou mais tipos de densidade') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>
