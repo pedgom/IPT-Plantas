@@ -90,5 +90,13 @@ Route::get('luzAtributos', [App\Http\Controllers\LuzAtributoController::class,'i
 Route::resource('luz-atributo-plantas', App\Http\Controllers\LuzAtributoPlantaController::class)->except('index');;
 Route::get('luzAtributoPlantas', [App\Http\Controllers\LuzAtributoPlantaController::class,'index'])->name('luz-atributo-plantas.index');
 
+Route::resource('diametro-atributos', App\Http\Controllers\DiametroAtributoController::class)->except('index');
+Route::get('diametroAtributos', [App\Http\Controllers\DiametroAtributoController::class,'index'])->name('diametro-atributos.index');
+
+
+Route::resource('diametro-atributo-plantas', App\Http\Controllers\DiametroAtributoPlantaController::class)->except('index');;
+Route::get('diametroAtributoPlantas', [App\Http\Controllers\DiametroAtributoPlantaController::class,'index'])->name('diametro-atributo-plantas.index');
+
+
 
 

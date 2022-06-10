@@ -338,7 +338,27 @@ class AtributosSeeder extends Seeder
         DB::table('familia_atributos');
         DB::table('genero_atributos');
         DB::table('origem_atributos');
-        DB::table('diametro_atributos');
+
+
+
+        DB::table('diametro_atributos')->insert([
+
+            [
+                'name' => '0.50 - 0.80',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => '1.20 - 1.50',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => '3.00 - 7.00',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+           ]);
         DB::table('densidade_atributos');
 
 

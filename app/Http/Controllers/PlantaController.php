@@ -50,6 +50,7 @@ class PlantaController extends Controller
             $model->alturaAtributos()->sync($validatedAttributes['altura']);
             $model->categoriaAtributos()->sync($validatedAttributes['categoria']);
             $model->luzAtributos()->sync($validatedAttributes['luz']);
+            $model->diametroAtributos()->sync($validatedAttributes['diametro']);
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
             return redirect(route('plantas.show', $model));
@@ -79,6 +80,7 @@ class PlantaController extends Controller
         $planta->altura=$planta->alturaAtributos()->pluck( 'altura_atributos.id')->toArray();
         $planta->categoria=$planta->categoriaAtributos()->pluck( 'categoria_atributos.id')->toArray();
         $planta->luz=$planta->luzAtributos()->pluck( 'luz_atributos.id')->toArray();
+        $planta->diametro=$planta->diametroAtributos()->pluck( 'diametro_atributos.id')->toArray();
         return view('plantas.edit', compact('planta'));
     }
 
@@ -100,6 +102,7 @@ class PlantaController extends Controller
             $planta->alturaAtributos()->sync($validatedAttributes['altura']);
             $planta->categoriaAtributos()->sync($validatedAttributes['categoria']);
             $planta->luzAtributos()->sync($validatedAttributes['luz']);
+            $planta->diametroAtributos()->sync($validatedAttributes['diametro']);
             return redirect(route('plantas.show', $planta));
         }else{
             return redirect()->back();

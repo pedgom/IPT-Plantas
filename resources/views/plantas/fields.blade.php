@@ -122,3 +122,27 @@
         </script>
     @endpush
 </div>
+
+
+
+
+<div class="mb-10">
+    {!! Form::label('diametro[]', $planta->getAttributeLabel('diametro'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('diametro[]',\App\Models\DiametroAtributo::valoresArray(), null , ['id' => 'diametro','class' => 'form-select form-select-solid ' .($errors->has('diametro') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('diametro')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#diametro").select2({
+                    placeholder: '{{ __('Selecione um ou mais tipos de diametro') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>

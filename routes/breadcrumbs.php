@@ -240,3 +240,39 @@ Breadcrumbs::for('luz-atributo-plantas.edit', function ($trail, $model) {
 });
 
 
+
+
+Breadcrumbs::for('diametro-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Diametro'), route('diametro-atributos.index'));
+});
+Breadcrumbs::for('diametro-atributos.create', function ($trail) {
+    $trail->parent('diametro-atributos.index');
+    $trail->push(__('Create'), route('diametro-atributos.create'));
+});
+Breadcrumbs::for('diametro-atributos.show', function ($trail, $model) {
+    $trail->parent('diametro-atributos.index');
+    $trail->push($model->planta_id, route('diametro-atributos.show', $model));
+});
+Breadcrumbs::for('diametro-atributos.edit', function ($trail, $model) {
+    $trail->parent('diametro-atributos.show', $model);
+    $trail->push(__('Update'), route('diametro-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('diametro-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Diametro'), route('diametro-atributo-plantas.index'));
+});
+Breadcrumbs::for('diametro-atributo-plantas.create', function ($trail) {
+    $trail->parent('diametro-atributos.index');
+    $trail->push(__('Create'), route('diametro-atributo-plantas.create'));
+});
+Breadcrumbs::for('diametro-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('diametro-atributo-plantas.index');
+    $trail->push($model->planta_id, route('diametro-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('diametro-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('diametro-atributo-plantas', $model);
+    $trail->push(__('Update'), route('diametro-atributo-plantas.edit', $model));
+});

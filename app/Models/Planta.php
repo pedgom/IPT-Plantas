@@ -37,6 +37,7 @@ class Planta extends Model implements Auditable
     public $altura= [];
     public $categoria= [];
     public $luz= [];
+    public $diametro= [];
 
 
 
@@ -88,7 +89,8 @@ class Planta extends Model implements Auditable
         'curiosidades' => 'required|string|max:255',
             'altura'=>'required|array|min:1',
             'categoria'=>'required|array|min:1',
-            'luz'=>'required|array|min:1'
+            'luz'=>'required|array|min:1',
+            'diametro'=>'required|array|min:1'
 
         ];
     }
@@ -183,6 +185,14 @@ class Planta extends Model implements Auditable
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function diametroAtributos()
+    {
+        return $this->belongsToMany(\App\Models\DiametroAtributo::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
     public function luzAtributoPlantas()
@@ -256,6 +266,15 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->luzAtributos as $luz){
             $string.=$luz->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+    public function diametroToString()
+    {
+        $string = '';
+        foreach ($this->diametroAtributos as $diametro){
+            $string.=$diametro->name.', ';
         }
         return trim($string, ', ');
     }
