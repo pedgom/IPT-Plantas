@@ -340,3 +340,44 @@ Breadcrumbs::for('densidade-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('densidade-atributo-plantas', $model);
     $trail->push(__('Update'), route('densidade-atributo-plantas.edit', $model));
 });
+
+
+
+
+//**************************************************************************************
+//AGUA     ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('agua-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Agua'), route('agua-atributos.index'));
+});
+Breadcrumbs::for('agua-atributos.create', function ($trail) {
+    $trail->parent('agua-atributos.index');
+    $trail->push(__('Create'), route('agua-atributos.create'));
+});
+Breadcrumbs::for('agua-atributos.show', function ($trail, $model) {
+    $trail->parent('agua-atributos.index');
+    $trail->push($model->planta_id, route('agua-atributos.show', $model));
+});
+Breadcrumbs::for('agua-atributos.edit', function ($trail, $model) {
+    $trail->parent('agua-atributos.show', $model);
+    $trail->push(__('Update'), route('agua-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('agua-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Agua'), route('agua-atributo-plantas.index'));
+});
+Breadcrumbs::for('agua-atributo-plantas.create', function ($trail) {
+    $trail->parent('agua-atributos.index');
+    $trail->push(__('Create'), route('agua-atributo-plantas.create'));
+});
+Breadcrumbs::for('agua-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('agua-atributo-plantas.index');
+    $trail->push($model->planta_id, route('agua-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('agua-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('agua-atributo-plantas', $model);
+    $trail->push(__('Update'), route('agua-atributo-plantas.edit', $model));
+});

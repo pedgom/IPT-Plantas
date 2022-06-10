@@ -39,6 +39,7 @@ class Planta extends Model implements Auditable
     public $luz= [];
     public $diametro= [];
     public $densidade= [];
+    public $agua= [];
 
 
 
@@ -92,7 +93,8 @@ class Planta extends Model implements Auditable
             'categoria'=>'required|array|min:1',
             'luz'=>'required|array|min:1',
             'diametro'=>'required|array|min:1',
-            'densidade'=>'required|array|min:1'
+            'densidade'=>'required|array|min:1',
+            'agua'=>'required|array|min:1'
 
         ];
     }
@@ -134,6 +136,15 @@ class Planta extends Model implements Auditable
     public function aguaAtributoPlantas()
     {
         return $this->hasMany(\App\Models\AguaAtributoPlanta::class, 'planta_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function aguaAtributos()
+    {
+        return $this->belongsToMany(\App\Models\AguaAtributo::class);
     }
 
     /**
@@ -295,6 +306,16 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->densidadeAtributos as $densidade){
             $string.=$densidade->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+
+    public function aguaToString()
+    {
+        $string = '';
+        foreach ($this->aguaAtributos as $agua){
+            $string.=$agua->name.', ';
         }
         return trim($string, ', ');
     }

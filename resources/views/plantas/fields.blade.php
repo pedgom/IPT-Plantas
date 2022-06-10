@@ -169,3 +169,27 @@
         </script>
     @endpush
 </div>
+
+
+
+
+<div class="mb-10">
+    {!! Form::label('agua[]', $planta->getAttributeLabel('agua'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('agua[]',\App\Models\AguaAtributo::valoresArray(), null , ['id' => 'agua','class' => 'form-select form-select-solid ' .($errors->has('agua') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('agua')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#agua").select2({
+                    placeholder: '{{ __('Selecione um ou mais tipos de agua') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>

@@ -108,3 +108,11 @@ Route::get('densidadeAtributoPlantas', [App\Http\Controllers\DensidadeAtributoPl
 
 
 
+
+Route::resource('agua-atributos', App\Http\Controllers\AguaAtributoController::class)->except('index');
+Route::get('aguaAtributos', [App\Http\Controllers\AguaAtributoController::class,'index'])->name('agua-atributos.index');
+
+
+Route::resource('agua-atributo-plantas', App\Http\Controllers\AguaAtributoPlantaController::class)->except('index');;
+Route::get('aguaAtributoPlantas', [App\Http\Controllers\AguaAtributoPlantaController::class,'index'])->name('agua-atributo-plantas.index');
+
