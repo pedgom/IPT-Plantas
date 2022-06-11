@@ -317,4 +317,3 @@ class Planta extends Model implements Auditable
         return trim($string, ', ');
     }
 }
-
