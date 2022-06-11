@@ -42,11 +42,8 @@ class Planta extends Model implements Auditable
     public $agua= [];
 
 
-
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
-
 
 
     public $fillable = [
@@ -304,8 +301,8 @@ class Planta extends Model implements Auditable
     public function densidadeToString()
     {
         $string = '';
-        foreach ($this->densidadeAtributos as $densidade){
-            $string.=$densidade->name.', ';
+        foreach ($this->densidadeAtributos as $densidade) {
+            $string .= $densidade->name . ', ';
         }
         return trim($string, ', ');
     }
@@ -320,3 +317,4 @@ class Planta extends Model implements Auditable
         return trim($string, ', ');
     }
 }
+
