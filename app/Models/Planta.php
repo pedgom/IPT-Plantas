@@ -34,19 +34,16 @@ class Planta extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'plantas';
-    public $altura= [];
-    public $categoria= [];
-    public $luz= [];
-    public $diametro= [];
-    public $densidade= [];
-    public $agua= [];
-
+    public $altura = [];
+    public $categoria = [];
+    public $luz = [];
+    public $diametro = [];
+    public $densidade = [];
+    public $agua = [];
 
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
-
 
 
     public $fillable = [
@@ -78,23 +75,24 @@ class Planta extends Model implements Auditable
      *
      * @var array
      */
-    public static function rules(){
+    public static function rules()
+    {
         return [
             'created_at' => 'nullable',
-        'updated_at' => 'nullable',
-        'deleted_at' => 'nullable',
-        'abreviatura' => 'required|string|max:255',
-        'nome_botanico' => 'required|string|max:255',
-        'nome_comum' => 'required|string|max:255',
-        'tempo_crescimento' => 'required|string|max:255',
-        'notas' => 'required|string|max:255',
-        'curiosidades' => 'required|string|max:255',
-            'altura'=>'required|array|min:1',
-            'categoria'=>'required|array|min:1',
-            'luz'=>'required|array|min:1',
-            'diametro'=>'required|array|min:1',
-            'densidade'=>'required|array|min:1',
-            'agua'=>'required|array|min:1'
+            'updated_at' => 'nullable',
+            'deleted_at' => 'nullable',
+            'abreviatura' => 'required|string|max:255',
+            'nome_botanico' => 'required|string|max:255',
+            'nome_comum' => 'required|string|max:255',
+            'tempo_crescimento' => 'required|string|max:255',
+            'notas' => 'required|string|max:255',
+            'curiosidades' => 'required|string|max:255',
+            'altura' => 'required|array|min:1',
+            'categoria' => 'required|array|min:1',
+            'luz' => 'required|array|min:1',
+            'diametro' => 'required|array|min:1',
+            'densidade' => 'required|array|min:1',
+            'agua' => 'required|array|min:1'
 
         ];
     }
@@ -108,15 +106,15 @@ class Planta extends Model implements Auditable
     {
         return [
             'id' => __('Id'),
-        'created_at' => __('Created At'),
-        'updated_at' => __('Updated At'),
-        'deleted_at' => __('Deleted At'),
-        'abreviatura' => __('Abreviatura'),
-        'nome_botanico' => __('Nome Botanico'),
-        'nome_comum' => __('Nome Comum'),
-        'tempo_crescimento' => __('Tempo Crescimento'),
-        'notas' => __('Notas'),
-        'curiosidades' => __('Curiosidades')
+            'created_at' => __('Created At'),
+            'updated_at' => __('Updated At'),
+            'deleted_at' => __('Deleted At'),
+            'abreviatura' => __('Abreviatura'),
+            'nome_botanico' => __('Nome Botanico'),
+            'nome_comum' => __('Nome Comum'),
+            'tempo_crescimento' => __('Tempo Crescimento'),
+            'notas' => __('Notas'),
+            'curiosidades' => __('Curiosidades')
         ];
     }
 
@@ -125,7 +123,8 @@ class Planta extends Model implements Auditable
      * @param string $attribute
      * @return string
      */
-    public function getAttributeLabel($attribute){
+    public function getAttributeLabel($attribute)
+    {
         $attributeLabels = static::attributeLabels();
         return isset($attributeLabels[$attribute]) ? $attributeLabels[$attribute] : __($attribute);
     }
@@ -154,7 +153,6 @@ class Planta extends Model implements Auditable
     {
         return $this->hasMany(\App\Models\AlturaAtributoPlanta::class, 'planta_id');
     }
-
 
 
     /**
@@ -265,8 +263,8 @@ class Planta extends Model implements Auditable
     public function alturasToString()
     {
         $string = '';
-        foreach ($this->alturaAtributos as $altura){
-            $string.=$altura->name.', ';
+        foreach ($this->alturaAtributos as $altura) {
+            $string .= $altura->name . ', ';
         }
         return trim($string, ', ');
     }
@@ -275,8 +273,8 @@ class Planta extends Model implements Auditable
     public function categoriasToString()
     {
         $string = '';
-        foreach ($this->categoriaAtributos as $categoria){
-            $string.=$categoria->name.', ';
+        foreach ($this->categoriaAtributos as $categoria) {
+            $string .= $categoria->name . ', ';
         }
         return trim($string, ', ');
     }
@@ -285,8 +283,8 @@ class Planta extends Model implements Auditable
     public function luzToString()
     {
         $string = '';
-        foreach ($this->luzAtributos as $luz){
-            $string.=$luz->name.', ';
+        foreach ($this->luzAtributos as $luz) {
+            $string .= $luz->name . ', ';
         }
         return trim($string, ', ');
     }
@@ -294,8 +292,8 @@ class Planta extends Model implements Auditable
     public function diametroToString()
     {
         $string = '';
-        foreach ($this->diametroAtributos as $diametro){
-            $string.=$diametro->name.', ';
+        foreach ($this->diametroAtributos as $diametro) {
+            $string .= $diametro->name . ', ';
         }
         return trim($string, ', ');
     }
@@ -304,19 +302,10 @@ class Planta extends Model implements Auditable
     public function densidadeToString()
     {
         $string = '';
-        foreach ($this->densidadeAtributos as $densidade){
-            $string.=$densidade->name.', ';
-        }
-        return trim($string, ', ');
-    }
-
-
-    public function aguaToString()
-    {
-        $string = '';
-        foreach ($this->aguaAtributos as $agua){
-            $string.=$agua->name.', ';
+        foreach ($this->densidadeAtributos as $densidade) {
+            $string .= $densidade->name . ', ';
         }
         return trim($string, ', ');
     }
 }
+
