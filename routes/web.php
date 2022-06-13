@@ -126,4 +126,18 @@ Route::resource('resistencia-atributo-plantas', App\Http\Controllers\Resistencia
 Route::get('resistenciaAtributoPlantas', [App\Http\Controllers\ResistenciaAtributoPlantaController::class,'index'])->name('resistencia-atributo-plantas.index');
 
 
+Route::resource('solo-atributos', App\Http\Controllers\SoloAtributoController::class)->except('index');
+Route::get('soloAtributos', [App\Http\Controllers\SoloAtributoController::class,'index'])->name('solo-atributos.index');
+
+Route::resource('solo-atributo-plantas', App\Http\Controllers\SoloAtributoPlantaController::class)->except('index');;
+Route::get('soloAtributoPlantas', [App\Http\Controllers\SoloAtributoPlantaController::class,'index'])->name('solo-atributo-plantas.index');
+
+
+
+
 Route::resource('persistenciaAtributos', App\Http\Controllers\PersistenciaAtributoController::class);
+
+
+
+
+

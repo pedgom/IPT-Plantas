@@ -386,7 +386,7 @@ Breadcrumbs::for('agua-atributo-plantas.edit', function ($trail, $model) {
 
 
 //**************************************************************************************
-//AGUA     ************************************************************************
+//RESISTENCIA     ************************************************************************
 //**************************************************************************************
 Breadcrumbs::for('resistencia-atributos.index', function ($trail) {
     $trail->parent('home');
@@ -421,4 +421,45 @@ Breadcrumbs::for('resistencia-atributo-plantas.show', function ($trail, $model) 
 Breadcrumbs::for('resistencia-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('resistencia-atributo-plantas', $model);
     $trail->push(__('Update'), route('resistencia-atributo-plantas.edit', $model));
+});
+
+
+
+
+//**************************************************************************************
+//SOLO          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('solo-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Solo'), route('solo-atributos.index'));
+});
+Breadcrumbs::for('solo-atributos.create', function ($trail) {
+    $trail->parent('solo-atributos.index');
+    $trail->push(__('Create'), route('solo-atributos.create'));
+});
+Breadcrumbs::for('solo-atributos.show', function ($trail, $model) {
+    $trail->parent('solo-atributos.index');
+    $trail->push($model->planta_id, route('solo-atributos.show', $model));
+});
+Breadcrumbs::for('solo-atributos.edit', function ($trail, $model) {
+    $trail->parent('solo-atributos.show', $model);
+    $trail->push(__('Update'), route('solo-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('solo-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Solo'), route('solo-atributo-plantas.index'));
+});
+Breadcrumbs::for('solo-atributo-plantas.create', function ($trail) {
+    $trail->parent('solo-atributos.index');
+    $trail->push(__('Create'), route('solo-atributo-plantas.create'));
+});
+Breadcrumbs::for('solo-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('solo-atributo-plantas.index');
+    $trail->push($model->planta_id, route('solo-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('solo-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('solo-atributo-plantas', $model);
+    $trail->push(__('Update'), route('solo-atributo-plantas.edit', $model));
 });

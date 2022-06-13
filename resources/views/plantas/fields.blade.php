@@ -216,6 +216,27 @@
     @endpush
 </div>
 
+<div class="mb-10">
+    {!! Form::label('solo[]', $planta->getAttributeLabel('solo'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('solo[]',\App\Models\SoloAtributo::valoresArray(), null , ['id' => 'solo','class' => 'form-select form-select-solid ' .($errors->has('solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('solo')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#solo").select2({
+                    placeholder: '{{ __('Selecione um ou mais tipos de solos') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>
+
 
 
 <div class="mb-10">

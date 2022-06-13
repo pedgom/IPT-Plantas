@@ -56,6 +56,7 @@ class PlantaController extends Controller
             $model->densidadeAtributos()->sync($validatedAttributes['densidade']);
             $model->aguaAtributos()->sync($validatedAttributes['agua']);
             $model->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
+            $model->soloAtributos()->sync($validatedAttributes['solo']);
             //$model->persistencia_atributo_id = $validatedAttributes['persistencia'];
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
@@ -90,6 +91,7 @@ class PlantaController extends Controller
         $planta->densidade=$planta->densidadeAtributos()->pluck( 'densidade_atributos.id')->toArray();
         $planta->agua=$planta->aguaAtributos()->pluck( 'agua_atributos.id')->toArray();
         $planta->resistencia=$planta->resistenciaAtributos()->pluck( 'resistencia_atributos.id')->toArray();
+        $planta->solo=$planta->soloAtributos()->pluck( 'solo_atributos.id')->toArray();
         return view('plantas.edit', compact('planta'));
     }
 
@@ -115,6 +117,7 @@ class PlantaController extends Controller
             $planta->densidadeAtributos()->sync($validatedAttributes['densidade']);
             $planta->aguaAtributos()->sync($validatedAttributes['agua']);
             $planta->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
+            $planta->soloAtributos()->sync($validatedAttributes['solo']);
 
             return redirect(route('plantas.show', $planta));
         }else{
