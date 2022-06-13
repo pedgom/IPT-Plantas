@@ -57,7 +57,9 @@ class Planta extends Model implements Auditable
         'tempo_crescimento',
         'notas',
         'curiosidades',
-        'persistencia_atributo_id'
+        'persistencia_atributo_id',
+        'ordem_atributo_id'
+
     ];
 
     /**
@@ -100,7 +102,8 @@ class Planta extends Model implements Auditable
             'resistencia'=>'required|array|min:1',
             'solo'=>'required|array|min:1',
             'ph_solo'=>'required|array|min:1',
-            'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray()))
+            'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray())),
+            'ordem'=>'required|in:'.implode(',',array_keys(\App\Models\OrdemAtributo::getOrdemArray()))
 
         ];
     }
@@ -124,7 +127,7 @@ class Planta extends Model implements Auditable
         'notas' => __('Notas'),
         'curiosidades' => __('Curiosidades'),
             'persistencia' => __('Persistencia'),
-
+            'ordem' => __('Ordem'),
 
 
 
@@ -288,6 +291,15 @@ class Planta extends Model implements Auditable
     public function persistenciaAtributo()
     {
         return $this->belongsTo(\App\Models\PersistenciaAtributo::class, 'persistencia_atributo_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function ordemAtributo()
+    {
+        return $this->belongsTo(\App\Models\OrdemAtributo::class, 'ordem_atributo_id');
     }
 
     /**

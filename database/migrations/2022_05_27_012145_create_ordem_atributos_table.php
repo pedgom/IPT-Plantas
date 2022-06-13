@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ordem_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->smallInteger('ordem');
             $table->timestamps();
         });
     }

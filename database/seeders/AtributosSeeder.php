@@ -334,7 +334,46 @@ class AtributosSeeder extends Seeder
         DB::table('forma_herb_atributos');
         DB::table('cor_sintese_atributos');
         DB::table('estacao_sintese_atributos');
-        DB::table('ordem_atributos');
+        DB::table('ordem_atributos')->insert([
+            [
+                'ordem' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'ordem' => 2,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'ordem' => 3,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'ordem' => 4,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'ordem' => 5,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'ordem' => 6,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'ordem' => 7,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+
+
         DB::table('familia_atributos');
         DB::table('genero_atributos');
         DB::table('origem_atributos');

@@ -271,3 +271,16 @@
     @enderror
 
 </div>
+
+
+<div class="mb-10">
+    {!! Form::label('ordem', $planta->getAttributeLabel('ordem'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('ordem',\App\Models\OrdemAtributo::getOrdemArray(), null , ['id' => 'ordem','class' => 'form-select form-select-solid ' .($errors->has('ordem') ? 'is-invalid' : '')]) !!}
+
+    @error('ordem')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
