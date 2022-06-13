@@ -257,7 +257,7 @@ class Planta extends Model implements Auditable
      */
     public function resistenciaAtributos()
     {
-        return $this->belongsToMany(\App\Models\ResistenciaAtributo::class);
+        return $this->belongsToMany(\App\Models\ResistenciaAtributo::class, 'planta_resistencia_atributos');
     }
 
     /**
