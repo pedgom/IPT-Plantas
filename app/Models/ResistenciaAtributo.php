@@ -84,7 +84,7 @@ class ResistenciaAtributo extends Model implements Auditable
      **/
     public function resistenciaAtributoPlantas()
     {
-        return $this->hasMany(\App\Models\ResistenciaAtributoPlantum::class, 'resistencia_atributo_id');
+        return $this->hasMany(\App\Models\ResistenciaAtributoPlanta::class, 'resistencia_atributo_id');
     }
 
     public static function valoresArray()

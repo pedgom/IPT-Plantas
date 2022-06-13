@@ -198,7 +198,7 @@
 <div class="mb-10">
     {!! Form::label('resistencia[]', $planta->getAttributeLabel('resistencia'), ['class' => 'form-label']) !!}
 
-    {!! Form::select('resistencia[]',\App\Models\AguaAtributo::valoresArray(), null , ['id' => 'resistencia','class' => 'form-select form-select-solid ' .($errors->has('resistencia') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+    {!! Form::select('resistencia[]',\App\Models\ResistenciaAtributo::valoresArray(), null , ['id' => 'resistencia','class' => 'form-select form-select-solid ' .($errors->has('resistencia') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
     @error('resistencia')
     <div class="error invalid-feedback">{{ $message }}</div>
@@ -207,7 +207,7 @@
         <script>
             jQuery(document).ready(function() {
                 $("#resistencia").select2({
-                    placeholder: '{{ __('Selecione um ou mais tipos de resistenciaresistenciaresistencia') }}',
+                    placeholder: '{{ __('Selecione um ou mais tipos de resistencia') }}',
                     allowClear: true,
                     minimumInputLength: 0,
                 });

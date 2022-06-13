@@ -112,6 +112,7 @@ class PlantaController extends Controller
             $planta->densidadeAtributos()->sync($validatedAttributes['densidade']);
             $planta->aguaAtributos()->sync($validatedAttributes['agua']);
             $planta->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
+
             return redirect(route('plantas.show', $planta));
         }else{
             return redirect()->back();
