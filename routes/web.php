@@ -116,3 +116,10 @@ Route::get('aguaAtributos', [App\Http\Controllers\AguaAtributoController::class,
 Route::resource('agua-atributo-plantas', App\Http\Controllers\AguaAtributoPlantaController::class)->except('index');;
 Route::get('aguaAtributoPlantas', [App\Http\Controllers\AguaAtributoPlantaController::class,'index'])->name('agua-atributo-plantas.index');
 
+Route::resource('resistencia-atributo-plantas', App\Http\Controllers\ResistenciaAtributoPlantaController::class)->except('index');;
+Route::get('resistenciaAtributoPlantas', [App\Http\Controllers\ResistenciaAtributoPlantaController::class,'index'])->name('resistencia-atributo-plantas.index');
+
+
+
+
+Route::resource('resistenciaAtributoPlantas', App\Http\Controllers\ResistenciaAtributoPlantaController::class);

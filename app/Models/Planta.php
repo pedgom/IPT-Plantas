@@ -40,6 +40,7 @@ class Planta extends Model implements Auditable
     public $diametro= [];
     public $densidade= [];
     public $agua= [];
+    public $resistencia= [];
 
 
 
@@ -94,7 +95,8 @@ class Planta extends Model implements Auditable
             'luz'=>'required|array|min:1',
             'diametro'=>'required|array|min:1',
             'densidade'=>'required|array|min:1',
-            'agua'=>'required|array|min:1'
+            'agua'=>'required|array|min:1',
+            'resistencia'=>'required|array|min:1'
 
         ];
     }
@@ -254,6 +256,14 @@ class Planta extends Model implements Auditable
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function resistenciaAtributos()
+    {
+        return $this->belongsToMany(\App\Models\ResistenciaAtributo::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
     public function soloAtributoPlantas()
@@ -316,6 +326,15 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->aguaAtributos as $agua){
             $string.=$agua->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+    public function resistenciaToString()
+    {
+        $string = '';
+        foreach ($this->resistenciaAtributos as $resistencia){
+            $string.=$resistencia->name.', ';
         }
         return trim($string, ', ');
     }

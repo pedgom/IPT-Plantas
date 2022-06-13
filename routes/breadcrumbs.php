@@ -381,3 +381,44 @@ Breadcrumbs::for('agua-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('agua-atributo-plantas', $model);
     $trail->push(__('Update'), route('agua-atributo-plantas.edit', $model));
 });
+
+
+
+
+//**************************************************************************************
+//AGUA     ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('resistencia-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Resistencia'), route('resistencia-atributos.index'));
+});
+Breadcrumbs::for('resistencia-atributos.create', function ($trail) {
+    $trail->parent('resistencia-atributos.index');
+    $trail->push(__('Create'), route('resistencia-atributos.create'));
+});
+Breadcrumbs::for('resistencia-atributos.show', function ($trail, $model) {
+    $trail->parent('resistencia-atributos.index');
+    $trail->push($model->planta_id, route('resistencia-atributos.show', $model));
+});
+Breadcrumbs::for('resistencia-atributos.edit', function ($trail, $model) {
+    $trail->parent('resistencia-atributos.show', $model);
+    $trail->push(__('Update'), route('resistencia-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('resistencia-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Resistencia'), route('resistencia-atributo-plantas.index'));
+});
+Breadcrumbs::for('resistencia-atributo-plantas.create', function ($trail) {
+    $trail->parent('resistencia-atributos.index');
+    $trail->push(__('Create'), route('resistencia-atributo-plantas.create'));
+});
+Breadcrumbs::for('resistencia-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('resistencia-atributo-plantas.index');
+    $trail->push($model->planta_id, route('resistencia-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('resistencia-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('resistencia-atributo-plantas', $model);
+    $trail->push(__('Update'), route('resistencia-atributo-plantas.edit', $model));
+});
