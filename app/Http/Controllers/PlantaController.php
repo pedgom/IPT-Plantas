@@ -45,6 +45,8 @@ class PlantaController extends Controller
     public function store(Request $request)
     {
         $validatedAttributes = $this->validateForm($request);
+        $validatedAttributes['persistencia_atributo_id']= $validatedAttributes['persistencia'];
+        isset($validatedAttributes['persistencia']);
 
         if(($model = Planta::create($validatedAttributes)) ) {
             $model->alturaAtributos()->sync($validatedAttributes['altura']);

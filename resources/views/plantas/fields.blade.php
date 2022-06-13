@@ -215,3 +215,16 @@
         </script>
     @endpush
 </div>
+
+
+
+<div class="mb-10">
+    {!! Form::label('persistencia', $planta->getAttributeLabel('persistencia'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('persistencia',\App\Models\PersistenciaAtributo::getPersistenciaArray(), null , ['id' => 'persistencia','class' => 'form-select form-select-solid ' .($errors->has('persistencia') ? 'is-invalid' : '')]) !!}
+
+    @error('persistencia')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>

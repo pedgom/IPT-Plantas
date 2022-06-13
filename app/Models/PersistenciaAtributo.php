@@ -34,7 +34,7 @@ class PersistenciaAtributo extends Model implements Auditable
 
 
     public $fillable = [
-        'name'
+        'persistencia'
     ];
 
     /**
@@ -44,7 +44,7 @@ class PersistenciaAtributo extends Model implements Auditable
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'persistencia' => 'string'
     ];
 
     /**
@@ -54,7 +54,7 @@ class PersistenciaAtributo extends Model implements Auditable
      */
     public static function rules(){
         return [
-            'name' => 'required|string|max:255',
+            'persistencia' => 'required|string|max:255',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
         ];
@@ -69,11 +69,57 @@ class PersistenciaAtributo extends Model implements Auditable
     {
         return [
             'id' => __('Id'),
-        'name' => __('Name'),
+        'persistencia' => __('Persistence'),
         'created_at' => __('Created At'),
         'updated_at' => __('Updated At')
         ];
     }
+
+
+
+    /**
+     * Retorna um Array com os valores do campo persistencia
+     * @return array
+     *
+     */
+    public static function getPersistenciaArray(){
+
+        return [
+            self::PERSISTENCIA_PERENIFOLIA=>__('PERENNIFOLIA PERSISTENCE'),
+            self::PERSISTENCIA_CADUCIFOLIA=>__('CADUCIFOLIA PERSISTENCE'),
+            self::PERSISTENCIA_MARCESCENTE=>__('MARCESCENTE PERSISTENCE'),
+            self::PERSISTENCIA_PERENE=>__('PERENE PERSISTENCE'),
+            self::PERSISTENCIA_VIVAZ=>__('VIVAZ PERSISTENCE'),
+            self::PERSISTENCIA_ANUAL=>__('ANUAL PERSISTENCE'),
+            self::PERSISTENCIA_BIANUAL=>__('BIANUAL PERSISTENCE')
+        ];
+    }
+
+
+
+    /**
+     * Retorna a persistencia selecionada
+     * @return array
+     *
+     */
+    public function getPersistenciaOptions(){
+
+        return static::getPersistenciaArray();
+    }
+
+
+    /**
+     * Retorna a persistencia selecionada
+     * @return
+     */
+    public function getPersistenciaLabelAttribute(){
+        $array= self::getPersistenciaOptions();
+        return $array [$this->persistencia]??null;
+    }
+
+
+
+
 
     /**
      * Return the attribute label
@@ -83,6 +129,14 @@ class PersistenciaAtributo extends Model implements Auditable
     public function getAttributeLabel($attribute){
         $attributeLabels = static::attributeLabels();
         return isset($attributeLabels[$attribute]) ? $attributeLabels[$attribute] : __($attribute);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function plantas()
+    {
+        return $this->hasMany(\App\Models\Planta::class, 'persistencia_atributo_id');
     }
 
 

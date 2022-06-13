@@ -38,7 +38,7 @@ return new class extends Migration {
             $table->string('notas');
             $table->string('curiosidades');
 
-            $table->foreignId('persistencia_atributo_id')->constrained('persistencia_atributos')->onDelete('set null')->nullable();
+            $table->foreignId('persistencia_atributo_id')->nullable()->constrained()->onDelete('set null');
 
 
 

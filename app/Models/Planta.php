@@ -53,7 +53,8 @@ class Planta extends Model implements Auditable
         'nome_comum',
         'tempo_crescimento',
         'notas',
-        'curiosidades'
+        'curiosidades',
+        'persistencia_atributo_id'
     ];
 
     /**
@@ -94,7 +95,7 @@ class Planta extends Model implements Auditable
             'densidade'=>'required|array|min:1',
             'agua'=>'required|array|min:1',
             'resistencia'=>'required|array|min:1',
-            'persistencia'=>'required|integer'
+            'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray()))
 
         ];
     }
@@ -116,7 +117,12 @@ class Planta extends Model implements Auditable
         'nome_comum' => __('Nome Comum'),
         'tempo_crescimento' => __('Tempo Crescimento'),
         'notas' => __('Notas'),
-        'curiosidades' => __('Curiosidades')
+        'curiosidades' => __('Curiosidades'),
+            'persistencia' => __('Persistencia'),
+
+
+
+
         ];
     }
 
@@ -261,6 +267,15 @@ class Planta extends Model implements Auditable
         return $this->belongsToMany(\App\Models\ResistenciaAtributo::class, 'planta_resistencia_atributos');
     }
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function persistenciaAtributo()
+    {
+        return $this->belongsTo(\App\Models\PersistenciaAtributo::class, 'persistencia_atributo_id');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
@@ -336,4 +351,9 @@ class Planta extends Model implements Auditable
         }
         return trim($string, ', ');
     }
+
+
+
+
+
 }
