@@ -54,6 +54,7 @@ class PlantaController extends Controller
             $model->densidadeAtributos()->sync($validatedAttributes['densidade']);
             $model->aguaAtributos()->sync($validatedAttributes['agua']);
             $model->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
+            //$model->persistencia_atributo_id = $validatedAttributes['persistencia'];
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
             return redirect(route('plantas.show', $model));

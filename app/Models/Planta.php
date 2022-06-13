@@ -93,7 +93,8 @@ class Planta extends Model implements Auditable
             'diametro'=>'required|array|min:1',
             'densidade'=>'required|array|min:1',
             'agua'=>'required|array|min:1',
-            'resistencia'=>'required|array|min:1'
+            'resistencia'=>'required|array|min:1',
+            'persistencia'=>'required|integer'
 
         ];
     }
