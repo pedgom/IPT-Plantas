@@ -42,6 +42,8 @@ class Planta extends Model implements Auditable
     public $agua= [];
     public $resistencia= [];
     public $solo= [];
+    public $ph_solo= [];
+
 
 
     const CREATED_AT = 'created_at';
@@ -97,6 +99,7 @@ class Planta extends Model implements Auditable
             'agua'=>'required|array|min:1',
             'resistencia'=>'required|array|min:1',
             'solo'=>'required|array|min:1',
+            'ph_solo'=>'required|array|min:1',
             'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray()))
 
         ];
@@ -253,6 +256,15 @@ class Planta extends Model implements Auditable
         return $this->hasMany(\App\Models\PhSoloAtributoPlanta::class, 'planta_id');
     }
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function phSoloAtributos()
+    {
+        return $this->belongsToMany(\App\Models\PhSoloAtributo::class);
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
@@ -367,6 +379,15 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->soloAtributos as $solo){
             $string.=$solo->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+    public function phSoloToString()
+    {
+        $string = '';
+        foreach ($this->phSoloAtributos as $ph_solo){
+            $string.=$ph_solo->name.', ';
         }
         return trim($string, ', ');
     }

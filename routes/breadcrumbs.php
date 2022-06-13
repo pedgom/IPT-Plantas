@@ -463,3 +463,43 @@ Breadcrumbs::for('solo-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('solo-atributo-plantas', $model);
     $trail->push(__('Update'), route('solo-atributo-plantas.edit', $model));
 });
+
+
+
+//**************************************************************************************
+//PH_SOLO          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('ph-solo-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Ph_Solo'), route('ph-solo-atributos.index'));
+});
+Breadcrumbs::for('ph-solo-atributos.create', function ($trail) {
+    $trail->parent('ph-solo-atributos.index');
+    $trail->push(__('Create'), route('ph-solo-atributos.create'));
+});
+Breadcrumbs::for('ph-solo-atributos.show', function ($trail, $model) {
+    $trail->parent('ph-solo-atributos.index');
+    $trail->push($model->planta_id, route('ph-solo-atributos.show', $model));
+});
+Breadcrumbs::for('ph-solo-atributos.edit', function ($trail, $model) {
+    $trail->parent('ph-solo-atributos.show', $model);
+    $trail->push(__('Update'), route('ph-solo-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('ph-solo-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Ph_Solo'), route('ph-solo-atributo-plantas.index'));
+});
+Breadcrumbs::for('ph-solo-atributo-plantas.create', function ($trail) {
+    $trail->parent('ph-solo-atributos.index');
+    $trail->push(__('Create'), route('ph-solo-atributo-plantas.create'));
+});
+Breadcrumbs::for('ph-solo-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('ph-solo-atributo-plantas.index');
+    $trail->push($model->planta_id, route('ph-solo-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('ph-solo-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('ph-solo-atributo-plantas', $model);
+    $trail->push(__('Update'), route('ph-solo-atributo-plantas.edit', $model));
+});

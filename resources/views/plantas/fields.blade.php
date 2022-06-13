@@ -240,6 +240,28 @@
 
 
 <div class="mb-10">
+    {!! Form::label('ph_solo[]', $planta->getAttributeLabel('ph_solo'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('ph_solo[]',\App\Models\PhSoloAtributo::valoresArray(), null , ['id' => 'ph_solo','class' => 'form-select form-select-solid ' .($errors->has('ph_solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('ph_solo')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#ph_solo").select2({
+                    placeholder: '{{ __('Selecione um ou mais tipos de ph solos') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>
+
+
+<div class="mb-10">
     {!! Form::label('persistencia', $planta->getAttributeLabel('persistencia'), ['class' => 'form-label']) !!}
 
     {!! Form::select('persistencia',\App\Models\PersistenciaAtributo::getPersistenciaArray(), null , ['id' => 'persistencia','class' => 'form-select form-select-solid ' .($errors->has('persistencia') ? 'is-invalid' : '')]) !!}
