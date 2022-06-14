@@ -59,7 +59,9 @@ class Planta extends Model implements Auditable
         'curiosidades',
         'persistencia_atributo_id',
         'ordem_atributo_id',
-        'familia_atributo_id'
+        'familia_atributo_id',
+        'genero_atributo_id'
+
 
     ];
 
@@ -105,7 +107,8 @@ class Planta extends Model implements Auditable
             'ph_solo'=>'required|array|min:1',
             'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray())),
             'ordem'=>'required|in:'.implode(',',array_keys(\App\Models\OrdemAtributo::getOrdemArray())),
-            'familia'=>'required|in:'.implode(',',array_keys(\App\Models\FamiliaAtributo::getFamiliaArray()))
+            'familia'=>'required|in:'.implode(',',array_keys(\App\Models\FamiliaAtributo::getFamiliaArray())),
+            'genero'=>'required|in:'.implode(',',array_keys(\App\Models\GeneroAtributo::getGeneroArray()))
 
         ];
     }
@@ -130,7 +133,9 @@ class Planta extends Model implements Auditable
         'curiosidades' => __('Curiosidades'),
             'persistencia' => __('Persistencia'),
             'ordem' => __('Ordem'),
-            'familia' => __('Familia')
+            'familia' => __('Familia'),
+            'genero' => __('Genero')
+
 
 
 
@@ -313,6 +318,16 @@ class Planta extends Model implements Auditable
     {
         return $this->belongsTo(\App\Models\FamiliaAtributo::class, 'familia_atributo_id');
     }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function generoAtributo()
+    {
+        return $this->belongsTo(\App\Models\GeneroAtributo::class, 'genero_atributo_id');
+    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

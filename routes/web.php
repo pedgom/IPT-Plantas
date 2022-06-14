@@ -136,25 +136,19 @@ Route::get('soloAtributoPlantas', [App\Http\Controllers\SoloAtributoPlantaContro
 Route::resource('ph-solo-atributos', App\Http\Controllers\PhSoloAtributoController::class)->except('index');
 Route::get('phSoloAtributos', [App\Http\Controllers\PhSoloAtributoController::class,'index'])->name('ph-solo-atributos.index');
 
-Route::resource('solo-atributo-plantas', App\Http\Controllers\PhSoloAtributoPlantaController::class)->except('index');;
+Route::resource('ph-solo-atributo-plantas', App\Http\Controllers\PhSoloAtributoPlantaController::class)->except('index');;
 Route::get('phsoloAtributoPlantas', [App\Http\Controllers\PhSoloAtributoPlantaController::class,'index'])->name('ph-solo-atributo-plantas.index');
+
+
+
+
 
 
 Route::resource('persistenciaAtributos', App\Http\Controllers\PersistenciaAtributoController::class);
 
-
-
-
-
-
-
-Route::resource('phSoloAtributos', App\Http\Controllers\PhSoloAtributoController::class);
-
-
-Route::resource('phSoloAtributoPlantas', App\Http\Controllers\PhSoloAtributoPlantaController::class);
-
-
 Route::resource('ordemAtributos', App\Http\Controllers\OrdemAtributoController::class);
 
-
 Route::resource('familiaAtributos', App\Http\Controllers\FamiliaAtributoController::class);
+
+Route::resource('generoAtributos', App\Http\Controllers\GeneroAtributoController::class);
+

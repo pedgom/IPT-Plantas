@@ -296,3 +296,16 @@
 
 </div>
 
+
+
+<div class="mb-10">
+    {!! Form::label('genero', $planta->getAttributeLabel('genero'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('genero',\App\Models\GeneroAtributo::getGeneroArray(), null , ['id' => 'genero','class' => 'form-select form-select-solid ' .($errors->has('genero') ? 'is-invalid' : '')]) !!}
+
+    @error('genero')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
