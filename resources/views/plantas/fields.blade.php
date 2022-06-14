@@ -309,3 +309,15 @@
 
 </div>
 
+
+<div class="mb-10">
+    {!! Form::label('forma_arbusto', $planta->getAttributeLabel('forma_arbusto'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('forma_arbusto',\App\Models\FormaArbustoAtributo::getFormaArbustoArray(), null , ['id' => 'forma_arbusto','class' => 'form-select form-select-solid ' .($errors->has('forma_arbusto') ? 'is-invalid' : '')]) !!}
+
+    @error('forma_arbusto')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+

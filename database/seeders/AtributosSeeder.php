@@ -330,7 +330,74 @@ class AtributosSeeder extends Seeder
         DB::table('especies_zonas_atributos');
         DB::table('especies_quercus_atributos');
         DB::table('forma_arv_atributos');
-        DB::table('forma_arb_atributos');
+
+
+        DB::table('forma_arbusto_atributos')->insert([
+            [
+                'forma_arbusto' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arbusto' => 2,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arbusto' => 3,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arbusto' => 4,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arbusto' => 5,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arbusto' => 6,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arbusto' => 7,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_arbusto' => 8,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_arbusto' => 9,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_arbusto' => 10,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_arbusto' => 11,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+
+
+
+
         DB::table('forma_herb_atributos');
         DB::table('cor_sintese_atributos');
         DB::table('estacao_sintese_atributos');

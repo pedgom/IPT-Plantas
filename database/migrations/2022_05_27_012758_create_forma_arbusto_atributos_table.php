@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('forma_arbusto_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->smallInteger('forma_arbusto');
             $table->timestamps();
         });
     }

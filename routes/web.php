@@ -152,3 +152,6 @@ Route::resource('familiaAtributos', App\Http\Controllers\FamiliaAtributoControll
 
 Route::resource('generoAtributos', App\Http\Controllers\GeneroAtributoController::class);
 
+
+
+Route::resource('formaArbustoAtributos', App\Http\Controllers\FormaArbustoAtributoController::class);

@@ -165,3 +165,10 @@
     </div>
 </div>
 
+<!-- Forma Arbusto Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_arbusto') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArbustoAtributo::getFormaArbustoArray()[$planta->formaArbustoAtributo->forma_arbusto]??null }}</span>
+    </div>
+</div>

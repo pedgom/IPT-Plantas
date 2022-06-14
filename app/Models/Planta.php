@@ -60,7 +60,8 @@ class Planta extends Model implements Auditable
         'persistencia_atributo_id',
         'ordem_atributo_id',
         'familia_atributo_id',
-        'genero_atributo_id'
+        'genero_atributo_id',
+        'forma_arbusto_atributo_id'
 
 
     ];
@@ -108,7 +109,8 @@ class Planta extends Model implements Auditable
             'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray())),
             'ordem'=>'required|in:'.implode(',',array_keys(\App\Models\OrdemAtributo::getOrdemArray())),
             'familia'=>'required|in:'.implode(',',array_keys(\App\Models\FamiliaAtributo::getFamiliaArray())),
-            'genero'=>'required|in:'.implode(',',array_keys(\App\Models\GeneroAtributo::getGeneroArray()))
+            'genero'=>'required|in:'.implode(',',array_keys(\App\Models\GeneroAtributo::getGeneroArray())),
+            'forma_arbusto'=>'required|in:'.implode(',',array_keys(\App\Models\FormaArbustoAtributo::getFormaArbustoArray()))
 
         ];
     }
@@ -134,7 +136,8 @@ class Planta extends Model implements Auditable
             'persistencia' => __('Persistencia'),
             'ordem' => __('Ordem'),
             'familia' => __('Familia'),
-            'genero' => __('Genero')
+            'genero' => __('Genero'),
+            'forma_arbusto' => __('Forma Arbusto')
 
 
 
@@ -326,6 +329,15 @@ class Planta extends Model implements Auditable
     public function generoAtributo()
     {
         return $this->belongsTo(\App\Models\GeneroAtributo::class, 'genero_atributo_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function formaArbustoAtributo()
+    {
+        return $this->belongsTo(\App\Models\FormaArbustoAtributo::class, 'forma_arbusto_atributo_id');
     }
 
 
