@@ -284,3 +284,15 @@
 
 </div>
 
+
+<div class="mb-10">
+    {!! Form::label('familia', $planta->getAttributeLabel('familia'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('familia',\App\Models\FamiliaAtributo::getFamiliaArray(), null , ['id' => 'familia','class' => 'form-select form-select-solid ' .($errors->has('familia') ? 'is-invalid' : '')]) !!}
+
+    @error('familia')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+

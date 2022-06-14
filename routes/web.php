@@ -155,3 +155,6 @@ Route::resource('phSoloAtributoPlantas', App\Http\Controllers\PhSoloAtributoPlan
 
 
 Route::resource('ordemAtributos', App\Http\Controllers\OrdemAtributoController::class);
+
+
+Route::resource('familiaAtributos', App\Http\Controllers\FamiliaAtributoController::class);

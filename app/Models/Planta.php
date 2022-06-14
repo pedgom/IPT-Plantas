@@ -58,7 +58,8 @@ class Planta extends Model implements Auditable
         'notas',
         'curiosidades',
         'persistencia_atributo_id',
-        'ordem_atributo_id'
+        'ordem_atributo_id',
+        'familia_atributo_id'
 
     ];
 
@@ -103,7 +104,8 @@ class Planta extends Model implements Auditable
             'solo'=>'required|array|min:1',
             'ph_solo'=>'required|array|min:1',
             'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray())),
-            'ordem'=>'required|in:'.implode(',',array_keys(\App\Models\OrdemAtributo::getOrdemArray()))
+            'ordem'=>'required|in:'.implode(',',array_keys(\App\Models\OrdemAtributo::getOrdemArray())),
+            'familia'=>'required|in:'.implode(',',array_keys(\App\Models\FamiliaAtributo::getFamiliaArray()))
 
         ];
     }
@@ -128,6 +130,7 @@ class Planta extends Model implements Auditable
         'curiosidades' => __('Curiosidades'),
             'persistencia' => __('Persistencia'),
             'ordem' => __('Ordem'),
+            'familia' => __('Familia')
 
 
 
@@ -300,6 +303,15 @@ class Planta extends Model implements Auditable
     public function ordemAtributo()
     {
         return $this->belongsTo(\App\Models\OrdemAtributo::class, 'ordem_atributo_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function familiaAtributo()
+    {
+        return $this->belongsTo(\App\Models\FamiliaAtributo::class, 'familia_atributo_id');
     }
 
     /**

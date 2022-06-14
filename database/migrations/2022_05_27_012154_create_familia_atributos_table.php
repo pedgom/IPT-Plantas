@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('familia_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->smallInteger('familia');
             $table->timestamps();
         });
     }

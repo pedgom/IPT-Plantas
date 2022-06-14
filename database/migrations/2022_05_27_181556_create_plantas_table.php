@@ -40,6 +40,7 @@ return new class extends Migration {
 
             $table->foreignId('persistencia_atributo_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('ordem_atributo_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('familia_atributo_id')->nullable()->constrained()->onDelete('set null');
 
 
 

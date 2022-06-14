@@ -51,6 +51,9 @@ class PlantaController extends Controller
         $validatedAttributes['ordem_atributo_id']= $validatedAttributes['ordem'];
         isset($validatedAttributes['ordem']);
 
+        $validatedAttributes['familia_atributo_id']= $validatedAttributes['familia'];
+        isset($validatedAttributes['familia']);
+
         if(($model = Planta::create($validatedAttributes)) ) {
             $model->alturaAtributos()->sync($validatedAttributes['altura']);
             $model->categoriaAtributos()->sync($validatedAttributes['categoria']);
