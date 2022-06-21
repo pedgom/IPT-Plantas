@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('colecoes_atributos', function (Blueprint $table) {
+        Schema::create('especie_zona_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('especie_zona');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('colecoes_atributos');
+        Schema::dropIfExists('especie_zona_atributos');
     }
 };

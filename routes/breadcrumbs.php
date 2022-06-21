@@ -144,7 +144,7 @@ Breadcrumbs::for('altura-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('altura-atributos.show', function ($trail, $model) {
     $trail->parent('altura-atributos.index');
-    $trail->push($model->planta_id, route('altura-atributos.show', $model));
+    $trail->push($model->id, route('altura-atributos.show', $model));
 });
 Breadcrumbs::for('altura-atributos.edit', function ($trail, $model) {
     $trail->parent('altura-atributos.show', $model);

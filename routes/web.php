@@ -155,3 +155,36 @@ Route::resource('generoAtributos', App\Http\Controllers\GeneroAtributoController
 
 
 Route::resource('formaArbustoAtributos', App\Http\Controllers\FormaArbustoAtributoController::class);
+
+
+Route::resource('descritorAtributos', App\Http\Controllers\DescritorAtributoController::class);
+
+
+Route::resource('usoAtributos', App\Http\Controllers\UsoAtributoController::class);
+
+
+Route::resource('situacaoEcologicaAtributos', App\Http\Controllers\SituacaoEcologicaAtributoController::class);
+
+
+Route::resource('origemAtributos', App\Http\Controllers\OrigemAtributoController::class);
+
+
+Route::resource('origemRelacaoAtributos', App\Http\Controllers\OrigemRelacaoAtributoController::class);
+
+
+Route::resource('aplicacaoAtributos', App\Http\Controllers\AplicacaoAtributoController::class);
+
+
+Route::resource('colecaoAtributos', App\Http\Controllers\ColecaoAtributoController::class);
+
+
+Route::resource('especieZonaAtributos', App\Http\Controllers\EspecieZonaAtributoController::class);
+
+
+Route::resource('especieQuercusAtributos', App\Http\Controllers\EspecieQuercusAtributoController::class);
+
+
+Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributoController::class);
+
+
+Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);

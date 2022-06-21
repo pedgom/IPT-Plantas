@@ -321,15 +321,296 @@ class AtributosSeeder extends Seeder
 
         ]);
 
-        DB::table('descritor_atributos');
-        DB::table('situacao_ecologica_atributos');
-        DB::table('ordem_relacao_atributos');
-        DB::table('usos_atributos');
-        DB::table('aplicacoes_atributos');
-        DB::table('colecoes_atributos');
-        DB::table('especies_zonas_atributos');
-        DB::table('especies_quercus_atributos');
-        DB::table('forma_arv_atributos');
+        DB::table('descritor_atributos')->insert([
+            [
+                'descritor' => 'H.Lindb',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'descritor' => 'D.Don',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'descritor' => 'L.',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+        ]);
+        DB::table('situacao_ecologica_atributos')->insert([
+            [
+                'situacao_ecologica' => 'Dunas e areais litorais, frequentemente em cristas dunares e dominando a duna primária',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'situacao_ecologica' => 'Matos baixos, em dunas sob coberto',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'situacao_ecologica' => 'Cabeço',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+        ]);
+
+
+
+        DB::table('origem_relacao_atributos')->insert([
+            [
+                'origem_relacao' => 'Autótocnes',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'origem_relacao' => 'Exóticas',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'origem_relacao' => 'Naturalizada',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'origem_relacao' => 'Invasora',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'origem_relacao' => 'Infrestantes',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+        DB::table('uso_atributos')->insert([
+            [
+                'uso' => 'medicinal',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'alimentar',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'Essências/Industriais',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'Venenosas/´Tóxicas',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'Materais/Estruturas',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'Forrageiras',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'Melidera',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'uso' => 'Social',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+        DB::table('aplicacao_atributos')->insert([
+            [
+                'aplicacao' => 'Rock Garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'aplicacao' => 'Revestimento Solo',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'aplicacao' => 'Controlo Erosão',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'aplicacao' => 'Sebes/Compartimentos',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'aplicacao' => 'Filtragem do ar',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+
+        DB::table('colecao_atributos')->insert([
+            [
+                'colecao' => 'Sombra',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'colecao' => 'Interior',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'colecao' => 'Duna Primária',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'colecao' => 'Duna Secundária',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+        ]);
+        DB::table('especie_zona_atributos')->insert([
+            [
+                'especie_zona' => 'Carvalhal de Zona Temperada',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_zona' => 'Carvalhal de Zona Continental',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_zona' => 'Carvalhal de Zona Húmida Quente',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_zona' => 'Mata Ribeirinha',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_zona' => 'Zona Alpina',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+        ]);
+        DB::table('especie_quercus_atributos')->insert([
+            [
+                'especie_quercus' => 'Quercus Robur',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_quercus' => 'Quercus Pyrenaica',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_quercus' => 'Quercus Faginea',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_quercus' => 'Quercus Suber',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especie_quercus' => 'Betula celtiberica',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'especies_quercus' => 'Quercus Ilex ',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+        DB::table('forma_arvore_atributos')->insert([
+            [
+                'forma_arvore' => 'Colunar',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Fastigiata',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Oval',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Cónica',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Esférica',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Elíptica',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_arvore' => 'Umbela',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Estendida',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Pendular',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Irregular',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Semiovoide',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Palmiforme',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => 'Abanico',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
 
 
         DB::table('forma_arbusto_atributos')->insert([
@@ -398,7 +679,7 @@ class AtributosSeeder extends Seeder
 
 
 
-        DB::table('forma_herb_atributos');
+        DB::table('forma_herbacea_atributos');
         DB::table('cor_sintese_atributos');
         DB::table('estacao_sintese_atributos');
         DB::table('ordem_atributos')->insert([

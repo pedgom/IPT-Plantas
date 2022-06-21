@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('especies_querus_atributos', function (Blueprint $table) {
+        Schema::create('especie_quercus_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('especie_quercus');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('especies_querus_atributos');
+        Schema::dropIfExists('especie_quercus_atributos');
     }
 };

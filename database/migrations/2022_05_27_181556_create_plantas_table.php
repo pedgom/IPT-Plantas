@@ -43,6 +43,7 @@ return new class extends Migration {
             $table->foreignId('familia_atributo_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('genero_atributo_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('forma_arbusto_atributo_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('descritor_atributo_id')->nullable()->constrained()->onDelete('set null');
 
         });
     }

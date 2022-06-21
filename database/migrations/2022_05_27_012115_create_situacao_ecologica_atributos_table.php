@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('situacao_ecologica_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('situacao_ecologica');
             $table->timestamps();
         });
     }

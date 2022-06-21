@@ -61,7 +61,8 @@ class Planta extends Model implements Auditable
         'ordem_atributo_id',
         'familia_atributo_id',
         'genero_atributo_id',
-        'forma_arbusto_atributo_id'
+        'forma_arbusto_atributo_id',
+        'descritor_atributo_id'
 
 
     ];
