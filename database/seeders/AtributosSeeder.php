@@ -281,7 +281,6 @@ class AtributosSeeder extends Seeder
         ]);
 
 
-
         DB::table('persistencia_atributos')->insert([
             [
                 'persistencia' => 1,
