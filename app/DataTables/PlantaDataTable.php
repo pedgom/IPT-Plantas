@@ -2,6 +2,8 @@
 
 namespace App\DataTables;
 
+use App\Models\OrdemAtributo;
+use App\Models\PersistenciaAtributo;
 use App\Models\Planta;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\Html\Column;
@@ -22,16 +24,31 @@ class PlantaDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('persistencia_atributo_id', function($planta){
+
+                return PersistenciaAtributo::getPersistenciaArray()[$planta->persistenciaAtributo->persistencia];
+            })
+            ->editColumn('ordem_atributo_id', function($planta){
+
+                return OrdemAtributo::getOrdemArray()[$planta->ordemAtributo->ordem];
+            })
+
+            //->editColumn('descritor', function($planta){
+
+                //return $planta->descritorAtributo->descritor;
+            //})
+
+
             ->addColumn('action', function ($planta) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.show', $planta) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
                         <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.edit', $planta) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
                         <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $planta->id .'" data-delete-url="'. route('plantas.destroy', $planta) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
-            //->editColumn('type', '{{ $this->typeLabel }}')
-            /*->editColumn('type', function ($model) {
-                              return  $model->typeLabel;
-                          })*/
+        //->editColumn('type', '{{ $this->typeLabel }}')
+        /*->editColumn('type', function ($model) {
+                          return  $model->typeLabel;
+                      })*/
     }
 
     /**
@@ -88,9 +105,17 @@ class PlantaDataTable extends DataTable
             Column::make('nome_botanico')->title($model->getAttributeLabel('nome_botanico')),
             Column::make('nome_comum')->title($model->getAttributeLabel('nome_comum')),
             Column::make('tempo_crescimento')->title($model->getAttributeLabel('tempo_crescimento')),
+            Column::make('persistencia_atributo_id')
+                ->attributes(['data-options' => json_encode(PersistenciaAtributo::getPersistenciaArray())])
+                ->title($model->getAttributeLabel('persistencia_atributo_id')),
+            Column::make('ordem_atributo_id')
+                ->attributes(['data-options' => json_encode(OrdemAtributo::getOrdemArray())])
+                ->title($model->getAttributeLabel('ordem_atributo_id')),
+
+            //Column::make('descritor')->title($model->getAttributeLabel('descritor')),
 
             // Column::make('notas')->title($model->getAttributeLabel('notas')),
-           // Column::make('curiosidades')->title($model->getAttributeLabel('curiosidades')),
+            // Column::make('curiosidades')->title($model->getAttributeLabel('curiosidades')),
 
             Column::computed('action')
                 ->exportable(false)
