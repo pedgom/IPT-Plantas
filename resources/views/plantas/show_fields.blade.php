@@ -172,3 +172,30 @@
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArbustoAtributo::getFormaArbustoArray()[$planta->formaArbustoAtributo->forma_arbusto]??null }}</span>
     </div>
 </div>
+
+
+<!-- Uso Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('uso') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\UsoAtributo::getUsoArray()[$planta->usoAtributo->uso]??null }}</span>
+    </div>
+</div>
+
+
+<!-- Origem Relacao Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('origem_relacao') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray()[$planta->origemRelacaoAtributo->origem_relacao]??null }}</span>
+    </div>
+</div>
+
+
+<!-- Forma Arvore Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_arvore') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArvoreAtributo::getFormaArvoreArray()[$planta->formaArvoreAtributo->forma_arvore]??null }}</span>
+    </div>
+</div>

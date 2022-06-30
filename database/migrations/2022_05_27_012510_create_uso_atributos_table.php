@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('uso_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('uso');
+            $table->smallInteger('uso');
             $table->timestamps();
         });
     }

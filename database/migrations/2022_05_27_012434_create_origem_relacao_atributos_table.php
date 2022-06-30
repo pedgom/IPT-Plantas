@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('origem_relacao_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('origem_relacao');
+            $table->smallInteger('origem_relacao');
             $table->timestamps();
         });
     }

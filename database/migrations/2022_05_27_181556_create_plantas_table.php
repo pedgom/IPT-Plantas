@@ -29,6 +29,7 @@ return new class extends Migration {
 
 
             //IDENTIFICAÇÃO
+
             $table->string('abreviatura');       //
             $table->string('nome_botanico');    //nome botanico
 
@@ -44,6 +45,12 @@ return new class extends Migration {
             $table->foreignId('genero_atributo_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('forma_arbusto_atributo_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('descritor_atributo_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('uso_atributo_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('origem_relacao_atributo_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('forma_arvore_atributo_id')->nullable()->constrained()->onDelete('set null');
+
+
+
 
         });
     }

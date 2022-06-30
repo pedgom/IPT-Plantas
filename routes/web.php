@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -19,7 +20,8 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
+Route::get('get-plantas', [App\Http\Controllers\PlantaController::class, 'getPlantas'])->name('plantas.get_plantas');
 //only users autenticated and with email verified can access the following routes
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
@@ -188,3 +190,12 @@ Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributo
 
 
 Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);
+
+
+Route::get('/add-image',[PlantaController::class,'addImage'])->name('images.add');
+//For storing an image
+Route::post('/store-image',[PlantaController::class,'storeImage'])
+    ->name('images.store');
+
+//For showing an image
+Route::get('/view-image',[PlantaController::class,'viewImage'])->name('images.view');

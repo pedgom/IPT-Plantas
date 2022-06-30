@@ -362,27 +362,27 @@ class AtributosSeeder extends Seeder
 
         DB::table('origem_relacao_atributos')->insert([
             [
-                'origem_relacao' => 'Autótocnes',
+                'origem_relacao' => '1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Exóticas',
+                'origem_relacao' => '2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Naturalizada',
+                'origem_relacao' => '3',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Invasora',
+                'origem_relacao' => '4',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Infrestantes',
+                'origem_relacao' => '5',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -390,42 +390,42 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('uso_atributos')->insert([
             [
-                'uso' => 'medicinal',
+                'uso' => '1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'alimentar',
+                'uso' => '2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Essências/Industriais',
+                'uso' => '3',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Venenosas/´Tóxicas',
+                'uso' => '4',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Materais/Estruturas',
+                'uso' => '5',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Forrageiras',
+                'uso' => '6',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Melidera',
+                'uso' => '7',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Social',
+                'uso' => '8',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -544,68 +544,73 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('forma_arvore_atributos')->insert([
             [
-                'forma_arvore' => 'Colunar',
+                'forma_arvore' => '1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Fastigiata',
+                'forma_arvore' => '2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Oval',
+                'forma_arvore' => '3',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Cónica',
+                'forma_arvore' => '4',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Esférica',
+                'forma_arvore' => '5',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Elíptica',
+                'forma_arvore' => '6',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_arvore' => 'Umbela',
+                'forma_arvore' => '7',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Estendida',
+                'forma_arvore' => '8',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Pendular',
+                'forma_arvore' => '9',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Irregular',
+                'forma_arvore' => '10',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Semiovoide',
+                'forma_arvore' => '11',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Palmiforme',
+                'forma_arvore' => '12',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Abanico',
+                'forma_arvore' => '13',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => '14',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]

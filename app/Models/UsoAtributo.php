@@ -19,9 +19,17 @@ class UsoAtributo extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'uso_atributos';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    const MEDICINAL = 1;
+    const ALIMENTAR = 2;
+    const ESSENCIAS_INDUSTRIAIS = 3;
+    const VENENOSAS_TOXICAS = 4;
+    const MATERIAIS_INFRAESTRUTURAS = 5;
+    const FORRAGEIRAS = 6;
+    const MELIDERA = 7;
+    const SOCIAL = 8;
 
 
 
@@ -69,6 +77,49 @@ class UsoAtributo extends Model implements Auditable
     }
 
     /**
+     * Retorna um Array com os valores do campo UsoAtributo
+     * @return array
+     *
+     */
+    public static function getUsoArray(){
+
+        return [
+            self::MEDICINAL=>__('MEDICINAL'),
+            self::ALIMENTAR=>__('ALIMENTAR'),
+            self::ESSENCIAS_INDUSTRIAIS=>__('ESSENCIAS_INDUSTRIAIS'),
+            self::VENENOSAS_TOXICAS=>__('VENENOSAS_TOXICAS'),
+            self::MATERIAIS_INFRAESTRUTURAS=>__('MATERIAIS_INFRAESTRUTURAS'),
+            self::FORRAGEIRAS=>__('FORRAGEIRAS'),
+            self::MELIDERA=>__('MELIDERA'),
+            self::SOCIAL=>__('SOCIAL')
+
+        ];
+    }
+
+
+
+    /**
+     * Retorna a familia selecionada
+     * @return array
+     *
+     */
+    public function getUsoOptions(){
+
+        return static::getUsoArray();
+    }
+
+
+    /**
+     * Retorna a ordem selecionada
+     * @return
+     */
+    public function getUsoLabelAttribute(){
+        $array= self::getUsoOptions();
+        return $array [$this->uso]??null;
+    }
+
+
+    /**
      * Return the attribute label
      * @param string $attribute
      * @return string
@@ -78,5 +129,14 @@ class UsoAtributo extends Model implements Auditable
         return isset($attributeLabels[$attribute]) ? $attributeLabels[$attribute] : __($attribute);
     }
 
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function plantas()
+    {
+        return $this->hasMany(\App\Models\Planta::class, 'uso_atributo_id');
+    }
+
 }
+
+

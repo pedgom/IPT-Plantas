@@ -321,3 +321,45 @@
 
 </div>
 
+
+
+<div class="mb-10">
+    {!! Form::label('uso', $planta->getAttributeLabel('uso'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('uso',\App\Models\UsoAtributo::getUsoArray(), null , ['id' => 'uso','class' => 'form-select form-select-solid ' .($errors->has('uso') ? 'is-invalid' : '')]) !!}
+
+    @error('uso')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+<div class="mb-10">
+    {!! Form::label('origem_relacao', $planta->getAttributeLabel('origem_relacao'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('origem_relacao',\App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray(), null , ['id' => 'origem_relacao','class' => 'form-select form-select-solid ' .($errors->has('origem_relacao') ? 'is-invalid' : '')]) !!}
+
+    @error('origem_relacao')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+
+<div class="mb-10">
+    {!! Form::label('forma_arvore', $planta->getAttributeLabel('forma_arvore'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('forma_arvore',\App\Models\FormaArvoreAtributo::getFormaArvoreArray(), null , ['id' => 'forma_arvore','class' => 'form-select form-select-solid ' .($errors->has('forma_arvore') ? 'is-invalid' : '')]) !!}
+
+    @error('forma_arvore')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+
+
+
+
