@@ -20,22 +20,7 @@ view()->share('hideSubHeader', true);
                 </div>
                 <!--end::Search-->
             </div>
-            <div class="card-toolbar">
-                <!--begin::Toolbar-->
-                <div class="d-flex justify-content-end">
-                    <!--begin::Export-->
-                    <div id="datatable-buttons"></div>
-                    <!--end::Export-->
-                    @can('adminApp')
-                    <a href="{{ route('plantas.create') }}" class="btn btn-primary">
-                        {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
-                        {{ __('New Planta') }}
-                    </a>
-                    @endcan
 
-                </div>
-                <!--end::Toolbar-->
-            </div>
         </div>
         <div class="card-body pt-0">
             <!--begin::Table-->

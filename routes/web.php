@@ -192,10 +192,4 @@ Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributo
 Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);
 
 
-Route::get('/add-image',[PlantaController::class,'addImage'])->name('images.add');
-//For storing an image
-Route::post('/store-image',[PlantaController::class,'storeImage'])
-    ->name('images.store');
 
-//For showing an image
-Route::get('/view-image',[PlantaController::class,'viewImage'])->name('images.view');

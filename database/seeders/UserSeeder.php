@@ -24,6 +24,17 @@ class UserSeeder extends Seeder
             ]
         ]);
 
+        DB::table('users')->insert([
+            [
+                'name' => 'Pedro',
+                'email' => 'aluno21279@ipt.pt',
+                'email_verified_at' => date("Y-m-d H:i:s"),
+                'password' => '$2y$10$MCsGWRkKnp1SmfonLifGd.oCrKJeO5UiaqgQZFc2.YNbEjW3kpdjK', //12345678
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+        ]);
+
 
 
     }
