@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Traits\DropzoneFilesArray;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\LoadDefaults;
 use OwenIt\Auditing\Contracts\Auditable;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * Class Planta
@@ -28,10 +32,13 @@ use OwenIt\Auditing\Contracts\Auditable;
  * @property string $notas
  * @property string $curiosidades
  */
-class Planta extends Model implements Auditable
+class Planta extends Model implements Auditable,HasMedia
 {
     use LoadDefaults;
     use \OwenIt\Auditing\Auditable;
+    use DropzoneFilesArray;
+    use InteractsWithMedia;
+    use HasFactory;
 
     public $table = 'plantas';
     public $altura= [];
@@ -44,6 +51,7 @@ class Planta extends Model implements Auditable
     public $solo= [];
     public $ph_solo= [];
     public $estacao= [];
+
 
 
 
@@ -553,6 +561,20 @@ class Planta extends Model implements Auditable
         }
         return trim($string, ', ');
     }
+
+
+    /**
+     * Register the media collection for this model
+     */
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('imagem_principal')->singleFile();
+        $this->addMediaCollection('imagem_totalidade')->singleFile();
+        $this->addMediaCollection('imagem_texturas')->singleFile();
+        $this->addMediaCollection('imagem_tronco')->singleFile();
+        $this->addMediaCollection('imagem_folha')->singleFile();
+        $this->addMediaCollection('imagem_fruto')->singleFile();
+        $this->addMediaCollection('imagem_flor')->singleFile();}
 
 
 

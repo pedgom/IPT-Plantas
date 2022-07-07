@@ -1,5 +1,5 @@
 <!--begin::Player widget 1-->
-<div class="card card-flush h-xl-100">
+<div class="card card-flush ">
     <!--begin::Header-->
     <div class="card-header pt-7">
         <!--begin::Title-->

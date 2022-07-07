@@ -1,4 +1,4 @@
-<div class="card card-custom">
+<div class="card card-custom mb-10">
     <div class="card-header">
         <div class="card-title">
             <span class="card-icon">

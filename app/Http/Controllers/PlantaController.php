@@ -97,6 +97,9 @@ class PlantaController extends Controller
             $model->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
             $model->estacaoAtributos()->sync($validatedAttributes['estacao']);
 
+            if ($request->hasFile('imagem_principal') && $request->file('imagem_principal')->isValid()) {
+                $model->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
+            }
             //$model->persistencia_atributo_id = $validatedAttributes['persistencia'];
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
