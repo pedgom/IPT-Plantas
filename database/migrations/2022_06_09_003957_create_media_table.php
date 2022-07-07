@@ -25,6 +25,7 @@ class CreateMediaTable extends Migration
             $table->json('generated_conversions');
             $table->json('responsive_images');
             $table->unsignedInteger('order_column')->nullable()->index();
+            $table->foreignId('planta_id')->constrained()->onDelete('cascade');
 
             $table->nullableTimestamps();
         });

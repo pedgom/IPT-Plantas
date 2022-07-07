@@ -1,238 +1,236 @@
 <!-- Abreviatura Field -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('abreviatura') }}</label>
-    <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->abreviatura }}</span>
-    </div>
-</div>
-
-
-<!-- Nome Botanico Field -->
-<div class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('nome_botanico') }}</label>
-    <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->nome_botanico }}</span>
-    </div>
-</div>
+    <h5 class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->abreviatura }}</span>
+
+        <span class="fw-bolder fs-6 text-gray-800" margin-left="50px">{{ $planta->nome_botanico }}</span>
+
+    </h5>
+</h3>
+
+
+<br />
 
 
 <!-- Nome Comum Field -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('nome_comum') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->nome_comum }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Tempo Crescimento Field -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('tempo_crescimento') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->tempo_crescimento }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Notas Field -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('notas') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->notas }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Curiosidades Field -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('curiosidades') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->curiosidades }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Altura Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('altura') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->alturasToString() }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Categoria Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('categoria') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->categoriasToString() }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Luz Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('luz') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->luzToString() }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Diametro Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('diametro') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->diametroToString() }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Densidade Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('densidade') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->densidadeToString() }}</span>
     </div>
-</div>
+</h3>
 
 
 
 <!-- Agua Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('agua') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->aguaToString() }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Resistencia Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('resistencia') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->resistenciaToString() }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Solo Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('solo') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->soloToString() }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- PhSolo Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('ph_solo') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->phSoloToString() }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Estacao Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('estacao') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->estacaoToString() }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Cor Sintese Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('cor_sintese') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\CorSinteseAtributo::getCorSinteseArray()[$planta->corSinteseAtributo->cor_sintese]??null }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Persistencia Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('persistencia') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\PersistenciaAtributo::getPersistenciaArray()[$planta->persistenciaAtributo->persistencia]??null }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Ordem Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('ordem') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrdemAtributo::getOrdemArray()[$planta->ordemAtributo->ordem]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Familia Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('familia') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FamiliaAtributo::getFamiliaArray()[$planta->familiaAtributo->familia]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 
 <!-- Genero Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('genero') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\GeneroAtributo::getGeneroArray()[$planta->generoAtributo->genero]??null }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Forma Arbusto Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_arbusto') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArbustoAtributo::getFormaArbustoArray()[$planta->formaArbustoAtributo->forma_arbusto]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Uso Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('uso') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\UsoAtributo::getUsoArray()[$planta->usoAtributo->uso]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Origem Relacao Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('origem_relacao') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray()[$planta->origemRelacaoAtributo->origem_relacao]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 <!-- Forma Arvore Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_arvore') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArvoreAtributo::getFormaArvoreArray()[$planta->formaArvoreAtributo->forma_arvore]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 
 <!-- Colecao Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('colecao') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\ColecaoAtributo::getColecaoArray()[$planta->colecaoAtributo->colecao]??null }}</span>
     </div>
-</div>
+</h3>
 
 <!-- Forma Herbacea Atributo -->
-<div class="row mb-7">
+<h3 class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_herbacea') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()[$planta->formaHerbaceaAtributo->forma_herbacea]??null }}</span>
     </div>
-</div>
+</h3>
 
 
 

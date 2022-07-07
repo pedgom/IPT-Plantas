@@ -212,3 +212,6 @@ Route::resource('estacaoAtributos', App\Http\Controllers\EstacaoAtributoControll
 
 
 Route::resource('estacaoAtributoPlantas', App\Http\Controllers\EstacaoAtributoPlantaController::class);
+
+
+Route::resource('media', App\Http\Controllers\MediaController::class);

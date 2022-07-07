@@ -52,7 +52,7 @@
 
 
         <div class="menu-item">
-            <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('plantas.index') }}">
+            <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('home.search') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 

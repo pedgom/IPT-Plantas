@@ -22,7 +22,7 @@ view()->share('hideToolbar', true);
                 jQuery(document).ready(function () {
                     $("#planta_id_select").select2({
                         width: '100%',
-                        placeholder: '{{ __('Search an Animal') }}',
+                        placeholder: '{{ __('Procure a sua planta....') }}',
                         //placeholderOption: "first",
                         allowClear: true,
                         minimumInputLength: 3,
