@@ -199,3 +199,24 @@
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArvoreAtributo::getFormaArvoreArray()[$planta->formaArvoreAtributo->forma_arvore]??null }}</span>
     </div>
 </div>
+
+
+
+<!-- Colecao Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('colecao') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\ColecaoAtributo::getColecaoArray()[$planta->colecaoAtributo->colecao]??null }}</span>
+    </div>
+</div>
+
+<!-- Forma Herbacea Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_herbacea') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()[$planta->formaHerbaceaAtributo->forma_herbacea]??null }}</span>
+    </div>
+</div>
+
+
+

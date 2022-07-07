@@ -359,6 +359,33 @@
 </div>
 
 
+<div class="mb-10">
+    {!! Form::label('colecao', $planta->getAttributeLabel('colecao'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('colecao',\App\Models\ColecaoAtributo::getColecaoArray(), null , ['id' => 'colecao','class' => 'form-select form-select-solid ' .($errors->has('colecao') ? 'is-invalid' : '')]) !!}
+
+    @error('colecao')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+
+
+<div class="mb-10">
+    {!! Form::label('forma_herbacea', $planta->getAttributeLabel('forma_herbacea'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('forma_herbacea',\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray(), null , ['id' => 'forma_herbacea','class' => 'form-select form-select-solid ' .($errors->has('forma_herbacea') ? 'is-invalid' : '')]) !!}
+
+    @error('forma_herbacea')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+
 
 
 

@@ -65,7 +65,9 @@ class Planta extends Model implements Auditable
         'descritor_atributo_id',
         'uso_atributo_id',
         'origem_relacao_atributo_id',
-        'forma_arvore_atributo_id'
+        'forma_arvore_atributo_id',
+        'colecao_atributo_id',
+        'forma_herbacea_atributo_id'
 
 
 
@@ -118,7 +120,10 @@ class Planta extends Model implements Auditable
             'forma_arbusto'=>'required|in:'.implode(',',array_keys(\App\Models\FormaArbustoAtributo::getFormaArbustoArray())),
             'uso'=>'required|in:'.implode(',',array_keys(\App\Models\UsoAtributo::getUsoArray())),
             'origem_relacao'=>'required|in:'.implode(',',array_keys(\App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray())),
-            'forma_arvore'=>'required|in:'.implode(',',array_keys(\App\Models\FormaArvoreAtributo::getFormaArvoreArray()))
+            'forma_arvore'=>'required|in:'.implode(',',array_keys(\App\Models\FormaArvoreAtributo::getFormaArvoreArray())),
+            'colecao'=>'required|in:'.implode(',',array_keys(\App\Models\ColecaoAtributo::getColecaoArray())),
+            'forma_herbacea'=>'required|in:'.implode(',',array_keys(\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()))
+
 
 
 
@@ -150,8 +155,9 @@ class Planta extends Model implements Auditable
             'forma_arbusto' => __('Forma Arbusto'),
             'uso' => __('Uso'),
             'origem_relacao' => __('Origem Relacao'),
-            'forma_arvore' => __('Forma Arvore')
-
+            'forma_arvore' => __('Forma Arvore'),
+            'colecao' => __('Colecao'),
+            'forma_herbacea' => __('Forma Herbacea')
 
 
 
@@ -353,6 +359,8 @@ class Planta extends Model implements Auditable
         return $this->belongsTo(\App\Models\FormaArbustoAtributo::class, 'forma_arbusto_atributo_id');
     }
 
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -378,6 +386,24 @@ class Planta extends Model implements Auditable
     public function formaArvoreAtributo()
     {
         return $this->belongsTo(\App\Models\FormaArvoreAtributo::class, 'forma_arvore_atributo_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function formaHerbaceaAtributo()
+    {
+        return $this->belongsTo(\App\Models\FormaHerbaceaAtributo::class, 'forma_herbacea_atributo_id');
+    }
+
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function colecaoAtributo()
+    {
+        return $this->belongsTo(\App\Models\ColecaoAtributo::class, 'colecao_atributo_id');
     }
 
 

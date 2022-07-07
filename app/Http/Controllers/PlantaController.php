@@ -70,6 +70,16 @@ class PlantaController extends Controller
         $validatedAttributes['forma_arvore_atributo_id']= $validatedAttributes['forma_arvore'];
         unset($validatedAttributes['forma_arvore']);
 
+        $validatedAttributes['colecao_atributo_id']= $validatedAttributes['colecao'];
+        unset($validatedAttributes['colecao']);
+
+
+        $validatedAttributes['forma_herbacea_atributo_id']= $validatedAttributes['forma_herbacea'];
+        unset($validatedAttributes['forma_herbacea']);
+
+
+
+
         if(($model = Planta::create($validatedAttributes)) ) {
             $model->alturaAtributos()->sync($validatedAttributes['altura']);
             $model->categoriaAtributos()->sync($validatedAttributes['categoria']);

@@ -433,27 +433,27 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('aplicacao_atributos')->insert([
             [
-                'aplicacao' => 'Rock Garden',
+                'aplicacao' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Revestimento Solo',
+                'aplicacao' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Controlo Erosão',
+                'aplicacao' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Sebes/Compartimentos',
+                'aplicacao' => 4,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Filtragem do ar',
+                'aplicacao' => 5,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -462,22 +462,22 @@ class AtributosSeeder extends Seeder
 
         DB::table('colecao_atributos')->insert([
             [
-                'colecao' => 'Sombra',
+                'colecao' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 'Interior',
+                'colecao' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 'Duna Primária',
+                'colecao' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 'Duna Secundária',
+                'colecao' => 4,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -684,7 +684,70 @@ class AtributosSeeder extends Seeder
 
 
 
-        DB::table('forma_herbacea_atributos');
+        DB::table('forma_herbacea_atributos')->insert([
+            [
+                'forma_herbacea' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 2,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 3,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 4,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 5,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 6,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 7,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 8,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 9,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 10,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 12,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+
+
+        ]);
         DB::table('cor_sintese_atributos');
         DB::table('estacao_sintese_atributos');
         DB::table('ordem_atributos')->insert([

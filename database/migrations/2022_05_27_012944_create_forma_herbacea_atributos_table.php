@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('forma_herbacea_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->smallInteger('forma_herbacea');
             $table->timestamps();
         });
     }

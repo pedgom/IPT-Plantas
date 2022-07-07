@@ -19,9 +19,15 @@ class AplicacaoAtributo extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'aplicacao_atributos';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    const ROCK_GARDEN = 1;
+    const REVESTIMENTO_SOLO = 2;
+    const CONTROLO_EROSAO = 3;
+    const SEBES_COMPARTIMENTO = 4;
+    const FILTRAGEM_AR = 5;
+
 
 
 
@@ -67,7 +73,39 @@ class AplicacaoAtributo extends Model implements Auditable
         'updated_at' => __('Updated At')
         ];
     }
+    public static function getAplicacaoArray(){
 
+        return [
+            self::ROCK_GARDEN=>__('ROCK GARDEN'),
+            self::REVESTIMENTO_SOLO=>__('REVESTIMENTO SOLO'),
+            self::CONTROLO_EROSAO=>__('CONTROLO EROSAO'),
+            self::SEBES_COMPARTIMENTO=>__('SEBES COMPARTIMENTO'),
+            self::FILTRAGEM_AR=>__('FILTRAGEM AR')
+
+        ];
+    }
+
+
+
+    /**
+     * Retorna a familia selecionada
+     * @return array
+     *
+     */
+    public function getAplicacaoOptions(){
+
+        return static::getAplicacaoArray();
+    }
+
+
+    /**
+     * Retorna a ordem selecionada
+     * @return
+     */
+    public function getAplicacaoLabelAttribute(){
+        $array= self::getAplicacaoOptions();
+        return $array [$this->aplicacao]??null;
+    }
     /**
      * Return the attribute label
      * @param string $attribute
@@ -78,5 +116,13 @@ class AplicacaoAtributo extends Model implements Auditable
         return isset($attributeLabels[$attribute]) ? $attributeLabels[$attribute] : __($attribute);
     }
 
-    
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function plantas()
+    {
+        return $this->hasMany(\App\Models\Planta::class, 'aplicacao_atributo_id');
+    }
+
 }
