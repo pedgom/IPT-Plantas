@@ -77,6 +77,11 @@ class PlantaController extends Controller
         $validatedAttributes['forma_herbacea_atributo_id']= $validatedAttributes['forma_herbacea'];
         unset($validatedAttributes['forma_herbacea']);
 
+        $validatedAttributes['cor_sintese_atributo_id']= $validatedAttributes['cor_sintese'];
+        unset($validatedAttributes['cor_sintese']);
+
+
+
 
 
 
@@ -90,6 +95,7 @@ class PlantaController extends Controller
             $model->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
             $model->soloAtributos()->sync($validatedAttributes['solo']);
             $model->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
+            $model->estacaoAtributos()->sync($validatedAttributes['estacao']);
 
             //$model->persistencia_atributo_id = $validatedAttributes['persistencia'];
             //flash(Planta saved successfully.');
@@ -127,6 +133,7 @@ class PlantaController extends Controller
         $planta->resistencia=$planta->resistenciaAtributos()->pluck( 'resistencia_atributos.id')->toArray();
         $planta->solo=$planta->soloAtributos()->pluck( 'solo_atributos.id')->toArray();
         $planta->ph_solo=$planta->phSoloAtributos()->pluck( 'ph_solo_atributos.id')->toArray();
+        $planta->estacao=$planta->estacaoAtributos()->pluck( 'estacao_atributos.id')->toArray();
         return view('plantas.edit', compact('planta'));
     }
 
@@ -154,6 +161,7 @@ class PlantaController extends Controller
             $planta->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
             $planta->soloAtributos()->sync($validatedAttributes['solo']);
             $planta->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
+            $planta->estacaoAtributos()->sync($validatedAttributes['estacao']);
 
             return redirect(route('plantas.show', $planta));
         }else{

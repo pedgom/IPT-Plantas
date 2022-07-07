@@ -262,6 +262,39 @@
 
 
 <div class="mb-10">
+    {!! Form::label('estacao[]', $planta->getAttributeLabel('estacao'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('estacao[]',\App\Models\EstacaoAtributo::valoresArray(), null , ['id' => 'estacao','class' => 'form-select form-select-solid ' .($errors->has('estacao') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('estacao')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#estacao").select2({
+                    placeholder: '{{ __('Selecione um ou mais Meses') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>
+
+<div class="mb-10">
+    {!! Form::label('cor_sintese', $planta->getAttributeLabel('cor_sintese'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null , ['id' => 'cor_sintese','class' => 'form-select form-select-solid ' .($errors->has('cor_sintese') ? 'is-invalid' : '')]) !!}
+
+    @error('cor_sintese')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+<div class="mb-10">
     {!! Form::label('persistencia', $planta->getAttributeLabel('persistencia'), ['class' => 'form-label']) !!}
 
     {!! Form::select('persistencia',\App\Models\PersistenciaAtributo::getPersistenciaArray(), null , ['id' => 'persistencia','class' => 'form-select form-select-solid ' .($errors->has('persistencia') ? 'is-invalid' : '')]) !!}
@@ -383,6 +416,8 @@
     @enderror
 
 </div>
+
+
 
 
 

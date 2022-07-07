@@ -43,6 +43,7 @@ class Planta extends Model implements Auditable
     public $resistencia= [];
     public $solo= [];
     public $ph_solo= [];
+    public $estacao= [];
 
 
 
@@ -67,7 +68,8 @@ class Planta extends Model implements Auditable
         'origem_relacao_atributo_id',
         'forma_arvore_atributo_id',
         'colecao_atributo_id',
-        'forma_herbacea_atributo_id'
+        'forma_herbacea_atributo_id',
+        'cor_sintese_atributo_id'
 
 
 
@@ -113,6 +115,7 @@ class Planta extends Model implements Auditable
             'resistencia'=>'required|array|min:1',
             'solo'=>'required|array|min:1',
             'ph_solo'=>'required|array|min:1',
+            'estacao'=>'required|array|min:1',
             'persistencia'=>'required|in:'.implode(',',array_keys(\App\Models\PersistenciaAtributo::getPersistenciaArray())),
             'ordem'=>'required|in:'.implode(',',array_keys(\App\Models\OrdemAtributo::getOrdemArray())),
             'familia'=>'required|in:'.implode(',',array_keys(\App\Models\FamiliaAtributo::getFamiliaArray())),
@@ -122,7 +125,8 @@ class Planta extends Model implements Auditable
             'origem_relacao'=>'required|in:'.implode(',',array_keys(\App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray())),
             'forma_arvore'=>'required|in:'.implode(',',array_keys(\App\Models\FormaArvoreAtributo::getFormaArvoreArray())),
             'colecao'=>'required|in:'.implode(',',array_keys(\App\Models\ColecaoAtributo::getColecaoArray())),
-            'forma_herbacea'=>'required|in:'.implode(',',array_keys(\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()))
+            'forma_herbacea'=>'required|in:'.implode(',',array_keys(\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray())),
+            'cor_sintese'=>'required|in:'.implode(',',array_keys(\App\Models\CorSinteseAtributo::getCorSinteseArray()))
 
 
 
@@ -157,7 +161,8 @@ class Planta extends Model implements Auditable
             'origem_relacao' => __('Origem Relacao'),
             'forma_arvore' => __('Forma Arvore'),
             'colecao' => __('Colecao'),
-            'forma_herbacea' => __('Forma Herbacea')
+            'forma_herbacea' => __('Forma Herbacea'),
+            'cor_sintese' => __('Cor Sintese')
 
 
 
@@ -265,6 +270,8 @@ class Planta extends Model implements Auditable
         return $this->hasMany(\App\Models\LuzAtributoPlanta::class, 'planta_id');
     }
 
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -297,6 +304,24 @@ class Planta extends Model implements Auditable
     {
         return $this->belongsToMany(\App\Models\PhSoloAtributo::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function estacaoAtributoPlantas()
+    {
+        return $this->hasMany(\App\Models\EstacaoAtributoPlanta::class, 'planta_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function estacaoAtributos()
+    {
+        return $this->belongsToMany(\App\Models\EstacaoAtributo::class);
+    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -407,6 +432,15 @@ class Planta extends Model implements Auditable
     }
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function corSinteseAtributo()
+    {
+        return $this->belongsTo(\App\Models\CorSinteseAtributo::class, 'cor_sintese_atributo_id');
+    }
+
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -506,6 +540,16 @@ class Planta extends Model implements Auditable
         $string = '';
         foreach ($this->phSoloAtributos as $ph_solo){
             $string.=$ph_solo->name.', ';
+        }
+        return trim($string, ', ');
+    }
+
+
+    public function estacaoToString()
+    {
+        $string = '';
+        foreach ($this->estacaoAtributos as $estacao){
+            $string.=$estacao->name.', ';
         }
         return trim($string, ', ');
     }

@@ -130,6 +130,22 @@
     </div>
 </div>
 
+<!-- Estacao Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('estacao') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->estacaoToString() }}</span>
+    </div>
+</div>
+
+<!-- Cor Sintese Atributo -->
+<div class="row mb-7">
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('cor_sintese') }}</label>
+    <div class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\CorSinteseAtributo::getCorSinteseArray()[$planta->corSinteseAtributo->cor_sintese]??null }}</span>
+    </div>
+</div>
+
 <!-- Persistencia Atributo -->
 <div class="row mb-7">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('persistencia') }}</label>
@@ -217,6 +233,9 @@
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()[$planta->formaHerbaceaAtributo->forma_herbacea]??null }}</span>
     </div>
 </div>
+
+
+
 
 
 

@@ -505,3 +505,48 @@ Breadcrumbs::for('ph-solo-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('ph-solo-atributo-plantas', $model);
     $trail->push(__('Update'), route('ph-solo-atributo-plantas.edit', $model));
 });
+
+
+
+
+
+
+
+
+//**************************************************************************************
+//Estacao          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('estacao-atributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Estacao'), route('estacao-atributos.index'));
+});
+Breadcrumbs::for('estacao-atributos.create', function ($trail) {
+    $trail->parent('estacao-atributos.index');
+    $trail->push(__('Create'), route('estacao-atributos.create'));
+});
+Breadcrumbs::for('estacao-atributos.show', function ($trail, $model) {
+    $trail->parent('estacao-atributos.index');
+    $trail->push($model->planta_id, route('estacao-atributos.show', $model));
+});
+Breadcrumbs::for('estacao-atributos.edit', function ($trail, $model) {
+    $trail->parent('estacao-atributos.show', $model);
+    $trail->push(__('Update'), route('estacao-atributos.edit', $model));
+});
+
+
+Breadcrumbs::for('estacao-atributo-plantas.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Estacao'), route('estacao-atributo-plantas.index'));
+});
+Breadcrumbs::for('estacao-atributo-plantas.create', function ($trail) {
+    $trail->parent('estacao-atributos.index');
+    $trail->push(__('Create'), route('estacao-atributo-plantas.create'));
+});
+Breadcrumbs::for('estacao-atributo-plantas.show', function ($trail, $model) {
+    $trail->parent('estacao-atributo-plantas.index');
+    $trail->push($model->planta_id, route('estacao-atributo-plantas.show', $model));
+});
+Breadcrumbs::for('estacao-atributo-plantas.edit', function ($trail, $model) {
+    $trail->parent('estacao-atributo-plantas', $model);
+    $trail->push(__('Update'), route('estacao-atributo-plantas.edit', $model));
+});

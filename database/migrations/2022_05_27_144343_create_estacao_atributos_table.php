@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cor_sintese_atributos', function (Blueprint $table) {
+        Schema::create('estacao_atributos', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('cor_sintese');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cor_sintese_atributos');
+        Schema::dropIfExists('estacao_atributos');
     }
 };

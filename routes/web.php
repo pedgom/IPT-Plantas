@@ -143,6 +143,13 @@ Route::get('phsoloAtributoPlantas', [App\Http\Controllers\PhSoloAtributoPlantaCo
 
 
 
+Route::resource('estacao-atributos', App\Http\Controllers\EstacaoAtributoController::class)->except('index');
+Route::get('estacaoAtributos', [App\Http\Controllers\EstacaoAtributoController::class,'index'])->name('estacao-atributos.index');
+
+Route::resource('estacao-atributo-plantas', App\Http\Controllers\EstacaoAtributoPlantaController::class)->except('index');;
+Route::get('estacaoAtributoPlantas', [App\Http\Controllers\EstacaoAtributoPlantaController::class,'index'])->name('estacao-atributo-plantas.index');
+
+
 
 
 
@@ -193,3 +200,15 @@ Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtri
 
 
 
+
+
+Route::resource('corSinteseAtributos', App\Http\Controllers\CorSinteseAtributoController::class);
+
+
+Route::resource('estacaoSinteseAtributos', App\Http\Controllers\EstacaoSinteseAtributoController::class);
+
+
+Route::resource('estacaoAtributos', App\Http\Controllers\EstacaoAtributoController::class);
+
+
+Route::resource('estacaoAtributoPlantas', App\Http\Controllers\EstacaoAtributoPlantaController::class);
