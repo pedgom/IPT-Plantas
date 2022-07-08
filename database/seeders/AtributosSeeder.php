@@ -361,27 +361,27 @@ class AtributosSeeder extends Seeder
 
         DB::table('origem_relacao_atributos')->insert([
             [
-                'origem_relacao' => 'Autótocnes',
+                'origem_relacao' => '1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Exóticas',
+                'origem_relacao' => '2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Naturalizada',
+                'origem_relacao' => '3',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Invasora',
+                'origem_relacao' => '4',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => 'Infrestantes',
+                'origem_relacao' => '5',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -389,42 +389,42 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('uso_atributos')->insert([
             [
-                'uso' => 'medicinal',
+                'uso' => '1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'alimentar',
+                'uso' => '2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Essências/Industriais',
+                'uso' => '3',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Venenosas/´Tóxicas',
+                'uso' => '4',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Materais/Estruturas',
+                'uso' => '5',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Forrageiras',
+                'uso' => '6',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Melidera',
+                'uso' => '7',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => 'Social',
+                'uso' => '8',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -432,27 +432,27 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('aplicacao_atributos')->insert([
             [
-                'aplicacao' => 'Rock Garden',
+                'aplicacao' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Revestimento Solo',
+                'aplicacao' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Controlo Erosão',
+                'aplicacao' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Sebes/Compartimentos',
+                'aplicacao' => 4,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'aplicacao' => 'Filtragem do ar',
+                'aplicacao' => 5,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -461,22 +461,22 @@ class AtributosSeeder extends Seeder
 
         DB::table('colecao_atributos')->insert([
             [
-                'colecao' => 'Sombra',
+                'colecao' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 'Interior',
+                'colecao' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 'Duna Primária',
+                'colecao' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 'Duna Secundária',
+                'colecao' => 4,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -543,68 +543,73 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('forma_arvore_atributos')->insert([
             [
-                'forma_arvore' => 'Colunar',
+                'forma_arvore' => '1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Fastigiata',
+                'forma_arvore' => '2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Oval',
+                'forma_arvore' => '3',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Cónica',
+                'forma_arvore' => '4',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Esférica',
+                'forma_arvore' => '5',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Elíptica',
+                'forma_arvore' => '6',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_arvore' => 'Umbela',
+                'forma_arvore' => '7',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Estendida',
+                'forma_arvore' => '8',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Pendular',
+                'forma_arvore' => '9',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Irregular',
+                'forma_arvore' => '10',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Semiovoide',
+                'forma_arvore' => '11',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Palmiforme',
+                'forma_arvore' => '12',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => 'Abanico',
+                'forma_arvore' => '13',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_arvore' => '14',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -678,9 +683,198 @@ class AtributosSeeder extends Seeder
 
 
 
-        DB::table('forma_herbacea_atributos');
-        DB::table('cor_sintese_atributos');
-        DB::table('estacao_sintese_atributos');
+        DB::table('forma_herbacea_atributos')->insert([
+            [
+                'forma_herbacea' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 2,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 3,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 4,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 5,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 6,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'forma_herbacea' => 7,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 8,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 9,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 10,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 12,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+
+
+        ]);
+        DB::table('cor_sintese_atributos')->insert([
+            [
+                'cor_sintese' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'cor_sintese' => 2,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'cor_sintese' => 3,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'cor_sintese' => 4,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'cor_sintese' => 5,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'cor_sintese' => 6,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'cor_sintese' => 7,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'cor_sintese' => 8,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'cor_sintese' => 9,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'cor_sintese' => 10,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'cor_sintese' => 11,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+
+        ]);
+
+
+        DB::table('estacao_atributos')->insert([
+            [
+                'name' => 'Janeiro',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Fevereiro',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Março',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Abril',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Maio',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Junho',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Julho',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Agosto',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Setembro',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+            'name' => 'Outubro',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
+        ],
+        [
+        'name' => 'Novembro',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+        [
+            'name' => 'Dezembro',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
+        ]
+
+        ]);
+
         DB::table('ordem_atributos')->insert([
             [
                 'ordem' => 1,

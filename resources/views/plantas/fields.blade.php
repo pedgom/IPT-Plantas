@@ -262,6 +262,39 @@
 
 
 <div class="mb-10">
+    {!! Form::label('estacao[]', $planta->getAttributeLabel('estacao'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('estacao[]',\App\Models\EstacaoAtributo::valoresArray(), null , ['id' => 'estacao','class' => 'form-select form-select-solid ' .($errors->has('estacao') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+    @error('estacao')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+    @push('scripts')
+        <script>
+            jQuery(document).ready(function() {
+                $("#estacao").select2({
+                    placeholder: '{{ __('Selecione um ou mais Meses') }}',
+                    allowClear: true,
+                    minimumInputLength: 0,
+                });
+            });
+        </script>
+    @endpush
+</div>
+
+<div class="mb-10">
+    {!! Form::label('cor_sintese', $planta->getAttributeLabel('cor_sintese'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null , ['id' => 'cor_sintese','class' => 'form-select form-select-solid ' .($errors->has('cor_sintese') ? 'is-invalid' : '')]) !!}
+
+    @error('cor_sintese')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+<div class="mb-10">
     {!! Form::label('persistencia', $planta->getAttributeLabel('persistencia'), ['class' => 'form-label']) !!}
 
     {!! Form::select('persistencia',\App\Models\PersistenciaAtributo::getPersistenciaArray(), null , ['id' => 'persistencia','class' => 'form-select form-select-solid ' .($errors->has('persistencia') ? 'is-invalid' : '')]) !!}
@@ -320,4 +353,125 @@
     @enderror
 
 </div>
+
+
+
+<div class="mb-10">
+    {!! Form::label('uso', $planta->getAttributeLabel('uso'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('uso',\App\Models\UsoAtributo::getUsoArray(), null , ['id' => 'uso','class' => 'form-select form-select-solid ' .($errors->has('uso') ? 'is-invalid' : '')]) !!}
+
+    @error('uso')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+<div class="mb-10">
+    {!! Form::label('origem_relacao', $planta->getAttributeLabel('origem_relacao'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('origem_relacao',\App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray(), null , ['id' => 'origem_relacao','class' => 'form-select form-select-solid ' .($errors->has('origem_relacao') ? 'is-invalid' : '')]) !!}
+
+    @error('origem_relacao')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+
+<div class="mb-10">
+    {!! Form::label('forma_arvore', $planta->getAttributeLabel('forma_arvore'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('forma_arvore',\App\Models\FormaArvoreAtributo::getFormaArvoreArray(), null , ['id' => 'forma_arvore','class' => 'form-select form-select-solid ' .($errors->has('forma_arvore') ? 'is-invalid' : '')]) !!}
+
+    @error('forma_arvore')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+<div class="mb-10">
+    {!! Form::label('colecao', $planta->getAttributeLabel('colecao'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('colecao',\App\Models\ColecaoAtributo::getColecaoArray(), null , ['id' => 'colecao','class' => 'form-select form-select-solid ' .($errors->has('colecao') ? 'is-invalid' : '')]) !!}
+
+    @error('colecao')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+
+
+<div class="mb-10">
+    {!! Form::label('forma_herbacea', $planta->getAttributeLabel('forma_herbacea'), ['class' => 'form-label']) !!}
+
+    {!! Form::select('forma_herbacea',\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray(), null , ['id' => 'forma_herbacea','class' => 'form-select form-select-solid ' .($errors->has('forma_herbacea') ? 'is-invalid' : '')]) !!}
+
+    @error('forma_herbacea')
+    <div class="error invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div>
+
+
+<div class="mb-10">
+    <!--begin::Image input-->
+    <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_principal')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
+        <!--begin::Image preview wrapper-->
+        <div class="image-input-wrapper w-125px h-125px" @if($planta->hasMedia('imagem_principal')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}')" @endif></div>
+        <!--end::Image preview wrapper-->
+
+        <!--begin::Edit button-->
+        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+               data-kt-image-input-action="change"
+               data-bs-toggle="tooltip"
+               data-bs-dismiss="click"
+               title="{{ __('Change image') }}">
+            <i class="bi bi-pencil-fill fs-7"></i>
+
+            <!--begin::Inputs-->
+            <input type="file" name="imagem_principal" accept=".png, .jpg, .jpeg" />
+            <input type="hidden" name="delete_imagem_principal" value="{{ old('delete_imagem_principal') }}" />
+            <!--end::Inputs-->
+        </label>
+        <!--end::Edit button-->
+
+        <!--begin::Cancel button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="cancel"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Cancel image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Cancel button-->
+
+        <!--begin::Remove button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="remove"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Remove image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Remove button-->
+    </div>
+    <!--end::Image input-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 

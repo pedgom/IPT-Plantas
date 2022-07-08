@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('cor_sintese_atributos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->smallInteger('cor_sintese');
             $table->timestamps();
         });
     }

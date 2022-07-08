@@ -47,16 +47,20 @@
             </div>
         @endcan
 
-            <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('plantas.index') }}">
+
+
+
+
+        <div class="menu-item">
+            <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('home.search') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
-                    <!--end::Svg Icon-->
+                        <!--end::Svg Icon-->
                     </span>
-                    <span class="menu-title">{{ __('Plantas') }}</span>
-                </a>
-            </div>
+                <span class="menu-title">{{ __('Encontrar Plantas') }}</span>
+            </a>
+        </div>
 
 
 
@@ -64,6 +68,17 @@
 
 
         @can('adminFullApp')
+
+            <div class="menu-item">
+                <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('plantas.index') }}">
+                    <span class="menu-icon">
+                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
+
+                        <!--end::Svg Icon-->
+                    </span>
+                    <span class="menu-title">{{ __('Criar Plantas') }}</span>
+                </a>
+            </div>
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('demos.*') ? "active" : "" }}" href="{{ route('demos.index') }}">
                         <span class="menu-icon">

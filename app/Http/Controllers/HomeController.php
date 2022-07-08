@@ -104,4 +104,9 @@ class HomeController extends Controller
         $lockStatus = Lock::setLockOrReject(null, $request->get('modelType'), $request->get('modelId'), $request->get('close', null));
         return ['success' => $lockStatus];
     }
+
+
+    public function search (Request $request){
+        return view('home.search');
+    }
 }

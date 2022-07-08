@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -19,7 +20,8 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
+Route::get('get-plantas', [App\Http\Controllers\PlantaController::class, 'getPlantas'])->name('plantas.get_plantas');
 //only users autenticated and with email verified can access the following routes
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
@@ -141,6 +143,13 @@ Route::get('phsoloAtributoPlantas', [App\Http\Controllers\PhSoloAtributoPlantaCo
 
 
 
+Route::resource('estacao-atributos', App\Http\Controllers\EstacaoAtributoController::class)->except('index');
+Route::get('estacaoAtributos', [App\Http\Controllers\EstacaoAtributoController::class,'index'])->name('estacao-atributos.index');
+
+Route::resource('estacao-atributo-plantas', App\Http\Controllers\EstacaoAtributoPlantaController::class)->except('index');;
+Route::get('estacaoAtributoPlantas', [App\Http\Controllers\EstacaoAtributoPlantaController::class,'index'])->name('estacao-atributo-plantas.index');
+
+
 
 
 
@@ -188,3 +197,21 @@ Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributo
 
 
 Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);
+
+
+
+
+
+Route::resource('corSinteseAtributos', App\Http\Controllers\CorSinteseAtributoController::class);
+
+
+Route::resource('estacaoSinteseAtributos', App\Http\Controllers\EstacaoSinteseAtributoController::class);
+
+
+Route::resource('estacaoAtributos', App\Http\Controllers\EstacaoAtributoController::class);
+
+
+Route::resource('estacaoAtributoPlantas', App\Http\Controllers\EstacaoAtributoPlantaController::class);
+
+
+Route::resource('media', App\Http\Controllers\MediaController::class);

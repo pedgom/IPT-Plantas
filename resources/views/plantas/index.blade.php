@@ -26,11 +26,12 @@ view()->share('hideSubHeader', true);
                     <!--begin::Export-->
                     <div id="datatable-buttons"></div>
                     <!--end::Export-->
-
+                    @can('adminApp')
                     <a href="{{ route('plantas.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
                         {{ __('New Planta') }}
                     </a>
+                    @endcan
 
                 </div>
                 <!--end::Toolbar-->

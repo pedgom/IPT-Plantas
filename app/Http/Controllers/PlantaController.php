@@ -46,23 +46,44 @@ class PlantaController extends Controller
     {
         $validatedAttributes = $this->validateForm($request);
         $validatedAttributes['persistencia_atributo_id']= $validatedAttributes['persistencia'];
-        isset($validatedAttributes['persistencia']);
+        unset($validatedAttributes['persistencia']);
 
         $validatedAttributes['ordem_atributo_id']= $validatedAttributes['ordem'];
-        isset($validatedAttributes['ordem']);
+        unset($validatedAttributes['ordem']);
 
         $validatedAttributes['familia_atributo_id']= $validatedAttributes['familia'];
-        isset($validatedAttributes['familia']);
+        unset($validatedAttributes['familia']);
 
 
         $validatedAttributes['genero_atributo_id']= $validatedAttributes['genero'];
-        isset($validatedAttributes['genero']);
+        unset($validatedAttributes['genero']);
 
         $validatedAttributes['forma_arbusto_atributo_id']= $validatedAttributes['forma_arbusto'];
-        isset($validatedAttributes['forma_arbusto']);
+        unset($validatedAttributes['forma_arbusto']);
 
-        //$validatedAttributes['uso_atributo_id']= $validatedAttributes['uso'];
-        //isset($validatedAttributes['uso']);
+        $validatedAttributes['uso_atributo_id']= $validatedAttributes['uso'];
+        unset($validatedAttributes['uso']);
+
+        $validatedAttributes['origem_relacao_atributo_id']= $validatedAttributes['origem_relacao'];
+        unset($validatedAttributes['origem_relacao']);
+
+        $validatedAttributes['forma_arvore_atributo_id']= $validatedAttributes['forma_arvore'];
+        unset($validatedAttributes['forma_arvore']);
+
+        $validatedAttributes['colecao_atributo_id']= $validatedAttributes['colecao'];
+        unset($validatedAttributes['colecao']);
+
+
+        $validatedAttributes['forma_herbacea_atributo_id']= $validatedAttributes['forma_herbacea'];
+        unset($validatedAttributes['forma_herbacea']);
+
+        $validatedAttributes['cor_sintese_atributo_id']= $validatedAttributes['cor_sintese'];
+        unset($validatedAttributes['cor_sintese']);
+
+
+
+
+
 
         if(($model = Planta::create($validatedAttributes)) ) {
             $model->alturaAtributos()->sync($validatedAttributes['altura']);
@@ -74,7 +95,11 @@ class PlantaController extends Controller
             $model->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
             $model->soloAtributos()->sync($validatedAttributes['solo']);
             $model->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
+            $model->estacaoAtributos()->sync($validatedAttributes['estacao']);
 
+            if ($request->hasFile('imagem_principal') && $request->file('imagem_principal')->isValid()) {
+                $model->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
+            }
             //$model->persistencia_atributo_id = $validatedAttributes['persistencia'];
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
@@ -111,6 +136,7 @@ class PlantaController extends Controller
         $planta->resistencia=$planta->resistenciaAtributos()->pluck( 'resistencia_atributos.id')->toArray();
         $planta->solo=$planta->soloAtributos()->pluck( 'solo_atributos.id')->toArray();
         $planta->ph_solo=$planta->phSoloAtributos()->pluck( 'ph_solo_atributos.id')->toArray();
+        $planta->estacao=$planta->estacaoAtributos()->pluck( 'estacao_atributos.id')->toArray();
         return view('plantas.edit', compact('planta'));
     }
 
@@ -138,6 +164,7 @@ class PlantaController extends Controller
             $planta->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
             $planta->soloAtributos()->sync($validatedAttributes['solo']);
             $planta->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
+            $planta->estacaoAtributos()->sync($validatedAttributes['estacao']);
 
             return redirect(route('plantas.show', $planta));
         }else{
@@ -169,4 +196,74 @@ class PlantaController extends Controller
 
         return $request->validate($rules, [], Planta::attributeLabels());
     }
+
+
+    public function getPlantas(Request $request){
+
+        /**
+         * @return array
+         */
+
+
+
+                $q = $request->q ?? null;
+
+
+                /*if(Auth::user()->can('accessAsClient')){
+                    $client_id = Auth::user()->client->id;
+                }
+
+                if(empty($client_id)){
+                    return ['results' => ['id' => '', 'text' => '']];
+                }
+
+                $associatedAnimalsIds = [];
+                if(!empty($inscription_id)){
+                    $inscription = Inscription::where('id', $inscription_id)->first();
+                    if(empty($inscription)){
+                        return ['results' => ['id' => '', 'text' => '']];
+                    }
+
+                    $associatedAnimalsIds = $inscription->animalInscriptions->pluck('animal_id')->toArray();
+                }*/
+
+                if (!empty($q)) {
+                    $plantas = Planta::where(function ($query) use($q){
+                            $query->where('nome_botanico', 'LIKE', '%' . $q . '%')
+                                ->orWhere('nome_comum', 'LIKE', '%' . $q . '%')
+                                ->orWhere('abreviatura', 'LIKE', '%' . $q . '%');
+
+
+                        })
+                        ->limit(40)
+                        ->get();
+                } else {
+                    $plantas = Planta::orderBy('nome_botanico', 'asc')
+                            ->limit(40)
+                        ->get();
+
+                }
+
+                foreach ($plantas as $planta) {
+
+                    $plantasArray [] = [
+                        'id' => $planta->id,
+                        'text' => '['._('Nome Botanico').'] '.$planta->nome_botanico.' ['.('Nome Comum').'] '.$planta->nome_comum.' ['._('Abreviatura').'] '.$planta->abreviatura,
+
+                    ];
+                }
+
+                if(!empty($plantasArray)){
+                    return ['results' => $plantasArray];
+                }else{
+                    return ['results' => ['id' => '', 'text' => '']];
+                }
+
+        }
+
+
+
+
+
+
 }

@@ -19,9 +19,14 @@ class OrigemRelacaoAtributo extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'origem_relacao_atributos';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    const AUTOTOCNES = 1;
+    const EXOTICAS = 2;
+    const NATURALIZADA = 3;
+    const INVASORA = 4;
+    const INFRAESTRANTES = 5;
 
 
 
@@ -68,6 +73,47 @@ class OrigemRelacaoAtributo extends Model implements Auditable
         ];
     }
 
+
+    /**
+     * Retorna um Array com os valores do campo OrigemRelacao
+     * @return array
+     *
+     */
+    public static function getOrigemRelacaoArray(){
+
+        return [
+
+            self::AUTOTOCNES=>__('AUTOTOCNES'),
+            self::EXOTICAS=>__('EXOTICAS'),
+            self::NATURALIZADA=>__('NATURALIZADA'),
+            self::INVASORA=>__('INVASORA'),
+            self::INFRAESTRANTES=>__('INFRAESTRANTES')
+
+        ];
+    }
+
+
+
+    /**
+     * Retorna a familia selecionada
+     * @return array
+     *
+     */
+    public function getOrigemRelacaoOptions(){
+
+        return static::getOrigemRelacaoArray();
+    }
+
+
+    /**
+     * Retorna a ordem selecionada
+     * @return
+     */
+    public function getOrigemRelacaoLabelAttribute(){
+        $array= self::getOrigemRelacaoOptions();
+        return $array [$this->origem_relacao]??null;
+    }
+
     /**
      * Return the attribute label
      * @param string $attribute
@@ -78,5 +124,13 @@ class OrigemRelacaoAtributo extends Model implements Auditable
         return isset($attributeLabels[$attribute]) ? $attributeLabels[$attribute] : __($attribute);
     }
 
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function plantas()
+    {
+        return $this->hasMany(\App\Models\Planta::class, 'origem_relacao_atributo_id');
+    }
+
+
 }

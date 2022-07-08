@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('estacao_sintese_atributos', function (Blueprint $table) {
+        Schema::create('estacao_atributo_planta', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('estacao_atributo_id')->constrained()->onDelete('cascade');
+            $table->foreignId('planta_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+
+            $table->unique(['estacao_atributo_id', 'planta_id']);
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estacao_sintese_atributos');
+        Schema::dropIfExists('estacao_atributo_planta');
     }
 };

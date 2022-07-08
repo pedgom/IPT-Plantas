@@ -19,15 +19,26 @@ class FormaHerbaceaAtributo extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     public $table = 'forma_herbacea_atributos';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    const NA = 1;
+    const FLORACAO_ALTA = 2;
+    const CESPITOSA = 3;
+    const CURVADA_PENDULA_ERVA = 4;
+    const FLORACAO_TOPO = 5;
+    const TUFO_RASTEIRO = 6;
+    const COMPOSTA = 7;
+    const DELICADA = 8;
+    const FLORACAO_EXTERIOR = 9;
+    const PENDENTE = 10;
+    const ESPINHOSA = 11;
 
 
 
 
     public $fillable = [
-        'name'
+        'forma_herbacea'
     ];
 
     /**
@@ -37,7 +48,7 @@ class FormaHerbaceaAtributo extends Model implements Auditable
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'forma_herbacea' => 'string'
     ];
 
     /**
@@ -47,7 +58,7 @@ class FormaHerbaceaAtributo extends Model implements Auditable
      */
     public static function rules(){
         return [
-            'name' => 'required|string|max:255',
+            'forma_herbacea' => 'required|string|max:255',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
         ];
@@ -62,10 +73,50 @@ class FormaHerbaceaAtributo extends Model implements Auditable
     {
         return [
             'id' => __('Id'),
-        'name' => __('Name'),
+        'forma_herbacea' => __('Forma Herbacea'),
         'created_at' => __('Created At'),
         'updated_at' => __('Updated At')
         ];
+    }
+
+    public static function getFormaHerbaceaArray(){
+
+        return [
+            self::NA=>__('NA'),
+            self::FLORACAO_ALTA=>__('FLORACAO ALTA'),
+            self::CESPITOSA=>__('CESPITOSA'),
+            self::CURVADA_PENDULA_ERVA=>__('CURVADA PENDULA ERVA'),
+            self::FLORACAO_TOPO=>__('FLORACAO TOPO'),
+            self::TUFO_RASTEIRO=>__('TUFO RASTEIRO'),
+            self::COMPOSTA=>__('COMPOSTA'),
+            self::DELICADA=>__('DELICADA'),
+            self::FLORACAO_EXTERIOR=>__('FLORACAO EXTERIOR'),
+            self::PENDENTE=>__('PENDENTE'),
+            self::ESPINHOSA=>__('ESPINHOSA')
+
+        ];
+    }
+
+
+
+    /**
+     * Retorna a familia selecionada
+     * @return array
+     *
+     */
+    public function getFormaHerbaceaOptions(){
+
+        return static::getFormaHerbaceaArray();
+    }
+
+
+    /**
+     * Retorna a ordem selecionada
+     * @return
+     */
+    public function getFormaHerbaceaLabelAttribute(){
+        $array= self::getFormaHerbaceaOptions();
+        return $array [$this->forma_herbacea]??null;
     }
 
     /**
@@ -78,5 +129,15 @@ class FormaHerbaceaAtributo extends Model implements Auditable
         return isset($attributeLabels[$attribute]) ? $attributeLabels[$attribute] : __($attribute);
     }
 
-    
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function plantas()
+    {
+        return $this->hasMany(\App\Models\Planta::class, 'forma_herbacea_atributo_id');
+    }
+
+
+
 }
