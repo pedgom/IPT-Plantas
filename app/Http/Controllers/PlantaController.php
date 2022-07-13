@@ -85,6 +85,8 @@ class PlantaController extends Controller
 
 
 
+
+
         if(($model = Planta::create($validatedAttributes)) ) {
             $model->alturaAtributos()->sync($validatedAttributes['altura']);
             $model->categoriaAtributos()->sync($validatedAttributes['categoria']);
@@ -165,6 +167,12 @@ class PlantaController extends Controller
             $planta->soloAtributos()->sync($validatedAttributes['solo']);
             $planta->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
             $planta->estacaoAtributos()->sync($validatedAttributes['estacao']);
+
+            if($request->hasFile('imagem_principal') && $request->file('imagem_principal')->isValid()){
+                $planta->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
+            }elseif($request->filled('delete_imagem_principal') && $request->boolean('delete_imagem_principal')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_principal')->delete();
+            }
 
             return redirect(route('plantas.show', $planta));
         }else{

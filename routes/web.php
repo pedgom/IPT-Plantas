@@ -20,7 +20,8 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
+Route::post('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
+
 Route::get('get-plantas', [App\Http\Controllers\PlantaController::class, 'getPlantas'])->name('plantas.get_plantas');
 //only users autenticated and with email verified can access the following routes
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -205,7 +206,7 @@ Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtri
 Route::resource('corSinteseAtributos', App\Http\Controllers\CorSinteseAtributoController::class);
 
 
-Route::resource('estacaoSinteseAtributos', App\Http\Controllers\EstacaoSinteseAtributoController::class);
+//Route::resource('estacaoSinteseAtributos', App\Http\Controllers\EstacaoSinteseAtributoController::class);
 
 
 Route::resource('estacaoAtributos', App\Http\Controllers\EstacaoAtributoController::class);
@@ -214,4 +215,4 @@ Route::resource('estacaoAtributos', App\Http\Controllers\EstacaoAtributoControll
 Route::resource('estacaoAtributoPlantas', App\Http\Controllers\EstacaoAtributoPlantaController::class);
 
 
-Route::resource('media', App\Http\Controllers\MediaController::class);
+//Route::resource('media', App\Http\Controllers\MediaController::class);
