@@ -234,6 +234,25 @@
 
 
 
+<!-- Imagens -->
+
+
+<div>
+    @if($planta->hasMedia('imagem_principal'))
+        <img
+        src="{{ $planta->getFirstMediaUrl('imagem_principal') }}"
+       />
+    @else
+        <img
+        src="{{ asset('images/floraon.png') }}"
+        >
+    @endif
+</div>
+
+
+
+
+
 
 
 
