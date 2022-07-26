@@ -102,6 +102,18 @@ class PlantaController extends Controller
             if ($request->hasFile('imagem_principal') && $request->file('imagem_principal')->isValid()) {
                 $model->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
             }
+
+            if ($request->hasFile('imagem_tronco') && $request->file('imagem_tronco')->isValid()) {
+                $model->addMediaFromRequest('imagem_tronco')->toMediaCollection('imagem_tronco');
+            }
+
+            if ($request->hasFile('imagem_folha') && $request->file('imagem_folha')->isValid()) {
+                $model->addMediaFromRequest('imagem_folha')->toMediaCollection('imagem_folha');
+            }
+
+
+
+
             //$model->persistencia_atributo_id = $validatedAttributes['persistencia'];
             //flash(Planta saved successfully.');
             //Flash::success('Planta saved successfully.');
@@ -172,6 +184,19 @@ class PlantaController extends Controller
                 $planta->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
             }elseif($request->filled('delete_imagem_principal') && $request->boolean('delete_imagem_principal')){ // if the image was replaced above it will automatically delete this so don't run again
                 $planta->getFirstMedia('imagem_principal')->delete();
+            }
+
+
+            if($request->hasFile('imagem_tronco') && $request->file('imagem_tronco')->isValid()){
+                $planta->addMediaFromRequest('imagem_tronco')->toMediaCollection('imagem_tronco');
+            }elseif($request->filled('delete_imagem_tronco') && $request->boolean('delete_imagem_tronco')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_tronco')->delete();
+            }
+
+            if($request->hasFile('imagem_folha') && $request->file('imagem_folha')->isValid()){
+                $planta->addMediaFromRequest('imagem_folha')->toMediaCollection('imagem_folha');
+            }elseif($request->filled('imagem_folha') && $request->boolean('imagem_folha')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_folha')->delete();
             }
 
             return redirect(route('plantas.show', $planta));

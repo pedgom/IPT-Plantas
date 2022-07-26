@@ -20,7 +20,7 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
+Route::get('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
 
 Route::get('get-plantas', [App\Http\Controllers\PlantaController::class, 'getPlantas'])->name('plantas.get_plantas');
 //only users autenticated and with email verified can access the following routes
@@ -44,7 +44,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //Route::middleware('can:adminApp')->group(function () { // dava problemas no leave impersonation
     Route::impersonate();
     //});
-
 
     Route::resource('roles', RoleController::class)->middleware('can:adminFullApp');
     Route::patch('/roles/{role}/update-permissions', [RoleController::class,'updatePermissions'])->name('roles.update_permissions')->middleware('can:adminFullApp');

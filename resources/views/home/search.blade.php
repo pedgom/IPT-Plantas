@@ -5,7 +5,7 @@ view()->share('hideToolbar', true);
 ?>
 
 <x-base-layout>
-   @include('home.search.select2')
+   @include('home.search.header')
     @include('home.search.plantas')
 
 </x-base-layout>

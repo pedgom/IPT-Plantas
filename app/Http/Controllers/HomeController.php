@@ -105,8 +105,17 @@ class HomeController extends Controller
         return ['success' => $lockStatus];
     }
 
-
     public function search (Request $request){
-        return view('home.search');
+        $search=$request->search ?? null;
+        $plantas = [];
+
+        if(!empty($search)){
+            $plantas = \App\Models\Planta::where(function($q) use($search){
+                $q->where('nome_comum','like', '%'.$search.'%')
+                    ->orWhere('nome_botanico','like', '%'.$search.'%')
+                    ->orWhere('abreviatura','like', '%'.$search.'%');
+            })->get();
+        }
+        return view('home.search', compact('plantas','search'));
     }
 }

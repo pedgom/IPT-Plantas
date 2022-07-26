@@ -233,9 +233,7 @@
 </h3>
 
 
-
 <!-- Imagens -->
-
 
 <div>
     @if($planta->hasMedia('imagem_principal'))
@@ -250,9 +248,29 @@
 </div>
 
 
+<div>
+    @if($planta->hasMedia('imagem_tronco'))
+        <img
+            src="{{ $planta->getFirstMediaUrl('imagem_tronco') }}"
+        />
+    @else
+        <img
+            src="{{ asset('images/floraon.png') }}"
+        >
+    @endif
+</div>
 
-
-
+<div>
+    @if($planta->hasMedia('imagem_folha'))
+        <img
+            src="{{ $planta->getFirstMediaUrl('imagem_folha') }}"
+        />
+    @else
+        <img
+            src="{{ asset('images/floraon.png') }}"
+        >
+    @endif
+</div>
 
 
 
