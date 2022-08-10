@@ -230,35 +230,12 @@ class PlantaController extends Controller
         return $request->validate($rules, [], Planta::attributeLabels());
     }
 
-
     public function getPlantas(Request $request){
 
         /**
          * @return array
          */
-
-
-
                 $q = $request->q ?? null;
-
-
-                /*if(Auth::user()->can('accessAsClient')){
-                    $client_id = Auth::user()->client->id;
-                }
-
-                if(empty($client_id)){
-                    return ['results' => ['id' => '', 'text' => '']];
-                }
-
-                $associatedAnimalsIds = [];
-                if(!empty($inscription_id)){
-                    $inscription = Inscription::where('id', $inscription_id)->first();
-                    if(empty($inscription)){
-                        return ['results' => ['id' => '', 'text' => '']];
-                    }
-
-                    $associatedAnimalsIds = $inscription->animalInscriptions->pluck('animal_id')->toArray();
-                }*/
 
                 if (!empty($q)) {
                     $plantas = Planta::where(function ($query) use($q){
@@ -273,7 +250,7 @@ class PlantaController extends Controller
                 } else {
                     $plantas = Planta::orderBy('nome_botanico', 'asc')
                             ->limit(40)
-                        ->get();
+                            ->get();
 
                 }
 

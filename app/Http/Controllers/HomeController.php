@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lock;
+use App\Models\Planta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Storage;
@@ -107,15 +108,28 @@ class HomeController extends Controller
 
     public function search (Request $request){
         $search=$request->search ?? null;
+        $altura=$request->altura ?? null;
         $plantas = [];
+        $planta = new Planta();
+        $planta->loadDefaultValues();
+        $query= new \App\Models\Planta;
 
         if(!empty($search)){
-            $plantas = \App\Models\Planta::where(function($q) use($search){
+                $query=$query->where(function($q) use($search){
                 $q->where('nome_comum','like', '%'.$search.'%')
                     ->orWhere('nome_botanico','like', '%'.$search.'%')
                     ->orWhere('abreviatura','like', '%'.$search.'%');
-            })->get();
+            });
+
         }
-        return view('home.search', compact('plantas','search'));
+        if(!empty($altura)){
+            $query=$query->whereHas('alturaAtributos',function($q) use($altura){
+            $q->whereIn('altura_atributos.id',$altura);
+            });
+        }
+
+        $plantas =$query->orderBy('id', 'desc')->paginate(12);
+
+        return view('home.search', compact('plantas','search','planta'));
     }
 }
