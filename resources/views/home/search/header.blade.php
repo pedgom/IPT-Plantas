@@ -72,6 +72,7 @@
 
                 </div>
 
+                <!-- Categoria -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
                         {!! Form::label('categoria[]', $planta->getAttributeLabel('categoria'), ['class' => 'form-label']) !!}
@@ -86,6 +87,83 @@
                                 jQuery(document).ready(function() {
                                     $("#categoria").select2({
                                         placeholder: '{{ __('Selecione uma ou mais categorias') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+                <!-- Luz -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('luz[]', $planta->getAttributeLabel('luz'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('luz[]',\App\Models\LuzAtributo::valoresArray(), null , ['id' => 'luz','class' => 'form-select form-select-solid ' .($errors->has('luz') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('luz')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#luz").select2({
+                                        placeholder: '{{ __('Selecione uma ou mais tipos de luz') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+
+                <!-- Solo -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('solo[]', $planta->getAttributeLabel('solo'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('solo[]',\App\Models\SoloAtributo::valoresArray(), null , ['id' => 'solo','class' => 'form-select form-select-solid ' .($errors->has('solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('solo')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#solo").select2({
+                                        placeholder: '{{ __('Selecione um ou mais tipos de solo') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+
+                <!-- Estacao -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('estacao[]', $planta->getAttributeLabel('estacao'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('estacao[]',\App\Models\EstacaoAtributo::valoresArray(), null , ['id' => 'estacao','class' => 'form-select form-select-solid ' .($errors->has('estacao') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('estacao')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#estacao").select2({
+                                        placeholder: '{{ __('Selecione uma ou mais estações do ano') }}',
                                         allowClear: true,
                                         minimumInputLength: 0,
                                     });

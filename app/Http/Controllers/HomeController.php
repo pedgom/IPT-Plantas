@@ -109,6 +109,11 @@ class HomeController extends Controller
     public function search (Request $request){
         $search=$request->search ?? null;
         $altura=$request->altura ?? null;
+        $agua=$request->agua ?? null;
+        $categoria=$request->categoria ?? null;
+        $luz=$request->luz ?? null;
+        $solo=$request->solo ?? null;
+        $estacao=$request->estacao ?? null;
         $plantas = [];
         $planta = new Planta();
         $planta->loadDefaultValues();
@@ -127,6 +132,38 @@ class HomeController extends Controller
             $q->whereIn('altura_atributos.id',$altura);
             });
         }
+
+
+        if(!empty($agua)){
+            $query=$query->whereHas('aguaAtributos',function($q) use($agua){
+                $q->whereIn('agua_atributos.id',$agua);
+            });
+        }
+
+        if(!empty($categoria)){
+            $query=$query->whereHas('categoriaAtributos',function($q) use($categoria){
+                $q->whereIn('categoria_atributos.id',$categoria);
+            });
+        }
+
+        if(!empty($luz)){
+            $query=$query->whereHas('luzAtributos',function($q) use($luz){
+                $q->whereIn('luz_atributos.id',$luz);
+            });
+        }
+
+        if(!empty($solo)){
+            $query=$query->whereHas('soloAtributos',function($q) use($solo){
+                $q->whereIn('solo_atributos.id',$solo);
+            });
+        }
+
+        if(!empty($estacao)){
+            $query=$query->whereHas('estacaoAtributos',function($q) use($estacao){
+                $q->whereIn('estacao_atributos.id',$estacao);
+            });
+        }
+
 
         $plantas =$query->orderBy('id', 'desc')->paginate(12);
 
