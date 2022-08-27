@@ -238,12 +238,51 @@
 <div>
     @if($planta->hasMedia('imagem_principal'))
         <img
-        src="{{ $planta->getFirstMediaUrl('imagem_principal') }}"
+        src="{{ $planta->getFirstMediaUrl('imagem_principal')}}"
+        width="600px"
+        height="600px"
        />
     @else
         <img
         src="{{ asset('images/floraon.png') }}"
-        >
+        width="600px"
+        height="600px"
+        />
+    @endif
+</div>
+
+
+<div>
+    @if($planta->hasMedia('imagem_zoomin'))
+        <img
+            src="{{ $planta->getFirstMediaUrl('imagem_zoomin') }}"
+            width="600px"
+            height="600px"
+        />
+    @else
+        <img
+            src="{{ asset('images/floraon.png') }}"
+            width="600px"
+            height="600px"
+        />
+    @endif
+</div>
+
+
+
+<div>
+    @if($planta->hasMedia('imagem_zoomout'))
+        <img
+            src="{{ $planta->getFirstMediaUrl('imagem_zoomout') }}"
+            width="600px"
+            height="600px"
+        />
+    @else
+        <img
+            src="{{ asset('images/floraon.png') }}"
+            width="600px"
+            height="600px"
+        />
     @endif
 </div>
 
@@ -252,11 +291,15 @@
     @if($planta->hasMedia('imagem_tronco'))
         <img
             src="{{ $planta->getFirstMediaUrl('imagem_tronco') }}"
+            width="600px"
+            height="600px"
         />
     @else
         <img
             src="{{ asset('images/floraon.png') }}"
-        >
+            width="600px"
+            height="600px"
+        />
     @endif
 </div>
 
@@ -264,11 +307,49 @@
     @if($planta->hasMedia('imagem_folha'))
         <img
             src="{{ $planta->getFirstMediaUrl('imagem_folha') }}"
+            width="600px"
+            height="600px"
         />
     @else
         <img
             src="{{ asset('images/floraon.png') }}"
-        >
+            width="600px"
+            height="600px"
+        />
+    @endif
+</div>
+
+
+<div>
+    @if($planta->hasMedia('imagem_fruto'))
+        <img
+            src="{{ $planta->getFirstMediaUrl('imagem_fruto') }}"
+            width="600px"
+            height="600px"
+        />
+    @else
+        <img
+            src="{{ asset('images/floraon.png') }}"
+            width="600px"
+            height="600px"
+        />
+    @endif
+</div>
+
+
+<div>
+    @if($planta->hasMedia('imagem_flor'))
+        <img
+            src="{{ $planta->getFirstMediaUrl('imagem_flor') }}"
+            width="600px"
+            height="600px"
+        />
+    @else
+        <img
+            src="{{ asset('images/floraon.png') }}"
+            width="600px"
+            height="600px"
+        />
     @endif
 </div>
 

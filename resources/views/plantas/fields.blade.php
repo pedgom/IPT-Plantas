@@ -417,7 +417,7 @@
 
 </div>
 
-
+<div>Imagem Principal: </div>
 <div class="mb-10">
     <!--begin::Image input-->
     <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_principal')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
@@ -463,6 +463,105 @@
     <!--end::Image input-->
 </div>
 
+
+
+
+<div>Imagem ZoomIn: </div>
+<div class="mb-10">
+    <!--begin::Image input-->
+    <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_zoomin')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
+        <!--begin::Image preview wrapper-->
+        <div class="image-input-wrapper w-125px h-125px" @if($planta->hasMedia('imagem_zoomin')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}')" @endif></div>
+        <!--end::Image preview wrapper-->
+
+        <!--begin::Edit button-->
+        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+               data-kt-image-input-action="change"
+               data-bs-toggle="tooltip"
+               data-bs-dismiss="click"
+               title="{{ __('Change image') }}">
+            <i class="bi bi-pencil-fill fs-7"></i>
+
+            <!--begin::Inputs-->
+            <input type="file" name="imagem_zoomin" accept=".png, .jpg, .jpeg" />
+            <input type="hidden" name="delete_imagem_zoomin" value="{{ old('delete_imagem_zoomin') }}" />
+            <!--end::Inputs-->
+        </label>
+        <!--end::Edit button-->
+
+        <!--begin::Cancel button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="cancel"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Cancel image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Cancel button-->
+
+        <!--begin::Remove button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="remove"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Remove image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Remove button-->
+    </div>
+    <!--end::Image input-->
+</div>
+
+
+
+
+<div>Imagem ZoomOut: </div>
+<div class="mb-10">
+    <!--begin::Image input-->
+    <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_zoomout')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
+        <!--begin::Image preview wrapper-->
+        <div class="image-input-wrapper w-125px h-125px" @if($planta->hasMedia('imagem_zoomout')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}')" @endif></div>
+        <!--end::Image preview wrapper-->
+
+        <!--begin::Edit button-->
+        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+               data-kt-image-input-action="change"
+               data-bs-toggle="tooltip"
+               data-bs-dismiss="click"
+               title="{{ __('Change image') }}">
+            <i class="bi bi-pencil-fill fs-7"></i>
+
+            <!--begin::Inputs-->
+            <input type="file" name="imagem_zoomout" accept=".png, .jpg, .jpeg" />
+            <input type="hidden" name="delete_imagem_zoomout" value="{{ old('delete_imagem_zoomout') }}" />
+            <!--end::Inputs-->
+        </label>
+        <!--end::Edit button-->
+
+        <!--begin::Cancel button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="cancel"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Cancel image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Cancel button-->
+
+        <!--begin::Remove button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="remove"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Remove image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Remove button-->
+    </div>
+    <!--end::Image input-->
+</div>
+
+<div>Imagem Tronco: </div>
 <div class="mb-10">
     <!--begin::Image input-->
     <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_tronco')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
@@ -508,7 +607,7 @@
     <!--end::Image input-->
 </div>
 
-
+<div>Imagem Folha: </div>
 <div class="mb-10">
     <!--begin::Image input-->
     <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_folha')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
@@ -527,6 +626,100 @@
             <!--begin::Inputs-->
             <input type="file" name="imagem_folha" accept=".png, .jpg, .jpeg" />
             <input type="hidden" name="delete_imagem_folha" value="{{ old('delete_imagem_folha') }}" />
+            <!--end::Inputs-->
+        </label>
+        <!--end::Edit button-->
+
+        <!--begin::Cancel button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="cancel"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Cancel image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Cancel button-->
+
+        <!--begin::Remove button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="remove"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Remove image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Remove button-->
+    </div>
+    <!--end::Image input-->
+</div>
+
+
+<div>Imagem Fruto: </div>
+<div class="mb-10">
+    <!--begin::Image input-->
+    <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_fruto')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
+        <!--begin::Image preview wrapper-->
+        <div class="image-input-wrapper w-125px h-125px" @if($planta->hasMedia('imagem_fruto')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_fruto') }}')" @endif></div>
+        <!--end::Image preview wrapper-->
+
+        <!--begin::Edit button-->
+        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+               data-kt-image-input-action="change"
+               data-bs-toggle="tooltip"
+               data-bs-dismiss="click"
+               title="{{ __('Change image') }}">
+            <i class="bi bi-pencil-fill fs-7"></i>
+
+            <!--begin::Inputs-->
+            <input type="file" name="imagem_fruto" accept=".png, .jpg, .jpeg" />
+            <input type="hidden" name="delete_imagem_fruto" value="{{ old('delete_imagem_fruto') }}" />
+            <!--end::Inputs-->
+        </label>
+        <!--end::Edit button-->
+
+        <!--begin::Cancel button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="cancel"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Cancel image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Cancel button-->
+
+        <!--begin::Remove button-->
+        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+              data-kt-image-input-action="remove"
+              data-bs-toggle="tooltip"
+              data-bs-dismiss="click"
+              title="{{ __('Remove image') }}">
+             <i class="bi bi-x fs-2"></i>
+        </span>
+        <!--end::Remove button-->
+    </div>
+    <!--end::Image input-->
+</div>
+
+
+<div>Imagem Flor: </div>
+<div class="mb-10">
+    <!--begin::Image input-->
+    <div class="image-input image-input-outline @if(!$planta->hasMedia('imagem_flor')) image-input-empty @endif" data-kt-image-input="true" style="background-image: url({{ assetCustom('media/avatars/blank.png') }})">
+        <!--begin::Image preview wrapper-->
+        <div class="image-input-wrapper w-125px h-125px" @if($planta->hasMedia('imagem_flor')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_flor') }}')" @endif></div>
+        <!--end::Image preview wrapper-->
+
+        <!--begin::Edit button-->
+        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+               data-kt-image-input-action="change"
+               data-bs-toggle="tooltip"
+               data-bs-dismiss="click"
+               title="{{ __('Change image') }}">
+            <i class="bi bi-pencil-fill fs-7"></i>
+
+            <!--begin::Inputs-->
+            <input type="file" name="imagem_flor" accept=".png, .jpg, .jpeg" />
+            <input type="hidden" name="delete_imagem_flor" value="{{ old('delete_imagem_flor') }}" />
             <!--end::Inputs-->
         </label>
         <!--end::Edit button-->

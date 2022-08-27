@@ -103,6 +103,14 @@ class PlantaController extends Controller
                 $model->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
             }
 
+            if ($request->hasFile('imagem_zoomin') && $request->file('imagem_zoomin')->isValid()) {
+                $model->addMediaFromRequest('imagem_zoomin')->toMediaCollection('imagem_zoomin');
+            }
+
+            if ($request->hasFile('imagem_zoomout') && $request->file('imagem_zoomout')->isValid()) {
+                $model->addMediaFromRequest('imagem_zoomout')->toMediaCollection('imagem_zoomout');
+            }
+
             if ($request->hasFile('imagem_tronco') && $request->file('imagem_tronco')->isValid()) {
                 $model->addMediaFromRequest('imagem_tronco')->toMediaCollection('imagem_tronco');
             }
@@ -110,6 +118,18 @@ class PlantaController extends Controller
             if ($request->hasFile('imagem_folha') && $request->file('imagem_folha')->isValid()) {
                 $model->addMediaFromRequest('imagem_folha')->toMediaCollection('imagem_folha');
             }
+
+            if ($request->hasFile('imagem_fruto') && $request->file('imagem_fruto')->isValid()) {
+                $model->addMediaFromRequest('imagem_fruto')->toMediaCollection('imagem_fruto');
+            }
+
+            if ($request->hasFile('imagem_flor') && $request->file('imagem_flor')->isValid()) {
+                $model->addMediaFromRequest('imagem_flor')->toMediaCollection('imagem_flor');
+            }
+
+
+
+
 
 
 
@@ -187,6 +207,19 @@ class PlantaController extends Controller
             }
 
 
+            if($request->hasFile('imagem_zoomin') && $request->file('imagem_zoomin')->isValid()){
+                $planta->addMediaFromRequest('imagem_zoomin')->toMediaCollection('imagem_zoomin');
+            }elseif($request->filled('delete_iimagem_zoomin') && $request->boolean('delete_imagem_zoomin')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_zoomin')->delete();
+            }
+
+            if($request->hasFile('imagem_zoomout') && $request->file('imagem_zoomout')->isValid()){
+                $planta->addMediaFromRequest('imagem_zoomout')->toMediaCollection('imagem_zoomout');
+            }elseif($request->filled('delete_imagem_zoomout') && $request->boolean('delete_imagem_zoomout')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_zoomout')->delete();
+            }
+
+
             if($request->hasFile('imagem_tronco') && $request->file('imagem_tronco')->isValid()){
                 $planta->addMediaFromRequest('imagem_tronco')->toMediaCollection('imagem_tronco');
             }elseif($request->filled('delete_imagem_tronco') && $request->boolean('delete_imagem_tronco')){ // if the image was replaced above it will automatically delete this so don't run again
@@ -195,9 +228,25 @@ class PlantaController extends Controller
 
             if($request->hasFile('imagem_folha') && $request->file('imagem_folha')->isValid()){
                 $planta->addMediaFromRequest('imagem_folha')->toMediaCollection('imagem_folha');
-            }elseif($request->filled('imagem_folha') && $request->boolean('imagem_folha')){ // if the image was replaced above it will automatically delete this so don't run again
+            }elseif($request->filled('delete_imagem_folha') && $request->boolean('delete_imagem_folha')){ // if the image was replaced above it will automatically delete this so don't run again
                 $planta->getFirstMedia('imagem_folha')->delete();
             }
+
+
+            if($request->hasFile('imagem_fruto') && $request->file('imagem_fruto')->isValid()){
+                $planta->addMediaFromRequest('imagem_fruto')->toMediaCollection('imagem_fruto');
+            }elseif($request->filled('delete_imagem_fruto') && $request->boolean('delete_imagem_fruto')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_fruto')->delete();
+            }
+
+
+            if($request->hasFile('imagem_flor') && $request->file('imagem_flor')->isValid()){
+                $planta->addMediaFromRequest('imagem_flor')->toMediaCollection('imagem_flor');
+            }elseif($request->filled('delete_imagem_flor') && $request->boolean('delete_imagem_flor')){ // if the image was replaced above it will automatically delete this so don't run again
+                $planta->getFirstMedia('imagem_flor')->delete();
+            }
+
+
 
             return redirect(route('plantas.show', $planta));
         }else{
