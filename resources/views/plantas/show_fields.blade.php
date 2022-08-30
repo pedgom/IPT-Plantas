@@ -244,7 +244,7 @@
        />
     @else
         <img
-        src="{{ asset('images/floraon.png') }}"
+        src="{{ asset('images/default-img.png') }}"
         width="600px"
         height="600px"
         />
@@ -261,7 +261,7 @@
         />
     @else
         <img
-            src="{{ asset('images/floraon.png') }}"
+            src="{{ asset('images/default-img.png') }}"
             width="600px"
             height="600px"
         />
@@ -279,7 +279,7 @@
         />
     @else
         <img
-            src="{{ asset('images/floraon.png') }}"
+            src="{{ asset('images/default-img.png') }}"
             width="600px"
             height="600px"
         />
@@ -296,7 +296,7 @@
         />
     @else
         <img
-            src="{{ asset('images/floraon.png') }}"
+            src="{{ asset('images/default-img.png') }}"
             width="600px"
             height="600px"
         />
@@ -312,7 +312,7 @@
         />
     @else
         <img
-            src="{{ asset('images/floraon.png') }}"
+            src="{{ asset('images/default-img.png') }}"
             width="600px"
             height="600px"
         />
@@ -329,7 +329,7 @@
         />
     @else
         <img
-            src="{{ asset('images/floraon.png') }}"
+            src="{{ asset('images/default-img.png') }}"
             width="600px"
             height="600px"
         />
@@ -346,7 +346,7 @@
         />
     @else
         <img
-            src="{{ asset('images/floraon.png') }}"
+            src="{{ asset('images/default-img.png') }}"
             width="600px"
             height="600px"
         />

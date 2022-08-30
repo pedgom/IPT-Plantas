@@ -29,7 +29,7 @@
                     <!--begin::User pic-->
                     <div class="card-rounded position-relative mb-5">
                         <!--begin::Img-->
-                        <div class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded" @if($planta->hasMedia('imagem_principal')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}')" @else style="background-image: url('{{ asset('images/img-default.png') }}')" @endif></div>
+                        <div class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded" @if($planta->hasMedia('imagem_principal')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}')" @else style="background-image: url('{{ asset('images/default-img.png') }}')" @endif></div>
                         <!--end::Img-->
                         <!--begin::Play-->
                         <button class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0" data-kt-element="list-play-button">
