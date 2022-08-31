@@ -20,6 +20,8 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('base-dados', [App\Http\Controllers\BaseDadosController::class, 'index'])->name('base_dados.layout');
+
 Route::get('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
 
 Route::get('get-plantas', [App\Http\Controllers\PlantaController::class, 'getPlantas'])->name('plantas.get_plantas');
@@ -154,64 +156,79 @@ Route::get('estacaoAtributoPlantas', [App\Http\Controllers\EstacaoAtributoPlanta
 
 
 Route::resource('persistenciaAtributos', App\Http\Controllers\PersistenciaAtributoController::class);
+Route::get('persistenciaAtributos', [App\Http\Controllers\PersistenciaAtributoController::class,'index'])->name('persistencia-atributos.index');
 
 Route::resource('ordemAtributos', App\Http\Controllers\OrdemAtributoController::class);
+Route::get('ordemAtributos', [App\Http\Controllers\OrdemAtributoController::class,'index'])->name('ordem-atributos.index');
 
 Route::resource('familiaAtributos', App\Http\Controllers\FamiliaAtributoController::class);
+Route::get('familiaAtributos', [App\Http\Controllers\FamiliaAtributoController::class,'index'])->name('familia-atributos.index');
 
 Route::resource('generoAtributos', App\Http\Controllers\GeneroAtributoController::class);
+Route::get('generoAtributos', [App\Http\Controllers\GeneroAtributoController::class,'index'])->name('genero-atributos.index');
 
 
 
 Route::resource('formaArbustoAtributos', App\Http\Controllers\FormaArbustoAtributoController::class);
+Route::get('formaArbustoAtributos', [App\Http\Controllers\FormaArbustoAtributoController::class,'index'])->name('forma-arbusto-atributos.index');
 
 
 Route::resource('descritorAtributos', App\Http\Controllers\DescritorAtributoController::class);
+Route::get('descritorAtributos', [App\Http\Controllers\DescritorAtributoController::class,'index'])->name('descritor-atributos.index');
 
 
 Route::resource('usoAtributos', App\Http\Controllers\UsoAtributoController::class);
+Route::get('usoAtributos', [App\Http\Controllers\UsoAtributoController::class,'index'])->name('uso-atributos.index');
 
 
 Route::resource('situacaoEcologicaAtributos', App\Http\Controllers\SituacaoEcologicaAtributoController::class);
+Route::get('situacaoEcologicaAtributos', [App\Http\Controllers\SituacaoEcologicaAtributoController::class,'index'])->name('situacao-ecologica-atributos.index');
 
 
 Route::resource('origemAtributos', App\Http\Controllers\OrigemAtributoController::class);
+Route::get('origemAtributos', [App\Http\Controllers\OrigemAtributoController::class,'index'])->name('origem-atributos.index');
 
 
 Route::resource('origemRelacaoAtributos', App\Http\Controllers\OrigemRelacaoAtributoController::class);
+Route::get('origemRelacaoAtributos', [App\Http\Controllers\OrigemRelacaoAtributoController::class,'index'])->name('origem-relacao-atributos.index');
 
 
 Route::resource('aplicacaoAtributos', App\Http\Controllers\AplicacaoAtributoController::class);
+Route::get('aplicacaoAtributos', [App\Http\Controllers\AplicacaoAtributoController::class,'index'])->name('aplicacao-atributos.index');
 
 
 Route::resource('colecaoAtributos', App\Http\Controllers\ColecaoAtributoController::class);
+Route::get('colecaoAtributos', [App\Http\Controllers\ColecaoAtributoController::class,'index'])->name('colecao-atributos.index');
 
 
 Route::resource('especieZonaAtributos', App\Http\Controllers\EspecieZonaAtributoController::class);
+Route::get('especieZonaAtributos', [App\Http\Controllers\EspecieZonaAtributoController::class,'index'])->name('especie-zona-atributos.index');
 
 
 Route::resource('especieQuercusAtributos', App\Http\Controllers\EspecieQuercusAtributoController::class);
+Route::get('especieQuercusAtributos', [App\Http\Controllers\EspecieQuercusAtributoController::class,'index'])->name('especie-quercus-atributos.index');
 
 
 Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributoController::class);
+Route::get('formaArvoreAtributos', [App\Http\Controllers\FormaArvoreAtributoController::class,'index'])->name('forma-arvore-atributos.index');
 
 
 Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);
+Route::get('formaHerbaceaAtributos', [App\Http\Controllers\FormaHerbaceaAtributoController::class,'index'])->name('forma-herbacea-atributos.index');
 
 
 
 
 
 Route::resource('corSinteseAtributos', App\Http\Controllers\CorSinteseAtributoController::class);
+//Route::get('corSinteseAtributos', [App\Http\Controllers\CorSinteseAtributoController::class,'index'])->name('cor-sintese-atributos.index');
 
+//Route::resource('cor-sintese-atributos', App\Http\Controllers\CorSinteseAtributoController::class, ['names' => 'corSinteseAtributos'])->parameter('cor-sintese-atributos', 'corSinteseAtributo');
 
 //Route::resource('estacaoSinteseAtributos', App\Http\Controllers\EstacaoSinteseAtributoController::class);
 
 
-Route::resource('estacaoAtributos', App\Http\Controllers\EstacaoAtributoController::class);
 
-
-Route::resource('estacaoAtributoPlantas', App\Http\Controllers\EstacaoAtributoPlantaController::class);
 
 
 //Route::resource('media', App\Http\Controllers\MediaController::class);

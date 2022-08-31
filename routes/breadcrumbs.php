@@ -550,3 +550,26 @@ Breadcrumbs::for('estacao-atributo-plantas.edit', function ($trail, $model) {
     $trail->parent('estacao-atributo-plantas', $model);
     $trail->push(__('Update'), route('estacao-atributo-plantas.edit', $model));
 });
+
+
+
+
+//**************************************************************************************
+//Cor          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('corSinteseAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Cor'), route('corSinteseAtributos.index'));
+});
+Breadcrumbs::for('corSinteseAtributos.create', function ($trail) {
+    $trail->parent('corSinteseAtributos.index');
+    $trail->push(__('Create'), route('corSinteseAtributos.create'));
+});
+Breadcrumbs::for('corSinteseAtributos.show', function ($trail, $model) {
+    $trail->parent('corSinteseAtributos.index');
+    $trail->push($model->planta_id, route('corSinteseAtributos.show', $model));
+});
+Breadcrumbs::for('corSinteseAtributos.edit', function ($trail, $model) {
+    $trail->parent('corSinteseAtributos.show', $model);
+    $trail->push(__('Update'), route('corSinteseAtributos.edit', $model));
+});

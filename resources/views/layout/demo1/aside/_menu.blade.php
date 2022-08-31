@@ -63,6 +63,18 @@
         </div>
 
 
+        <div class="menu-item">
+            <a class="menu-link {{ request()->routeIs('base_dados') ? "active" : "" }}" href="{{ route('base_dados.layout') }}">
+                    <span class="menu-icon">
+                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
+
+                        <!--end::Svg Icon-->
+                    </span>
+                <span class="menu-title">{{ __('Base de Dados') }}</span>
+            </a>
+        </div>
+
+
 
 
 

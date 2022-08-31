@@ -4,7 +4,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('cor-sintese-atributos.index') }}
+        {{ Breadcrumbs::render('corSinteseAtributos.index') }}
     @endsection
     @push('firstStyles')
         <link href="{{ assetCustom('/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@ view()->share('hideSubHeader', true);
                     <div id="datatable-buttons"></div>
                     <!--end::Export-->
 
-                    <a href="{{ route('cor-sintese-atributos.create') }}" class="btn btn-primary">
+                    <a href="{{ route('corSinteseAtributos.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
                         {{ __('New Cor Sintese Atributo') }}
                     </a>
