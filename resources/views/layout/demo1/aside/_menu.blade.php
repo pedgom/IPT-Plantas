@@ -25,7 +25,7 @@
                     {!! theme()->getSvgIcon("icons/duotune/general/gen008.svg", "svg-icon-2") !!}
                     <!--end::Svg Icon-->
                 </span>
-                <span class="menu-title">{{ __('Dashboard') }}</span>
+                <span style="font-size:18px" class="menu-title">{{ __('Home') }}</span>
             </a>
         </div>
 
@@ -42,7 +42,7 @@
                             {!! theme()->getSvgIcon("icons/duotune/communication/com013.svg", "svg-icon-2") !!}
                         <!--end::Svg Icon-->
                     </span>
-                    <span class="menu-title">{{ __('Users') }}</span>
+                    <span style="font-size:18px" class="menu-title">{{ __('Users') }}</span>
                 </a>
             </div>
         @endcan
@@ -54,11 +54,11 @@
         <div class="menu-item">
             <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('home.search') }}">
                     <span class="menu-icon">
-                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-
-                        <!--end::Svg Icon-->
+                        <span class="menu-icon">
+                        <img alt="Logo" src="{{asset('images/lupa.svg')}}" class="h-20px logo"/>
                     </span>
-                <span class="menu-title">{{ __('Encontrar Plantas') }}</span>
+                    </span>
+                <span style="font-size:18px" class="menu-title">{{ __('Encontrar Plantas') }}</span>
             </a>
         </div>
 
@@ -66,11 +66,11 @@
         <div class="menu-item">
             <a class="menu-link {{ request()->routeIs('base_dados') ? "active" : "" }}" href="{{ route('base_dados.layout') }}">
                     <span class="menu-icon">
-                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-
-                        <!--end::Svg Icon-->
+                        <span class="menu-icon">
+                        <img alt="Logo" src="{{asset('images/database.svg')}}" class="h-20px logo"/>
                     </span>
-                <span class="menu-title">{{ __('Base de Dados') }}</span>
+                    </span>
+                <span style="font-size:18px" class="menu-title">{{ __('Base de Dados') }}</span>
             </a>
         </div>
 
@@ -84,23 +84,14 @@
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('plantas.index') }}">
                     <span class="menu-icon">
-                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-
-                        <!--end::Svg Icon-->
-                    </span>
-                    <span class="menu-title">{{ __('Criar Plantas') }}</span>
-                </a>
-            </div>
-            <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('demos.*') ? "active" : "" }}" href="{{ route('demos.index') }}">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen011.svg-->
-                                {!! theme()->getSvgIcon("icons/duotune/general/gen011.svg", "svg-icon-2") !!}
-                            <!--end::Svg Icon-->
-                        </span>
-                    <span class="menu-title">{{ __('Demos') }}</span>
+                        <img alt="Logo" src="{{asset('images/create_plant.svg')}}" class="h-20px logo"/>
+                    </span>
+                    </span>
+                    <span style="font-size:18px" class="menu-title">{{ __('Criar Plantas') }}</span>
                 </a>
             </div>
+
         @endcan
         @can('adminApp')
             <div class="menu-item">
@@ -115,7 +106,7 @@
                             {!! theme()->getSvgIcon("icons/duotune/general/gen019.svg", "svg-icon-2") !!}
                         <!--end::Svg Icon-->
                     </span>
-                    <span class="menu-title">{{ __('Settings') }}</span>
+                    <span style="font-size:18px" class="menu-title">{{ __('Settings') }}</span>
                 </a>
             </div>
             @can('adminFullApp')
@@ -126,7 +117,7 @@
                             {!! theme()->getSvgIcon("icons/duotune/maps/map004.svg", "svg-icon-2") !!}
                         <!--end::Svg Icon-->
                     </span>
-                        <span class="menu-title">{{ __('Translations') }}</span>
+                        <span style="font-size:18px" class="menu-title">{{ __('Translations') }}</span>
                     </a>
                 </div>
                 @if(false)
