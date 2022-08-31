@@ -97,6 +97,18 @@
 
                 </div>
 
+
+                <!-- Cor -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('cor_sintese', $planta->getAttributeLabel('cor_sintese'), ['class' => 'form-label']) !!}
+                        {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('cor_sintese') ? 'is-invalid' : '')]) !!}
+                        @error('cor_sintese')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
                 <!-- Luz -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
