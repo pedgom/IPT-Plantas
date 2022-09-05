@@ -1,9 +1,9 @@
 {!! Form::open(['route' => ['cor-sintese-atributos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('cor-sintese-atributos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('corSinteseAtributos.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
-    <a href="{{ route('cor-sintese-atributos.edit', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('corSinteseAtributos.edit', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-edit"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [

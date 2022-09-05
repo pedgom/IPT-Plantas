@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('ordem-atributos.create') }}
+        {{ Breadcrumbs::render('ordemAtributos.create') }}
     @endsection
 
     <div class="card">
@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Ordem Atributo') }}
             </h3>
         </div>
-        {!! Form::model($ordemAtributo, ['route' => ['ordem-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($ordemAtributo, ['route' => ['ordemAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('ordem_atributos.fields')
              </div>

@@ -23,9 +23,9 @@ class SituacaoEcologicaAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->addColumn('action', function ($situacaoEcologicaAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('situacao-ecologica-atributos.show', $situacaoEcologicaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('situacao-ecologica-atributos.edit', $situacaoEcologicaAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $situacaoEcologicaAtributo->id .'" data-delete-url="'. route('situacao-ecologica-atributos.destroy', $situacaoEcologicaAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('situacaoEcologicaAtributos.show', $situacaoEcologicaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('situacaoEcologicaAtributos.edit', $situacaoEcologicaAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $situacaoEcologicaAtributo->id .'" data-delete-url="'. route('situacaoEcologicaAtributos.destroy', $situacaoEcologicaAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')

@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('persistencia-atributos.create') }}
+        {{ Breadcrumbs::render('persistenciaAtributos.create') }}
     @endsection
 
     <div class="card">
@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Persistencia Atributo') }}
             </h3>
         </div>
-        {!! Form::model($persistenciaAtributo, ['route' => ['persistencia-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($persistenciaAtributo, ['route' => ['persistenciaAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('persistencia_atributos.fields')
              </div>

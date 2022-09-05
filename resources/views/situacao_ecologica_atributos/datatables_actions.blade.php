@@ -1,9 +1,9 @@
 {!! Form::open(['route' => ['situacao-ecologica-atributos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('situacao-ecologica-atributos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('situacaoEcologicaAtributos.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
-    <a href="{{ route('situacao-ecologica-atributos.edit', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('situacaoEcologicaAtributos.edit', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-edit"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [

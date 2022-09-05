@@ -155,34 +155,17 @@ Route::get('estacaoAtributoPlantas', [App\Http\Controllers\EstacaoAtributoPlanta
 
 
 
-Route::resource('persistenciaAtributos', App\Http\Controllers\PersistenciaAtributoController::class);
-Route::get('persistenciaAtributos', [App\Http\Controllers\PersistenciaAtributoController::class,'index'])->name('persistencia-atributos.index');
-
-Route::resource('ordemAtributos', App\Http\Controllers\OrdemAtributoController::class);
-Route::get('ordemAtributos', [App\Http\Controllers\OrdemAtributoController::class,'index'])->name('ordem-atributos.index');
-
-Route::resource('familiaAtributos', App\Http\Controllers\FamiliaAtributoController::class);
-Route::get('familiaAtributos', [App\Http\Controllers\FamiliaAtributoController::class,'index'])->name('familia-atributos.index');
-
-Route::resource('generoAtributos', App\Http\Controllers\GeneroAtributoController::class);
-Route::get('generoAtributos', [App\Http\Controllers\GeneroAtributoController::class,'index'])->name('genero-atributos.index');
 
 
-
-Route::resource('formaArbustoAtributos', App\Http\Controllers\FormaArbustoAtributoController::class);
-Route::get('formaArbustoAtributos', [App\Http\Controllers\FormaArbustoAtributoController::class,'index'])->name('forma-arbusto-atributos.index');
 
 
 Route::resource('descritorAtributos', App\Http\Controllers\DescritorAtributoController::class);
 Route::get('descritorAtributos', [App\Http\Controllers\DescritorAtributoController::class,'index'])->name('descritor-atributos.index');
 
 
-Route::resource('usoAtributos', App\Http\Controllers\UsoAtributoController::class);
-Route::get('usoAtributos', [App\Http\Controllers\UsoAtributoController::class,'index'])->name('uso-atributos.index');
 
 
 Route::resource('situacaoEcologicaAtributos', App\Http\Controllers\SituacaoEcologicaAtributoController::class);
-Route::get('situacaoEcologicaAtributos', [App\Http\Controllers\SituacaoEcologicaAtributoController::class,'index'])->name('situacao-ecologica-atributos.index');
 
 
 Route::resource('origemAtributos', App\Http\Controllers\OrigemAtributoController::class);
@@ -190,7 +173,6 @@ Route::get('origemAtributos', [App\Http\Controllers\OrigemAtributoController::cl
 
 
 Route::resource('origemRelacaoAtributos', App\Http\Controllers\OrigemRelacaoAtributoController::class);
-Route::get('origemRelacaoAtributos', [App\Http\Controllers\OrigemRelacaoAtributoController::class,'index'])->name('origem-relacao-atributos.index');
 
 
 Route::resource('aplicacaoAtributos', App\Http\Controllers\AplicacaoAtributoController::class);
@@ -210,17 +192,24 @@ Route::get('especieQuercusAtributos', [App\Http\Controllers\EspecieQuercusAtribu
 
 
 Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributoController::class);
-Route::get('formaArvoreAtributos', [App\Http\Controllers\FormaArvoreAtributoController::class,'index'])->name('forma-arvore-atributos.index');
-
-
-Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);
-Route::get('formaHerbaceaAtributos', [App\Http\Controllers\FormaHerbaceaAtributoController::class,'index'])->name('forma-herbacea-atributos.index');
 
 
 
 
 
+Route::resource('familiaAtributos', App\Http\Controllers\FamiliaAtributoController::class);
+Route::resource('formaArbustoAtributos', App\Http\Controllers\FormaArbustoAtributoController::class);
 Route::resource('corSinteseAtributos', App\Http\Controllers\CorSinteseAtributoController::class);
+Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributoController::class);
+Route::resource('formaHerbaceaAtributos', App\Http\Controllers\FormaHerbaceaAtributoController::class);
+Route::resource('generoAtributos', App\Http\Controllers\GeneroAtributoController::class);
+Route::resource('ordemAtributos', App\Http\Controllers\OrdemAtributoController::class);
+Route::resource('origemRelacaoAtributos', App\Http\Controllers\OrigemRelacaoAtributoController::class);
+Route::resource('persistenciaAtributos', App\Http\Controllers\PersistenciaAtributoController::class);
+Route::resource('situacaoEcologicaAtributos', App\Http\Controllers\SituacaoEcologicaAtributoController::class);
+Route::resource('usoAtributos', App\Http\Controllers\UsoAtributoController::class);
+
+
 //Route::get('corSinteseAtributos', [App\Http\Controllers\CorSinteseAtributoController::class,'index'])->name('cor-sintese-atributos.index');
 
 //Route::resource('cor-sintese-atributos', App\Http\Controllers\CorSinteseAtributoController::class, ['names' => 'corSinteseAtributos'])->parameter('cor-sintese-atributos', 'corSinteseAtributo');

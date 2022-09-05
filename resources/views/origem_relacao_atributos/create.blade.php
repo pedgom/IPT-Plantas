@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('origem-relacao-atributos.create') }}
+        {{ Breadcrumbs::render('origemRelacaoAtributos.create') }}
     @endsection
 
     <div class="card">
@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Origem Relacao Atributo') }}
             </h3>
         </div>
-        {!! Form::model($origemRelacaoAtributo, ['route' => ['origem-relacao-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($origemRelacaoAtributo, ['route' => ['origemRelacaoAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('origem_relacao_atributos.fields')
              </div>

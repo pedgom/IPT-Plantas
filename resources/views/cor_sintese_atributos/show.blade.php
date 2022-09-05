@@ -8,7 +8,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('cor-sintese-atributos.show', $corSinteseAtributo) }}
+        {{ Breadcrumbs::render('corSinteseAtributos.show', $corSinteseAtributo) }}
     @endsection
 
     <div class="card">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $corSinteseAtributo->id }}
             </h3>
             <div class="card-toolbar">
-                <a href="{{ route('cor-sintese-atributos.edit', $corSinteseAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
+                <a href="{{ route('corSinteseAtributos.edit', $corSinteseAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
                     {!! theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-3") !!}
                     {{ __('Update') }}
                 </a>
@@ -25,7 +25,7 @@ view()->share('hideSubHeader', true);
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
                 </button>
-                {!! Form::open(['route' => ['cor-sintese-atributos.destroy', $corSinteseAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
+                {!! Form::open(['route' => ['corSinteseAtributos.destroy', $corSinteseAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

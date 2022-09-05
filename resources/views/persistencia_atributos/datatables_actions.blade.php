@@ -1,9 +1,9 @@
 {!! Form::open(['route' => ['persistencia-atributos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('persistencia-atributos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('persistenciaAtributos.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
-    <a href="{{ route('persistencia-atributos.edit', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('persistenciaAtributos.edit', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-edit"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [

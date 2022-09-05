@@ -42,9 +42,9 @@
                     <!--begin::Info-->
                     <div class="m-0">
                         <!--begin::Title-->
-                        <a href="/plantas/{{$planta->id}}" class="text-gray-800 text-hover-primary fs-3 fw-bolder d-block mb-2">{{$planta->nome_comum}}</a>
+                        <a href="/plantas/{{$planta->id}}" class="text-gray-800 text-hover-primary fs-3 fw-bolder d-block mb-2">{{$planta->nome_botanico}}</a>
                         <!--end::Title-->
-                        <span class="fw-bolder fs-6 text-gray-400 d-block lh-1">{{$planta->nome_botanico}}</span>
+                        <span class="fw-bolder fs-6 text-gray-400 d-block lh-1">{{$planta->nome_comum}}</span>
                     </div>
                     <!--end::Info-->
                 </div>

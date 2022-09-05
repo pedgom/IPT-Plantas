@@ -1,9 +1,9 @@
 {!! Form::open(['route' => ['origem-relacao-atributos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('origem-relacao-atributos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('origemRelacaoAtributos.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
-    <a href="{{ route('origem-relacao-atributos.edit', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('origemRelacaoAtributos.edit', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-edit"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [

@@ -22,10 +22,13 @@ class OrdemAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('ordem', function($ordemAtributo){
+                return $ordemAtributo->getOrdemLabelAttribute();
+            })
             ->addColumn('action', function ($ordemAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('ordem-atributos.show', $ordemAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('ordem-atributos.edit', $ordemAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $ordemAtributo->id .'" data-delete-url="'. route('ordem-atributos.destroy', $ordemAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('ordemAtributos.show', $ordemAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('ordemAtributos.edit', $ordemAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $ordemAtributo->id .'" data-delete-url="'. route('ordemAtributos.destroy', $ordemAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')
@@ -84,7 +87,7 @@ class OrdemAtributoDataTable extends DataTable
     {
         $model = new OrdemAtributo();
         return [
-            Column::make('name')->title($model->getAttributeLabel('name')),
+            Column::make('ordem')->title($model->getAttributeLabel('ordem')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

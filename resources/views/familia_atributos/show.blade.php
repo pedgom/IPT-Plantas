@@ -8,7 +8,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('familia-atributos.show', $familiaAtributo) }}
+        {{ Breadcrumbs::render('familiaAtributos.show', $familiaAtributo) }}
     @endsection
 
     <div class="card">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $familiaAtributo->id }}
             </h3>
             <div class="card-toolbar">
-                <a href="{{ route('familia-atributos.edit', $familiaAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
+                <a href="{{ route('familiaAtributos.edit', $familiaAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
                     {!! theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-3") !!}
                     {{ __('Update') }}
                 </a>
@@ -25,7 +25,7 @@ view()->share('hideSubHeader', true);
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
                 </button>
-                {!! Form::open(['route' => ['familia-atributos.destroy', $familiaAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
+                {!! Form::open(['route' => ['familiaAtributos.destroy', $familiaAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

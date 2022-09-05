@@ -8,7 +8,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('persistencia-atributos.show', $persistenciaAtributo) }}
+        {{ Breadcrumbs::render('persistenciaAtributos.show', $persistenciaAtributo) }}
     @endsection
 
     <div class="card">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $persistenciaAtributo->id }}
             </h3>
             <div class="card-toolbar">
-                <a href="{{ route('persistencia-atributos.edit', $persistenciaAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
+                <a href="{{ route('persistenciaAtributos.edit', $persistenciaAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
                     {!! theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-3") !!}
                     {{ __('Update') }}
                 </a>
@@ -25,7 +25,7 @@ view()->share('hideSubHeader', true);
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
                 </button>
-                {!! Form::open(['route' => ['persistencia-atributos.destroy', $persistenciaAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
+                {!! Form::open(['route' => ['persistenciaAtributos.destroy', $persistenciaAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

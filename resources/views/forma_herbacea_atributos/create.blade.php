@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('forma-herbacea-atributos.create') }}
+        {{ Breadcrumbs::render('formaHerbaceaAtributos.create') }}
     @endsection
 
     <div class="card">
@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Forma Herbacea Atributo') }}
             </h3>
         </div>
-        {!! Form::model($formaHerbaceaAtributo, ['route' => ['forma-herbacea-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($formaHerbaceaAtributo, ['route' => ['formaHerbaceaAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('forma_herbacea_atributos.fields')
              </div>

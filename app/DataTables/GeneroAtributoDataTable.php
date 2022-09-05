@@ -22,10 +22,13 @@ class GeneroAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('genero', function($generoAtributo){
+                return $generoAtributo->getgeneroLabelAttribute();
+            })
             ->addColumn('action', function ($generoAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('genero-atributos.show', $generoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('genero-atributos.edit', $generoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $generoAtributo->id .'" data-delete-url="'. route('genero-atributos.destroy', $generoAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('generoAtributos.show', $generoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('generoAtributos.edit', $generoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $generoAtributo->id .'" data-delete-url="'. route('generoAtributos.destroy', $generoAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')
@@ -84,7 +87,7 @@ class GeneroAtributoDataTable extends DataTable
     {
         $model = new GeneroAtributo();
         return [
-            Column::make('name')->title($model->getAttributeLabel('name')),
+            Column::make('genero')->title($model->getAttributeLabel('genero')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

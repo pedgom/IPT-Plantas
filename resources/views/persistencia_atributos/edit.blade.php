@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('persistencia-atributos.edit', $persistenciaAtributo) }}
+        {{ Breadcrumbs::render('persistenciaAtributos.edit', $persistenciaAtributo) }}
     @endsection
     <div class="card">
         <div class="card-header">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $persistenciaAtributo->id }}
             </h3>
         </div>
-        {!! Form::model($persistenciaAtributo, ['route' => ['persistencia-atributos.update', $persistenciaAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($persistenciaAtributo, ['route' => ['persistenciaAtributos.update', $persistenciaAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('persistencia_atributos.fields')
              </div>

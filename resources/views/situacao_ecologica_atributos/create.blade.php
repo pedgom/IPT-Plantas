@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('situacao-ecologica-atributos.create') }}
+        {{ Breadcrumbs::render('situacaoEcologicaAtributos.create') }}
     @endsection
 
     <div class="card">
@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Situacao Ecologica Atributo') }}
             </h3>
         </div>
-        {!! Form::model($situacaoEcologicaAtributo, ['route' => ['situacao-ecologica-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($situacaoEcologicaAtributo, ['route' => ['situacaoEcologicaAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('situacao_ecologica_atributos.fields')
              </div>

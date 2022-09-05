@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('cor-sintese-atributos.create') }}
+        {{ Breadcrumbs::render('corSinteseAtributos.create') }}
     @endsection
 
     <div class="card">
@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Cor Sintese Atributo') }}
             </h3>
         </div>
-        {!! Form::model($corSinteseAtributo, ['route' => ['cor-sintese-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($corSinteseAtributo, ['route' => ['corSinteseAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('cor_sintese_atributos.fields')
              </div>

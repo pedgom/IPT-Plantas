@@ -8,7 +8,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('situacao-ecologica-atributos.show', $situacaoEcologicaAtributo) }}
+        {{ Breadcrumbs::render('situacaoEcologicaAtributos.show', $situacaoEcologicaAtributo) }}
     @endsection
 
     <div class="card">

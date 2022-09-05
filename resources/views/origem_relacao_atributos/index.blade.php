@@ -4,7 +4,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('origem-relacao-atributos.index') }}
+        {{ Breadcrumbs::render('origemRelacaoAtributos.index') }}
     @endsection
     @push('firstStyles')
         <link href="{{ assetCustom('/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@ view()->share('hideSubHeader', true);
                     <div id="datatable-buttons"></div>
                     <!--end::Export-->
 
-                    <a href="{{ route('origem-relacao-atributos.create') }}" class="btn btn-primary">
+                    <a href="{{ route('origemRelacaoAtributos.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
                         {{ __('New Origem Relacao Atributo') }}
                     </a>

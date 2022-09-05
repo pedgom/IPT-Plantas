@@ -4,7 +4,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('persistencia-atributos.index') }}
+        {{ Breadcrumbs::render('persistenciaAtributos.index') }}
     @endsection
     @push('firstStyles')
         <link href="{{ assetCustom('/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@ view()->share('hideSubHeader', true);
                     <div id="datatable-buttons"></div>
                     <!--end::Export-->
 
-                    <a href="{{ route('persistencia-atributos.create') }}" class="btn btn-primary">
+                    <a href="{{ route('persistenciaAtributos.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
                         {{ __('New Persistencia Atributo') }}
                     </a>

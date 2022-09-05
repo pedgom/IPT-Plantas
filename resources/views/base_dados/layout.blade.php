@@ -31,7 +31,7 @@ view()->share('hideToolbar', true);
 
                         <!--end::Svg Icon-->
                     </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Agua') }}</span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Água') }}</span>
                 </a>
             </div>
 
@@ -93,7 +93,7 @@ view()->share('hideToolbar', true);
 
                         <!--end::Svg Icon-->
                     </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Diametro') }}</span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Diâmetro') }}</span>
                 </a>
             </div>
 
@@ -105,7 +105,7 @@ view()->share('hideToolbar', true);
 
                         <!--end::Svg Icon-->
                     </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Especie-Quercus') }}</span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Espécie-Quercus') }}</span>
                 </a>
             </div>
 
@@ -117,7 +117,7 @@ view()->share('hideToolbar', true);
 
                         <!--end::Svg Icon-->
                     </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Especie-Zona') }}</span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Espécie-Zona') }}</span>
                 </a>
             </div>
 
@@ -128,23 +128,23 @@ view()->share('hideToolbar', true);
 
                         <!--end::Svg Icon-->
                     </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Estacao') }}</span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Estação') }}</span>
                 </a>
             </div>
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('familiaAtributos') ? "active" : "index" }}" href="{{ route('familia-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('familiaAtributos') ? "active" : "index" }}" href="{{ route('familiaAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
                         <!--end::Svg Icon-->
                     </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Familia') }}</span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Família') }}</span>
                 </a>
             </div>
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('formaArbustoAtributos') ? "active" : "index" }}" href="{{ route('forma-arbusto-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('formaArbustoAtributos') ? "active" : "index" }}" href="{{ route('formaArbustoAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -155,7 +155,7 @@ view()->share('hideToolbar', true);
             </div>
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('formaArvoreAtributos') ? "active" : "index" }}" href="{{ route('forma-arvore-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('formaArvoreAtributos') ? "active" : "index" }}" href="{{ route('formaArvoreAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -167,7 +167,7 @@ view()->share('hideToolbar', true);
 
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('formaHerbaceaAtributos') ? "active" : "index" }}" href="{{ route('forma-herbacea-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('formaHerbaceaAtributos') ? "active" : "index" }}" href="{{ route('formaHerbaceaAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -179,7 +179,7 @@ view()->share('hideToolbar', true);
 
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('generoAtributos') ? "active" : "index" }}" href="{{ route('genero-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('generoAtributos') ? "active" : "index" }}" href="{{ route('generoAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -203,7 +203,7 @@ view()->share('hideToolbar', true);
 
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('ordemAtributos') ? "active" : "index" }}" href="{{ route('ordem-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('ordemAtributos') ? "active" : "index" }}" href="{{ route('ordemAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -227,7 +227,19 @@ view()->share('hideToolbar', true);
 
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('persistenciaAtributos') ? "active" : "index" }}" href="{{ route('persistencia-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('origemRelacaoAtributos') ? "active" : "index" }}" href="{{ route('origemRelacaoAtributos.index') }}">
+                    <span class="menu-icon">
+                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
+
+                        <!--end::Svg Icon-->
+                    </span>
+                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Origem Relação') }}</span>
+                </a>
+            </div>
+
+
+            <div class="menu-item">
+                <a class="menu-link {{ request()->routeIs('persistenciaAtributos') ? "active" : "index" }}" href="{{ route('persistenciaAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -263,7 +275,7 @@ view()->share('hideToolbar', true);
 
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('situacaoEcologiaAtributos') ? "active" : "index" }}" href="{{ route('situacao-ecologica-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('situacaoEcologiaAtributos') ? "active" : "index" }}" href="{{ route('situacaoEcologicaAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
@@ -286,7 +298,7 @@ view()->share('hideToolbar', true);
 
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('usoAtributos') ? "active" : "index" }}" href="{{ route('uso-atributos.index') }}">
+                <a class="menu-link {{ request()->routeIs('usoAtributos') ? "active" : "index" }}" href="{{ route('usoAtributos.index') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 

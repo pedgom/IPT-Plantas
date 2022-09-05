@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('cor-sintese-atributos.edit', $corSinteseAtributo) }}
+        {{ Breadcrumbs::render('corSinteseAtributos.edit', $corSinteseAtributo) }}
     @endsection
     <div class="card">
         <div class="card-header">

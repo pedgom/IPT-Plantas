@@ -22,10 +22,13 @@ class FormaArvoreAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('forma_arvore', function($formaArvoreAtributo){
+                return $formaArvoreAtributo->getFormaArvoreLabelAttribute();
+            })
             ->addColumn('action', function ($formaArvoreAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('forma-arvore-atributos.show', $formaArvoreAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('forma-arvore-atributos.edit', $formaArvoreAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $formaArvoreAtributo->id .'" data-delete-url="'. route('forma-arvore-atributos.destroy', $formaArvoreAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('formaArvoreAtributos.show', $formaArvoreAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('formaArvoreAtributos.edit', $formaArvoreAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $formaArvoreAtributo->id .'" data-delete-url="'. route('formaArvoreAtributos.destroy', $formaArvoreAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')

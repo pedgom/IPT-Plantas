@@ -22,10 +22,13 @@ class FamiliaAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('familia', function($familiaAtributo){
+                return $familiaAtributo->getFamiliaLabelAttribute();
+            })
             ->addColumn('action', function ($familiaAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('familia-atributos.show', $familiaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('familia-atributos.edit', $familiaAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $familiaAtributo->id .'" data-delete-url="'. route('familia-atributos.destroy', $familiaAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('familiaAtributos.show', $familiaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('familiaAtributos.edit', $familiaAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $familiaAtributo->id .'" data-delete-url="'. route('familiaAtributos.destroy', $familiaAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')
@@ -84,7 +87,7 @@ class FamiliaAtributoDataTable extends DataTable
     {
         $model = new FamiliaAtributo();
         return [
-            Column::make('name')->title($model->getAttributeLabel('name')),
+            Column::make('familia')->title($model->getAttributeLabel('familia')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

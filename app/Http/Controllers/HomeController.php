@@ -114,6 +114,8 @@ class HomeController extends Controller
         $luz=$request->luz ?? null;
         $solo=$request->solo ?? null;
         $estacao=$request->estacao ?? null;
+        $corSintese=$request->cor_sintese ?? null;
+        $familia=$request->familia ?? null;
         $plantas = [];
         $planta = new Planta();
         $planta->loadDefaultValues();
@@ -163,6 +165,27 @@ class HomeController extends Controller
                 $q->whereIn('estacao_atributos.id',$estacao);
             });
         }
+
+
+        if(!empty($corSintese)){
+            $query=$query->whereHas('corSinteseAtributo',function($q) use($corSintese){
+                $q->where('cor_sintese',$corSintese);
+            });
+        }
+
+        if(!empty($familia)){
+            $query=$query->whereHas('familiaAtributo',function($q) use($familia){
+                $q->where('familia',$familia);
+            });
+        }
+
+
+
+
+
+
+
+
 
 
         $plantas =$query->orderBy('id', 'desc')->paginate(12);

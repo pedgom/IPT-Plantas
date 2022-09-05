@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('origem-relacao-atributos.edit', $origemRelacaoAtributo) }}
+        {{ Breadcrumbs::render('origemRelacaoAtributos.edit', $origemRelacaoAtributo) }}
     @endsection
     <div class="card">
         <div class="card-header">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $origemRelacaoAtributo->id }}
             </h3>
         </div>
-        {!! Form::model($origemRelacaoAtributo, ['route' => ['origem-relacao-atributos.update', $origemRelacaoAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($origemRelacaoAtributo, ['route' => ['origemRelacaoAtributos.update', $origemRelacaoAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('origem_relacao_atributos.fields')
              </div>

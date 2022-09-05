@@ -23,9 +23,9 @@ class PersistenciaAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->addColumn('action', function ($persistenciaAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('persistencia-atributos.show', $persistenciaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('persistencia-atributos.edit', $persistenciaAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $persistenciaAtributo->id .'" data-delete-url="'. route('persistencia-atributos.destroy', $persistenciaAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('persistenciaAtributos.show', $persistenciaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('persistenciaAtributos.edit', $persistenciaAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $persistenciaAtributo->id .'" data-delete-url="'. route('persistenciaAtributos.destroy', $persistenciaAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')
@@ -84,7 +84,7 @@ class PersistenciaAtributoDataTable extends DataTable
     {
         $model = new PersistenciaAtributo();
         return [
-            Column::make('name')->title($model->getAttributeLabel('name')),
+            Column::make('persistencia')->title($model->getAttributeLabel('persistencia')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

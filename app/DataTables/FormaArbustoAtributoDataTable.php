@@ -22,10 +22,13 @@ class FormaArbustoAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('forma_arbusto', function($formaArbustoAtributo){
+                return $formaArbustoAtributo->getFormaArbustoLabelAttribute();
+            })
             ->addColumn('action', function ($formaArbustoAtributo) {
-                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('forma-arbusto-atributos.show', $formaArbustoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
-                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('forma-arbusto-atributos.edit', $formaArbustoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
-                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $formaArbustoAtributo->id .'" data-delete-url="'. route('forma-arbusto-atributos.destroy', $formaArbustoAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+                return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('formaArbustoAtributos.show', $formaArbustoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
+                        <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('formaArbustoAtributos.edit', $formaArbustoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+                        <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $formaArbustoAtributo->id .'" data-delete-url="'. route('formaArbustoAtributos.destroy', $formaArbustoAtributo) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
             ->setRowClass('text-gray-600 fw-bold');
             //->editColumn('type', '{{ $this->typeLabel }}')
@@ -84,7 +87,7 @@ class FormaArbustoAtributoDataTable extends DataTable
     {
         $model = new FormaArbustoAtributo();
         return [
-            Column::make('name')->title($model->getAttributeLabel('name')),
+            Column::make('forma_arbusto')->title($model->getAttributeLabel('forma_arbusto')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

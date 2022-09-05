@@ -8,7 +8,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('forma-arbusto-atributos.show', $formaArbustoAtributo) }}
+        {{ Breadcrumbs::render('formaArbustoAtributos.show', $formaArbustoAtributo) }}
     @endsection
 
     <div class="card">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $formaArbustoAtributo->id }}
             </h3>
             <div class="card-toolbar">
-                <a href="{{ route('forma-arbusto-atributos.edit', $formaArbustoAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
+                <a href="{{ route('formaArbustoAtributos.edit', $formaArbustoAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
                     {!! theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-3") !!}
                     {{ __('Update') }}
                 </a>
@@ -25,7 +25,7 @@ view()->share('hideSubHeader', true);
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
                 </button>
-                {!! Form::open(['route' => ['forma-arbusto-atributos.destroy', $formaArbustoAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
+                {!! Form::open(['route' => ['formaArbustoAtributos.destroy', $formaArbustoAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

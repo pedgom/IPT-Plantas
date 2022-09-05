@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('forma-arbusto-atributos.edit', $formaArbustoAtributo) }}
+        {{ Breadcrumbs::render('formaArbustoAtributos.edit', $formaArbustoAtributo) }}
     @endsection
     <div class="card">
         <div class="card-header">

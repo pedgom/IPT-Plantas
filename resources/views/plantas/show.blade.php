@@ -14,7 +14,7 @@ view()->share('hideSubHeader', true);
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
-                {{ $planta->id }}
+                {{ $planta->nome_comum }}
             </h3>
             <div class="card-toolbar">
                 <a href="{{ route('plantas.edit', $planta) }}" class="btn btn-sm btn-flex btn-light-primary me-2">

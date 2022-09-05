@@ -4,7 +4,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('forma-arbusto-atributos.index') }}
+        {{ Breadcrumbs::render('formaArbustoAtributos.index') }}
     @endsection
     @push('firstStyles')
         <link href="{{ assetCustom('/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@ view()->share('hideSubHeader', true);
                     <div id="datatable-buttons"></div>
                     <!--end::Export-->
 
-                    <a href="{{ route('forma-arbusto-atributos.create') }}" class="btn btn-primary">
+                    <a href="{{ route('formaArbustoAtributos.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
                         {{ __('New Forma Arbusto Atributo') }}
                     </a>

@@ -573,3 +573,216 @@ Breadcrumbs::for('corSinteseAtributos.edit', function ($trail, $model) {
     $trail->parent('corSinteseAtributos.show', $model);
     $trail->push(__('Update'), route('corSinteseAtributos.edit', $model));
 });
+
+
+//**************************************************************************************
+//Familia          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('familiaAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Familia'), route('familiaAtributos.index'));
+});
+Breadcrumbs::for('familiaAtributos.create', function ($trail) {
+    $trail->parent('familiaAtributos.index');
+    $trail->push(__('Create'), route('familiaAtributos.create'));
+});
+Breadcrumbs::for('familiaAtributos.show', function ($trail, $model) {
+    $trail->parent('familiaAtributos.index');
+    $trail->push($model->planta_id, route('familiaAtributos.show', $model));
+});
+Breadcrumbs::for('familiaAtributos.edit', function ($trail, $model) {
+    $trail->parent('familiaAtributos.show', $model);
+    $trail->push(__('Update'), route('familiaAtributos.edit', $model));
+});
+
+
+//**************************************************************************************
+//Forma Arbusto          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('formaArbustoAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Forma_Arbusto'), route('formaArbustoAtributos.index'));
+});
+Breadcrumbs::for('formaArbustoAtributos.create', function ($trail) {
+    $trail->parent('formaArbustoAtributos.index');
+    $trail->push(__('Create'), route('formaArbustoAtributos.create'));
+});
+Breadcrumbs::for('formaArbustoAtributos.show', function ($trail, $model) {
+    $trail->parent('formaArbustoAtributos.index');
+    $trail->push($model->planta_id, route('formaArbustoAtributos.show', $model));
+});
+Breadcrumbs::for('formaArbustoAtributos.edit', function ($trail, $model) {
+    $trail->parent('formaArbustoAtributos.show', $model);
+    $trail->push(__('Update'), route('formaArbustoAtributos.edit', $model));
+});
+
+
+
+//**************************************************************************************
+//Forma Arvore          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('formaArvoreAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Forma_Arvore'), route('formaArvoreAtributos.index'));
+});
+Breadcrumbs::for('formaArvoreAtributos.create', function ($trail) {
+    $trail->parent('formaArvoreAtributos.index');
+    $trail->push(__('Create'), route('formaArvoreAtributos.create'));
+});
+Breadcrumbs::for('formaArvoreAtributos.show', function ($trail, $model) {
+    $trail->parent('formaArvoreAtributos.index');
+    $trail->push($model->planta_id, route('formaArvoreAtributos.show', $model));
+});
+Breadcrumbs::for('formaArvoreAtributos.edit', function ($trail, $model) {
+    $trail->parent('formaArvoreAtributos.show', $model);
+    $trail->push(__('Update'), route('formaArvoreAtributos.edit', $model));
+});
+
+
+//**************************************************************************************
+//Forma Herbacea          ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('formaHerbaceaAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Forma_Herbacea'), route('formaHerbaceaAtributos.index'));
+});
+Breadcrumbs::for('formaHerbaceaAtributos.create', function ($trail) {
+    $trail->parent('formaHerbaceaAtributos.index');
+    $trail->push(__('Create'), route('formaHerbaceaAtributos.create'));
+});
+Breadcrumbs::for('formaHerbaceaAtributos.show', function ($trail, $model) {
+    $trail->parent('formaHerbaceaAtributos.index');
+    $trail->push($model->planta_id, route('formaHerbaceaAtributos.show', $model));
+});
+Breadcrumbs::for('formaHerbaceaAtributos.edit', function ($trail, $model) {
+    $trail->parent('formaHerbaceaAtributos.show', $model);
+    $trail->push(__('Update'), route('formaHerbaceaAtributos.edit', $model));
+});
+
+
+
+//**************************************************************************************
+//Genero         ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('generoAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Genero'), route('generoAtributos.index'));
+});
+Breadcrumbs::for('generoAtributos.create', function ($trail) {
+    $trail->parent('generoAtributos.index');
+    $trail->push(__('Create'), route('generoAtributos.create'));
+});
+Breadcrumbs::for('generoAtributos.show', function ($trail, $model) {
+    $trail->parent('generoAtributos.index');
+    $trail->push($model->planta_id, route('generoAtributos.show', $model));
+});
+Breadcrumbs::for('generoAtributos.edit', function ($trail, $model) {
+    $trail->parent('generoAtributos.show', $model);
+    $trail->push(__('Update'), route('generoAtributos.edit', $model));
+});
+
+
+
+//**************************************************************************************
+//Genero         ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('ordemAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Ordem'), route('ordemAtributos.index'));
+});
+Breadcrumbs::for('ordemAtributos.create', function ($trail) {
+    $trail->parent('ordemAtributos.index');
+    $trail->push(__('Create'), route('ordemAtributos.create'));
+});
+Breadcrumbs::for('ordemAtributos.show', function ($trail, $model) {
+    $trail->parent('ordemAtributos.index');
+    $trail->push($model->planta_id, route('ordemAtributos.show', $model));
+});
+Breadcrumbs::for('ordemAtributos.edit', function ($trail, $model) {
+    $trail->parent('ordemAtributos.show', $model);
+    $trail->push(__('Update'), route('ordemAtributos.edit', $model));
+});
+
+
+//**************************************************************************************
+//Origem Relacao         ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('origemRelacaoAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Origem Relação'), route('origemRelacaoAtributos.index'));
+});
+Breadcrumbs::for('origemRelacaoAtributos.create', function ($trail) {
+    $trail->parent('origemRelacaoAtributos.index');
+    $trail->push(__('Create'), route('origemRelacaoAtributos.create'));
+});
+Breadcrumbs::for('origemRelacaoAtributos.show', function ($trail, $model) {
+    $trail->parent('origemRelacaoAtributos.index');
+    $trail->push($model->planta_id, route('origemRelacaoAtributos.show', $model));
+});
+Breadcrumbs::for('origemRelacaoAtributos.edit', function ($trail, $model) {
+    $trail->parent('origemRelacaoAtributos.show', $model);
+    $trail->push(__('Update'), route('origemRelacaoAtributos.edit', $model));
+});
+
+
+//**************************************************************************************
+//Persistencia        ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('persistenciaAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Persistencia'), route('persistenciaAtributos.index'));
+});
+Breadcrumbs::for('persistenciaAtributos.create', function ($trail) {
+    $trail->parent('persistenciaAtributos.index');
+    $trail->push(__('Create'), route('persistenciaAtributos.create'));
+});
+Breadcrumbs::for('persistenciaAtributos.show', function ($trail, $model) {
+    $trail->parent('persistenciaAtributos.index');
+    $trail->push($model->planta_id, route('persistenciaAtributos.show', $model));
+});
+Breadcrumbs::for('persistenciaAtributos.edit', function ($trail, $model) {
+    $trail->parent('persistenciaAtributos.show', $model);
+    $trail->push(__('Update'), route('persistenciaAtributos.edit', $model));
+});
+
+
+//**************************************************************************************
+//Situaçao Ecologica        ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('situacaoEcologicaAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Situacao Ecologica'), route('situacaoEcologicaAtributos.index'));
+});
+Breadcrumbs::for('situacaoEcologicaAtributos.create', function ($trail) {
+    $trail->parent('situacaoEcologicaAtributos.index');
+    $trail->push(__('Create'), route('situacaoEcologicaAtributos.create'));
+});
+Breadcrumbs::for('situacaoEcologicaAtributos.show', function ($trail, $model) {
+    $trail->parent('situacaoEcologicaAtributos.index');
+    $trail->push($model->planta_id, route('situacaoEcologicaAtributos.show', $model));
+});
+Breadcrumbs::for('situacaoEcologicaAtributos.edit', function ($trail, $model) {
+    $trail->parent('situacaoEcologicaAtributos.show', $model);
+    $trail->push(__('Update'), route('situacaoEcologicaAtributos.edit', $model));
+});
+
+
+//**************************************************************************************
+//Situaçao Ecologica        ************************************************************************
+//**************************************************************************************
+Breadcrumbs::for('usoAtributos.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('Uso'), route('usoAtributos.index'));
+});
+Breadcrumbs::for('usoAtributos.create', function ($trail) {
+    $trail->parent('usoAtributos.index');
+    $trail->push(__('Create'), route('usoAtributos.create'));
+});
+Breadcrumbs::for('usoAtributos.show', function ($trail, $model) {
+    $trail->parent('usoAtributos.index');
+    $trail->push($model->planta_id, route('usoAtributos.show', $model));
+});
+Breadcrumbs::for('usoAtributos.edit', function ($trail, $model) {
+    $trail->parent('usoAtributos.show', $model);
+    $trail->push(__('Update'), route('usoAtributos.edit', $model));
+});

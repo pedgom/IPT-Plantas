@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('forma-arvore-atributos.edit', $formaArvoreAtributo) }}
+        {{ Breadcrumbs::render('formaArbustoAtributos.edit', $formaArvoreAtributo) }}
     @endsection
     <div class="card">
         <div class="card-header">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $formaArvoreAtributo->id }}
             </h3>
         </div>
-        {!! Form::model($formaArvoreAtributo, ['route' => ['forma-arvore-atributos.update', $formaArvoreAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($formaArvoreAtributo, ['route' => ['formaArbustoAtributos.update', $formaArvoreAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('forma_arvore_atributos.fields')
              </div>

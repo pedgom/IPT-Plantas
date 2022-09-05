@@ -1,7 +1,7 @@
 <!-- Abreviatura Field -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('abreviatura') }}</label>
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('nome_botanico') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Abreviatura') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Nome Botânico') }}</label>
     <h5 class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->abreviatura }}</span>
 
@@ -34,7 +34,7 @@
 
 <!-- Notas Field -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('notas') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Notas') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->notas }}</span>
     </div>
@@ -43,7 +43,7 @@
 
 <!-- Curiosidades Field -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('curiosidades') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Curiosidades') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->curiosidades }}</span>
     </div>
@@ -52,7 +52,7 @@
 
 <!-- Altura Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('altura') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Altura') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->alturasToString() }}</span>
     </div>
@@ -60,7 +60,7 @@
 
 <!-- Categoria Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('categoria') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Categoria') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->categoriasToString() }}</span>
     </div>
@@ -68,7 +68,7 @@
 
 <!-- Luz Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('luz') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Luz') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->luzToString() }}</span>
     </div>
@@ -77,7 +77,7 @@
 
 <!-- Diametro Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('diametro') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Diâmetro') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->diametroToString() }}</span>
     </div>
@@ -86,7 +86,7 @@
 
 <!-- Densidade Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('densidade') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Densidade') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->densidadeToString() }}</span>
     </div>
@@ -96,7 +96,7 @@
 
 <!-- Agua Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('agua') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Água') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->aguaToString() }}</span>
     </div>
@@ -105,7 +105,7 @@
 
 <!-- Resistencia Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('resistencia') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Resistência') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->resistenciaToString() }}</span>
     </div>
@@ -113,7 +113,7 @@
 
 <!-- Solo Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('solo') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Solo') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->soloToString() }}</span>
     </div>
@@ -122,7 +122,7 @@
 
 <!-- PhSolo Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('ph_solo') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Ph_Solo') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->phSoloToString() }}</span>
     </div>
@@ -130,7 +130,7 @@
 
 <!-- Estacao Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('estacao') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Estação') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->estacaoToString() }}</span>
     </div>
@@ -138,7 +138,7 @@
 
 <!-- Cor Sintese Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('cor_sintese') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Cor Sintese') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\CorSinteseAtributo::getCorSinteseArray()[$planta->corSinteseAtributo->cor_sintese]??null }}</span>
     </div>
@@ -146,7 +146,7 @@
 
 <!-- Persistencia Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('persistencia') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Persistência') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\PersistenciaAtributo::getPersistenciaArray()[$planta->persistenciaAtributo->persistencia]??null }}</span>
     </div>
@@ -154,7 +154,7 @@
 
 <!-- Ordem Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('ordem') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Ordem') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrdemAtributo::getOrdemArray()[$planta->ordemAtributo->ordem]??null }}</span>
     </div>
@@ -163,7 +163,7 @@
 
 <!-- Familia Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('familia') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Família') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FamiliaAtributo::getFamiliaArray()[$planta->familiaAtributo->familia]??null }}</span>
     </div>
@@ -173,7 +173,7 @@
 
 <!-- Genero Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('genero') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Género') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\GeneroAtributo::getGeneroArray()[$planta->generoAtributo->genero]??null }}</span>
     </div>
@@ -190,7 +190,7 @@
 
 <!-- Uso Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('uso') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Uso') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\UsoAtributo::getUsoArray()[$planta->usoAtributo->uso]??null }}</span>
     </div>
@@ -199,7 +199,7 @@
 
 <!-- Origem Relacao Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('origem_relacao') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Origem Relação') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray()[$planta->origemRelacaoAtributo->origem_relacao]??null }}</span>
     </div>
@@ -208,7 +208,7 @@
 
 <!-- Forma Arvore Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_arvore') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Forma Árvore') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArvoreAtributo::getFormaArvoreArray()[$planta->formaArvoreAtributo->forma_arvore]??null }}</span>
     </div>
@@ -218,7 +218,7 @@
 
 <!-- Colecao Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('colecao') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Coleção') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\ColecaoAtributo::getColecaoArray()[$planta->colecaoAtributo->colecao]??null }}</span>
     </div>
@@ -226,7 +226,7 @@
 
 <!-- Forma Herbacea Atributo -->
 <h3 class="row mb-7">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('forma_herbacea') }}</label>
+    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Forma Herbácea') }}</label>
     <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()[$planta->formaHerbaceaAtributo->forma_herbacea]??null }}</span>
     </div>

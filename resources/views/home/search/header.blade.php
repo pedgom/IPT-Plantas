@@ -97,7 +97,6 @@
 
                 </div>
 
-
                 <!-- Cor -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
@@ -108,6 +107,19 @@
                         @enderror
                     </div>
                 </div>
+
+
+                <!-- Familia -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('familia', $planta->getAttributeLabel('familia'), ['class' => 'form-label']) !!}
+                        {!! Form::select('familia',\App\Models\FamiliaAtributo::getFamiliaArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('familia') ? 'is-invalid' : '')]) !!}
+                        @error('familia')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
 
                 <!-- Luz -->
                 <div class="col-12 col-md-4">
@@ -185,6 +197,31 @@
                     </div>
 
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             </div>
