@@ -27,7 +27,7 @@
                 <!-- Água -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('agua[]', $planta->getAttributeLabel('agua'), ['class' => 'form-label']) !!}
+                        {!! Form::label('agua[]', $planta->getAttributeLabel('Água'), ['class' => 'form-label']) !!}
 
                         {!! Form::select('agua[]',\App\Models\AguaAtributo::valoresArray(), null , ['id' => 'agua','class' => 'form-select form-select-solid ' .($errors->has('agua') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -50,7 +50,7 @@
                 <!-- Altura -->
                 <div class="col-12 col-md-4">
                      <div class="mb-10">
-                        {!! Form::label('altura[]', $planta->getAttributeLabel('altura'), ['class' => 'form-label']) !!}
+                        {!! Form::label('altura[]', $planta->getAttributeLabel('Altura'), ['class' => 'form-label']) !!}
 
                         {!! Form::select('altura[]',\App\Models\AlturaAtributo::valoresArray(), null , ['id' => 'altura','class' => 'form-select form-select-solid ' .($errors->has('altura') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -75,7 +75,7 @@
                 <!-- Categoria -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('categoria[]', $planta->getAttributeLabel('categoria'), ['class' => 'form-label']) !!}
+                        {!! Form::label('categoria[]', $planta->getAttributeLabel('Categoria'), ['class' => 'form-label']) !!}
 
                         {!! Form::select('categoria[]',\App\Models\CategoriaAtributo::valoresArray(), null , ['id' => 'categoria','class' => 'form-select form-select-solid ' .($errors->has('categoria') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -100,7 +100,7 @@
                 <!-- Cor -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('cor_sintese', $planta->getAttributeLabel('cor_sintese'), ['class' => 'form-label']) !!}
+                        {!! Form::label('cor_sintese', $planta->getAttributeLabel('Cor'), ['class' => 'form-label']) !!}
                         {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('cor_sintese') ? 'is-invalid' : '')]) !!}
                         @error('cor_sintese')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -112,9 +112,34 @@
                 <!-- Familia -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('familia', $planta->getAttributeLabel('familia'), ['class' => 'form-label']) !!}
+                        {!! Form::label('familia', $planta->getAttributeLabel('Família'), ['class' => 'form-label']) !!}
                         {!! Form::select('familia',\App\Models\FamiliaAtributo::getFamiliaArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('familia') ? 'is-invalid' : '')]) !!}
                         @error('familia')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <!-- Ordem -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('ordem', $planta->getAttributeLabel('Ordem'), ['class' => 'form-label']) !!}
+                        {!! Form::select('ordem',\App\Models\OrdemAtributo::getOrdemArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('ordem') ? 'is-invalid' : '')]) !!}
+                        @error('ordem')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+
+                <!-- Genero -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('genero', $planta->getAttributeLabel('Género'), ['class' => 'form-label']) !!}
+                        {!! Form::select('genero',\App\Models\GeneroAtributo::getGeneroArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('genero') ? 'is-invalid' : '')]) !!}
+                        @error('genero')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -124,7 +149,7 @@
                 <!-- Luz -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('luz[]', $planta->getAttributeLabel('luz'), ['class' => 'form-label']) !!}
+                        {!! Form::label('luz[]', $planta->getAttributeLabel('Luz'), ['class' => 'form-label']) !!}
 
                         {!! Form::select('luz[]',\App\Models\LuzAtributo::valoresArray(), null , ['id' => 'luz','class' => 'form-select form-select-solid ' .($errors->has('luz') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -150,7 +175,7 @@
                 <!-- Solo -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('solo[]', $planta->getAttributeLabel('solo'), ['class' => 'form-label']) !!}
+                        {!! Form::label('solo[]', $planta->getAttributeLabel('Solo'), ['class' => 'form-label']) !!}
 
                         {!! Form::select('solo[]',\App\Models\SoloAtributo::valoresArray(), null , ['id' => 'solo','class' => 'form-select form-select-solid ' .($errors->has('solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -176,7 +201,7 @@
                 <!-- Estacao -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
-                        {!! Form::label('estacao[]', $planta->getAttributeLabel('estacao'), ['class' => 'form-label']) !!}
+                        {!! Form::label('estacao[]', $planta->getAttributeLabel('Estação'), ['class' => 'form-label']) !!}
 
                         {!! Form::select('estacao[]',\App\Models\EstacaoAtributo::valoresArray(), null , ['id' => 'estacao','class' => 'form-select form-select-solid ' .($errors->has('estacao') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 

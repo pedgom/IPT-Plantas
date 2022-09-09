@@ -116,6 +116,8 @@ class HomeController extends Controller
         $estacao=$request->estacao ?? null;
         $corSintese=$request->cor_sintese ?? null;
         $familia=$request->familia ?? null;
+        $genero=$request->genero ?? null;
+        $ordem=$request->ordem ?? null;
         $plantas = [];
         $planta = new Planta();
         $planta->loadDefaultValues();
@@ -176,6 +178,19 @@ class HomeController extends Controller
         if(!empty($familia)){
             $query=$query->whereHas('familiaAtributo',function($q) use($familia){
                 $q->where('familia',$familia);
+            });
+        }
+
+        if(!empty($genero)){
+            $query=$query->whereHas('generoAtributo',function($q) use($genero){
+                $q->where('genero',$genero);
+            });
+        }
+
+
+        if(!empty($ordem)){
+            $query=$query->whereHas('ordemAtributo',function($q) use($ordem){
+                $q->where('ordem',$ordem);
             });
         }
 
