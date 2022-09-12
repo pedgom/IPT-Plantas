@@ -588,7 +588,7 @@ Breadcrumbs::for('familiaAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('familiaAtributos.show', function ($trail, $model) {
     $trail->parent('familiaAtributos.index');
-    $trail->push($model->planta_id, route('familiaAtributos.show', $model));
+    $trail->push($model->familia, route('familiaAtributos.show', $model));
 });
 Breadcrumbs::for('familiaAtributos.edit', function ($trail, $model) {
     $trail->parent('familiaAtributos.show', $model);

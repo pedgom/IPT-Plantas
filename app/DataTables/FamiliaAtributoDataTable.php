@@ -23,7 +23,7 @@ class FamiliaAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->editColumn('familia', function($familiaAtributo){
-                return $familiaAtributo->getFamiliaLabelAttribute();
+                return $familiaAtributo->familia;
             })
             ->addColumn('action', function ($familiaAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('familiaAtributos.show', $familiaAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>

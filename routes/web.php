@@ -193,6 +193,11 @@ Route::get('especieQuercusAtributos', [App\Http\Controllers\EspecieQuercusAtribu
 
 Route::resource('formaArvoreAtributos', App\Http\Controllers\FormaArvoreAtributoController::class);
 
+Route::get('importPlantas', [App\Http\Controllers\PlantaController::class, 'importPlantas'])->name('plantas.import_plantas');
+Route::post('submitPlantas', [App\Http\Controllers\PlantaController::class, 'submitPlantas'])->name('plantas.submit_plantas');
+
+
+
 
 
 

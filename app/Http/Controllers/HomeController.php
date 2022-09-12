@@ -41,6 +41,7 @@ class HomeController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
+
     public function apiUpload(Request $request){
 
         if($request->get('rules', false)){
@@ -177,7 +178,7 @@ class HomeController extends Controller
 
         if(!empty($familia)){
             $query=$query->whereHas('familiaAtributo',function($q) use($familia){
-                $q->where('familia',$familia);
+                $q->where('id',$familia);
             });
         }
 
@@ -207,4 +208,6 @@ class HomeController extends Controller
 
         return view('home.search', compact('plantas','search','planta'));
     }
+
+
 }

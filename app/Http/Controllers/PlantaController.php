@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\PlantaDataTable;
+use App\Imports\PlantasImport;
 use Illuminate\Http\Request;
 //use App\Http\Requests\CreatePlantaRequest;
 //use App\Http\Requests\UpdatePlantaRequest;
@@ -10,6 +11,7 @@ use App\Models\Planta;
 //use Flash;
 //use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Response;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PlantaController extends Controller
 {
@@ -323,6 +325,21 @@ class PlantaController extends Controller
 
 
 
+    public function importPlantas(){
 
+        return view('plantas.import_plantas');
+    }
+
+    public function submitPlantas(Request $request){
+        if (!empty($request->input('template'))) {
+            $storagePath = storage_path("app/" . $request->input('template'));
+
+                $import = new PlantasImport();
+                Excel::import($import, $storagePath);
+
+        }
+
+        return redirect(route('plantas.index'));
+    }
 
 }

@@ -195,7 +195,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Família') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FamiliaAtributo::getFamiliaArray()[$planta->familiaAtributo->familia]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->familiaAtributo->familia??null }}</span>
     </div>
 </div>
 

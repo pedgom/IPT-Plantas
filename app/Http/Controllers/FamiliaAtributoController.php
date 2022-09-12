@@ -49,7 +49,7 @@ class FamiliaAtributoController extends Controller
         if(($model = FamiliaAtributo::create($validatedAttributes)) ) {
             //flash(Familia Atributo saved successfully.');
             //Flash::success('Familia Atributo saved successfully.');
-            return redirect(route('familia-atributos.show', $model));
+            return redirect(route('familiaAtributos.show', $model));
         }else
             return redirect()->back();
     }

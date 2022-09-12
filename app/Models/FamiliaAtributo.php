@@ -22,14 +22,7 @@ class FamiliaAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const FAMILIA_ASTERACEAE = 1;
-    const FAMILIA_BRASSICACEAE = 2;
-    const FAMILIA_POACEAE = 3;
-    const FAMILIA_CLUSIACEAE = 4;
-    const FAMILIA_LAMIACEAE = 5;
-    const FAMILIA_FABACEAE = 6;
-    const FAMILIA_ARECACEAE = 7;
-    const FAMILIA_APIACEAE =8;
+
 
 
 
@@ -83,40 +76,10 @@ class FamiliaAtributo extends Model implements Auditable
      *
      */
     public static function getFamiliaArray(){
-
-        return [
-            self::FAMILIA_ASTERACEAE=>__('ASTERACEAE FAMILY'),
-            self::FAMILIA_BRASSICACEAE=>__('BRASSICACEAE FAMILY'),
-            self::FAMILIA_POACEAE=>__('POACEAE FAMILY'),
-            self::FAMILIA_CLUSIACEAE=>__('CLUSIACEAE FAMILY'),
-            self::FAMILIA_LAMIACEAE=>__('LAMIACEAE FAMILY'),
-            self::FAMILIA_FABACEAE=>__('FABACEAE FAMILY'),
-            self::FAMILIA_ARECACEAE=>__('ARECACEAE FAMILY'),
-            self::FAMILIA_APIACEAE=>__('APIACEAE FAMILY')
-        ];
+        return self::all()->pluck('familia','id')->toArray();
     }
 
 
-
-    /**
-     * Retorna a familia selecionada
-     * @return array
-     *
-     */
-    public function getFamiliaOptions(){
-
-        return static::getFamiliaArray();
-    }
-
-
-    /**
-     * Retorna a ordem selecionada
-     * @return
-     */
-    public function getFamiliaLabelAttribute(){
-        $array= self::getFamiliaOptions();
-        return $array [$this->familia]??null;
-    }
 
     /**
      * Return the attribute label

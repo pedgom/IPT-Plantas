@@ -917,37 +917,37 @@ class AtributosSeeder extends Seeder
 
         DB::table('familia_atributos')->insert([
             [
-                'familia' => 1,
+                'familia' =>'leguminosae' ,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'familia' => 2,
+                'familia' => 'eleagnaceae',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'familia' => 3,
+                'familia' => 'rosaceae',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'familia' => 4,
+                'familia' => 'aceraceae',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'familia' => 5,
+                'familia' => 'anacardiaceae',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'familia' => 6,
+                'familia' => 'myrtaceae',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'familia' => 7,
+                'familia' => 'oleaceae',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
