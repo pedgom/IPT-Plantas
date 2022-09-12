@@ -101,7 +101,8 @@
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
                         {!! Form::label('cor_sintese', $planta->getAttributeLabel('Cor'), ['class' => 'form-label']) !!}
-                        {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('cor_sintese') ? 'is-invalid' : '')]) !!}
+                        {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('cor_sintese') ? 'is-invalid' : ''),
+                                            "placeholder"=>'Escolha uma Cor']) !!}
                         @error('cor_sintese')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -113,7 +114,8 @@
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
                         {!! Form::label('familia', $planta->getAttributeLabel('Família'), ['class' => 'form-label']) !!}
-                        {!! Form::select('familia',\App\Models\FamiliaAtributo::getFamiliaArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('familia') ? 'is-invalid' : '')]) !!}
+                        {!! Form::select('familia',\App\Models\FamiliaAtributo::getFamiliaArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('familia') ? 'is-invalid' : ''),
+                                            "placeholder"=>'Escolha uma Família']) !!}
                         @error('familia')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -125,7 +127,8 @@
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
                         {!! Form::label('ordem', $planta->getAttributeLabel('Ordem'), ['class' => 'form-label']) !!}
-                        {!! Form::select('ordem',\App\Models\OrdemAtributo::getOrdemArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('ordem') ? 'is-invalid' : '')]) !!}
+                        {!! Form::select('ordem',\App\Models\OrdemAtributo::getOrdemArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('ordem') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha uma Ordem']) !!}
                         @error('ordem')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -138,7 +141,8 @@
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
                         {!! Form::label('genero', $planta->getAttributeLabel('Género'), ['class' => 'form-label']) !!}
-                        {!! Form::select('genero',\App\Models\GeneroAtributo::getGeneroArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('genero') ? 'is-invalid' : '')]) !!}
+                        {!! Form::select('genero',\App\Models\GeneroAtributo::getGeneroArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('genero') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha um Género']) !!}
                         @error('genero')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
