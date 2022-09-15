@@ -3,7 +3,7 @@
  *
  * @var $planta \App\Models\Planta
  */
-view()->share('pageTitle', $planta->id);
+view()->share('pageTitle', $planta->nome_comum);
 view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>

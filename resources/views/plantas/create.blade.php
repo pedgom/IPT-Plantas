@@ -4,7 +4,7 @@
  * @var $planta \App\Models\Planta;
  * @var $errors Illuminate\View\Middleware\ShareErrorsFromSession
  */
-view()->share('pageTitle', __('Create Planta'));
+view()->share('pageTitle', __('Criar Planta'));
 view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>

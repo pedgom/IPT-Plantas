@@ -75,6 +75,18 @@
         </div>
 
 
+        <div class="menu-item">
+            <a class="menu-link {{ request()->routeIs('import_plantas') ? "active" : "" }}" href="{{ route('plantas.import_plantas') }}">
+                    <span class="menu-icon">
+                        <span class="menu-icon">
+                        <img alt="Logo" src="{{asset('images/upload_file.svg')}}" class="h-20px logo"/>
+                    </span>
+                    </span>
+                <span style="font-size:18px" class="menu-title">{{ __('Importar Plantas') }}</span>
+            </a>
+        </div>
+
+
 
 
 

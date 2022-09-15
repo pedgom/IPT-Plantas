@@ -4,10 +4,11 @@
  * @var $planta \App\Models\Planta
  * @var $errors Illuminate\View\Middleware\ShareErrorsFromSession
  */
-view()->share('pageTitle', $planta->id);
+view()->share('pageTitle',  $planta->nome_comum);
 view()->share('hideSubHeader', true);
 ?>
-<x-base-layout>
+<x-base-layout >
+
     @section('breadcrumbs')
         {{ Breadcrumbs::render('plantas.edit', $planta) }}
     @endsection

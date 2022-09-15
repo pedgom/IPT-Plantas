@@ -22,6 +22,8 @@ use App\Http\Controllers\SettingController;
 */
 Route::get('base-dados', [App\Http\Controllers\BaseDadosController::class, 'index'])->name('base_dados.layout');
 
+
+
 Route::get('search-plantas', [App\Http\Controllers\HomeController::class, 'search'])->name('home.search');
 
 Route::get('get-plantas', [App\Http\Controllers\PlantaController::class, 'getPlantas'])->name('plantas.get_plantas');
@@ -197,7 +199,13 @@ Route::get('importPlantas', [App\Http\Controllers\PlantaController::class, 'impo
 Route::post('submitPlantas', [App\Http\Controllers\PlantaController::class, 'submitPlantas'])->name('plantas.submit_plantas');
 
 
-
+Route::get('/download', function(){
+    $file = public_path()."/excel.xlsx";
+    $headers = array (
+        'Content-Type: application/xlsx',
+    );
+    return Response::download($file, "Excel.xlsx", $headers);
+});
 
 
 

@@ -1,5 +1,5 @@
 <?php
-view()->share('pageTitle', __('Dashboard'));
+view()->share('pageTitle', __('Base de Dados'));
 view()->share('hideToolbar', true);
 ?>
 <x-base-layout>

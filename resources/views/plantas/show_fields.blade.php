@@ -1,3 +1,11 @@
+<head>
+
+    <style>
+
+    </style>
+
+</head>
+
 
 
 <div>
@@ -266,7 +274,7 @@
 <!-- Imagens -->
 
 
-
+    <div class="slider">
 
 <div>
     @if($planta->hasMedia('imagem_zoomin'))
@@ -369,5 +377,5 @@
     @endif
 </div>
 
-
+</div>
 

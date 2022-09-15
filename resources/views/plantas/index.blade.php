@@ -10,7 +10,7 @@ view()->share('hideSubHeader', true);
         <link href="{{ assetCustom('/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
     @endpush
     <!--begin::Card-->
-    <div class="card">
+    <div style="background-image: url('fundo.jpg');" class="card">
         <div class="card-header">
             <div class="card-title">
                 <!--begin::Search-->

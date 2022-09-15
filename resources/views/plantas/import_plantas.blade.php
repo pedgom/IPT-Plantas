@@ -1,6 +1,11 @@
 
 <x-base-layout>
 
+    <div style="margin-top:40px; background-color: #ffffff" class="mb-10 rounded border p-10">
+        <p>Para efetuar a importação de plantas através de Excel, por favor, faça o download deste ficheiro.</p>
+        <a href="/download" style="background: #333ab7; color: #fff; padding:12px; display: block; text-decoration: none;width: 150px">Download Now</a>
+    </div>
+
 <form action="{{ route("plantas.submit_plantas") }}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -8,9 +13,9 @@
 @php
     $uploadFileName = 'template';
 @endphp
-<div class="mb-10 rounded border p-10">
+<div style="background-color: #ffffff" class="mb-10 rounded border p-10">
     <!--begin::Input group-->
-    <div class="form-group row">
+    <div  class="form-group row">
         <!--begin::Label-->
         <label class="col-lg-2 col-form-label text-lg-right">{{ __('Upload Files') }}:</label>
         <!--end::Label-->
@@ -224,4 +229,7 @@
 
 
 </form>
+
+
+
     </x-base-layout>

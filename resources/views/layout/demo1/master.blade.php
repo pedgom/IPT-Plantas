@@ -17,7 +17,7 @@
             @endif
 
                 <!--begin::Wrapper-->
-                <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                <div style="background-size: auto; background-position: center;background-repeat: no-repeat;background-image: url({{url('images/login_layout.jpg')}}); width:1000px" class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 {{ theme()->getView('layout/header/_base') }}
 
                     <!--begin::Content-->

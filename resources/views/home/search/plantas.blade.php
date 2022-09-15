@@ -1,3 +1,83 @@
+
+<head>
+
+    <style>
+        .image {
+            position: relative;
+            width: 400px;
+        }
+
+        .image__img {
+            display: block;
+            width: 100%;
+        }
+
+        .image__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .image__overlay--blur {
+            backdrop-filter: blur(5px);
+        }
+
+        .image__overlay--primary {
+            background: #009578;
+        }
+
+        .image__overlay > * {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+
+        .image__overlay:hover {
+            opacity: 0.9;
+        }
+
+        .image__overlay:hover > * {
+            transform: translateY(0);
+        }
+
+        .image__title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .image__description {
+            font-size: 1.1em;
+            margin-top: 0.25em;
+            text-align: left;
+        }
+
+
+    </style>
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
 <!--begin::Player widget 1-->
 <div class="card card-flush ">
     <!--begin::Header-->
@@ -30,7 +110,27 @@
                     <!--begin::User pic-->
                     <div class="card-rounded position-relative mb-5">
                         <!--begin::Img-->
-                        <div class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded" @if($planta->hasMedia('imagem_principal')) style="background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}')" @else style="background-image: url('{{ asset('images/default-img.png') }}')" @endif></div>
+                        <div class="image">
+                            <div class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded" @if($planta->hasMedia('imagem_principal')) style=" display:block;width: 200px; background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}') " @else style="display:block; width: 200px; background-image: url('{{ asset('images/default-img.png') }}')" @endif></div>
+                            <div class="image__overlay image__overlay--primary">
+                                <div>
+                                    <p class="image__description">
+                                        <img alt="Solo" src="{{asset('images/sol.png')}}" class="h-25px logo"/><b style="color:black">Luz:</b>{{$planta->luzToString()}}
+                                    </p>
+                                    <p class="image__description">
+                                        <img alt="Solo" src="{{asset('images/solo.png')}}" class="h-15px logo"/><b style="color:black">Solo:</b>{{$planta->soloToString()}}
+                                    </p>
+                                    <p class="image__description">
+                                        <img alt="Agua" src="{{asset('images/agua.png')}}" class="h-25px logo"/><b style="color:black">Água:</b>{{$planta->aguaToString()}}
+                                    </p>
+                                    <p class="image__description">
+                                        <img alt="Altura" src="{{asset('images/altura.png')}}" class="h-25px logo"/><b style="color:black">Altura(m):</b>{{$planta->alturasToString()}}
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <!--end::Img-->
                         <!--begin::Play-->
                         <button class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0" data-kt-element="list-play-button">

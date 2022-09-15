@@ -4,6 +4,7 @@ namespace App\Imports;
 
 use App\Models\Planta;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -12,7 +13,7 @@ use Maatwebsite\Excel\Concerns\WithStartRow;
 use Maatwebsite\Excel\Concerns\WithUpsertColumns;
 use Maatwebsite\Excel\Concerns\WithUpserts;
 
-class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, WithStartRow, WithHeadingRow
+class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, WithStartRow
 {
     use Importable;
 
@@ -20,16 +21,22 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
     {
         foreach ($rows as $row)
         {
-            $abreviatura = $row[0]?? null;
-            $nome_botanico = $row[1]?? null;
-            $curiosidades = $row[2]?? null;
-            $notas = $row[3]?? null;
-            $tempo_crescimento = $row[4]?? null;
-            $nome_comum = $row[5]?? null;
-            $cor_sintese = $row[6]?? null;
-            $luz = $row[7]?? null;
-            $persistencia = $row[8]?? null;
-            $estacao = $row[9]?? null;
+            //Log::error($row);
+
+            $abreviatura = $row[0];
+            Log::error($abreviatura);
+
+            $nome_botanico = $row[1];
+            Log::error($nome_botanico);
+
+            $curiosidades = $row[2];
+            $notas = $row[3];
+            $tempo_crescimento = $row[4];
+            $nome_comum = $row[5];
+            $cor_sintese = $row[6];
+            $luz = $row[7];
+            $persistencia = $row[8];
+            $estacao = $row[9];
 
             if( !empty($abreviatura) &&
                 !empty($nome_botanico) &&
