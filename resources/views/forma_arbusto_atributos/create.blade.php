@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Forma Arbusto Atributo') }}
             </h3>
         </div>
-        {!! Form::model($formaArbustoAtributo, ['route' => ['forma-arbusto-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($formaArbustoAtributo, ['route' => ['formaArbustoAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('forma_arbusto_atributos.fields')
              </div>

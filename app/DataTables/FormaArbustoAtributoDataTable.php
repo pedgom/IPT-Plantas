@@ -23,7 +23,7 @@ class FormaArbustoAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->editColumn('forma_arbusto', function($formaArbustoAtributo){
-                return $formaArbustoAtributo->getFormaArbustoLabelAttribute();
+                return $formaArbustoAtributo->forma_arbusto;
             })
             ->addColumn('action', function ($formaArbustoAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('formaArbustoAtributos.show', $formaArbustoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>

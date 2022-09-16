@@ -22,17 +22,7 @@ class FormaArbustoAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const NA = 1;
-    const FORMA_PENDENTE = 2;
-    const FORMA_CESPITOSA = 3;
-    const FORMA_OVOIDE_IRREGULAR = 4;
-    const FORMA_IRREGULAR = 5;
-    const FORMA_LECQUE = 6;
-    const FORMA_ESFERICA = 7;
-    const FORMA_OVOIDE_RASTEIRA = 8;
-    const FORMA_PENDENTE_RASTEIRA =9;
-    const FORMA_PROSTADA =10;
-    const FORMA_TUFO_RASTEIRO =11;
+
 
 
 
@@ -87,42 +77,16 @@ class FormaArbustoAtributo extends Model implements Auditable
      */
     public static function getFormaArbustoArray(){
 
-        return [
-            self::NA=>__('NA'),
-            self::FORMA_PENDENTE=>__('PENDING FORM'),
-            self::FORMA_CESPITOSA=>__('CESPITOSE FORM'),
-            self::FORMA_OVOIDE_IRREGULAR=>__('IRREGULAR OVOID FORM'),
-            self::FORMA_IRREGULAR=>__('IRREGULAR FORM'),
-            self::FORMA_LECQUE=>__('LECQUE FORM'),
-            self::FORMA_ESFERICA=>__('SPHERICAL FORM'),
-            self::FORMA_OVOIDE_RASTEIRA=>__('RASTERIA OVOID FORM'),
-            self::FORMA_PENDENTE_RASTEIRA=>__('LOW PENDANT FORM'),
-            self::FORMA_PROSTADA=>__('PROSTATE FORM'),
-            self::FORMA_TUFO_RASTEIRO=>__('LOW TUFT FORM')
-        ];
+        return self::all()->pluck('forma_arbusto', 'id')->toArray();
     }
 
 
 
-    /**
-     * Retorna a familia selecionada
-     * @return array
-     *
-     */
-    public function getFormaArbustoOptions(){
-
-        return static::getFormaArbustoArray();
-    }
 
 
-    /**
-     * Retorna a ordem selecionada
-     * @return
-     */
-    public function getFormaArbustoLabelAttribute(){
-        $array= self::getFormaArbustoOptions();
-        return $array [$this->forma_arbusto]??null;
-    }
+
+
+
 
     /**
      * Return the attribute label

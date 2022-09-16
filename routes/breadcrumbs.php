@@ -609,7 +609,7 @@ Breadcrumbs::for('formaArbustoAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('formaArbustoAtributos.show', function ($trail, $model) {
     $trail->parent('formaArbustoAtributos.index');
-    $trail->push($model->planta_id, route('formaArbustoAtributos.show', $model));
+    $trail->push($model->forma_arbusto, route('formaArbustoAtributos.show', $model));
 });
 Breadcrumbs::for('formaArbustoAtributos.edit', function ($trail, $model) {
     $trail->parent('formaArbustoAtributos.show', $model);

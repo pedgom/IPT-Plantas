@@ -619,61 +619,61 @@ class AtributosSeeder extends Seeder
 
         DB::table('forma_arbusto_atributos')->insert([
             [
-                'forma_arbusto' => 1,
+                'forma_arbusto' => 'NA',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arbusto' => 2,
+                'forma_arbusto' => 'Pendente',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arbusto' => 3,
+                'forma_arbusto' => 'Cespitosa',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arbusto' => 4,
+                'forma_arbusto' => 'Ovoide Irregular',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arbusto' => 5,
+                'forma_arbusto' => 'Irregular',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arbusto' => 6,
+                'forma_arbusto' => 'Lecque',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arbusto' => 7,
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
-            ],
-
-            [
-                'forma_arbusto' => 8,
+                'forma_arbusto' => 'Esferica',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_arbusto' => 9,
+                'forma_arbusto' => 'Ovoide Rasteira',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_arbusto' => 10,
+                'forma_arbusto' => 'Pendente Rasteira',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_arbusto' => 11,
+                'forma_arbusto' => 'Prostada',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_arbusto' => 'Tufo Rasteiro',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]

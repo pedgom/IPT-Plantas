@@ -49,7 +49,7 @@ class FormaArbustoAtributoController extends Controller
         if(($model = FormaArbustoAtributo::create($validatedAttributes)) ) {
             //flash(Forma Arbusto Atributo saved successfully.');
             //Flash::success('Forma Arbusto Atributo saved successfully.');
-            return redirect(route('forma-arbusto-atributos.show', $model));
+            return redirect(route('formaArbustoAtributos.show', $model));
         }else
             return redirect()->back();
     }

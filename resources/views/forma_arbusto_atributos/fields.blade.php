@@ -1,7 +1,7 @@
 <!-- Name Field -->
 <div class="mb-10">
-    {!! Form::label('name', $formaArbustoAtributo->getAttributeLabel('name'), ['class' => 'form-label ']) !!}
-    {!! Form::text('name', null, ['class' => 'form-control form-control-solid '.($errors->has('name') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
+    {!! Form::label('forma_arbusto', $formaArbustoAtributo->getAttributeLabel('name'), ['class' => 'form-label ']) !!}
+    {!! Form::text('forma_arbusto', null, ['class' => 'form-control form-control-solid '.($errors->has('name') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('name')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
