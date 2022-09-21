@@ -60,11 +60,34 @@ class AtributosSeeder extends Seeder
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
+
             [
-                'name' => 'Mal-Drenado',
+                'name' => 'Bem Drenado',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
-            ]
+            ],
+            [
+                'name' => 'Calcário',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+
+            [
+                'name' => 'Não-Calcário',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Ácido',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Neutro',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
         ]);
 
         DB::table('ph_solo_atributos')->insert([
@@ -1054,7 +1077,17 @@ class AtributosSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
+                'name' => '0.80 - 1.20',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
                 'name' => '1.20 - 1.50',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => '1.50 - 3.00',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],

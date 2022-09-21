@@ -2,12 +2,15 @@
 
 namespace App\Helpers;
 
+use App\Models\AguaAtributo;
 use App\Models\AlturaAtributo;
 use App\Models\CategoriaAtributo;
 use App\Models\CorSinteseAtributo;
+use App\Models\DensidadeAtributo;
 use App\Models\DiametroAtributo;
 use App\Models\LuzAtributo;
 use App\Models\PersistenciaAtributo;
+use App\Models\SoloAtributo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -312,7 +315,7 @@ class Helper
     public static function parseLuz(mixed $luz)
     {
         if(empty($luz)){
-            return LuzAtributo::where('name', 'Indefinido')->first()->id;
+            return LuzAtributo::where('name', 'Indiferente')->first()->id;
         }
         $arr= [];
 
@@ -331,9 +334,121 @@ class Helper
             $arr = array_merge($arr, [$luz_atributo]);
         }
 
+        return $arr;
+
+    }
+
+    public static function parseSolo(mixed $solo)
+    {
+        $arr= [];
+
+        if(Str::contains($solo, ['arenoso'])){
+            $solo_id = SoloAtributo::where('name', 'Arenoso')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['medio'])){
+            $solo_id = SoloAtributo::where('name', 'Medio')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['argiloso'])){
+            $solo_id = SoloAtributo::where('name', 'Argiloso')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['drenado'])){
+            $solo_id = SoloAtributo::where('name', 'Drenado')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
 
 
 
+        if(Str::contains($solo, ['bem drenado'])){
+            $solo_id = SoloAtributo::where('name', 'Bem Drenado')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['não calcário'])){
+            $solo_id = SoloAtributo::where('name', 'Não-Calcário')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['calcareos'])){
+            $solo_id = SoloAtributo::where('name', 'Calcário')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['neutro'])){
+            $solo_id = SoloAtributo::where('name', 'Neutro')->first()->id;
+            $arr = array_merge($arr, [$solo_id]);
+        }
+
+        if(Str::contains($solo, ['qualquer'])){
+            $solo_id = SoloAtributo::all()->pluck('id')->toArray();
+            $arr = array_merge($arr, $solo_id);
+        }
+
+        return array_unique($arr);
+    }
+
+    public static function parseAgua(mixed $agua)
+    {
+        $arr= [];
+
+        if(Str::contains($agua, ['Verão','pouca'])){
+            $agua_id = AguaAtributo::where('name', 'Baixa')->first()->id;
+            $arr = array_merge($arr, [$agua_id]);
+        }
+
+        if(Str::contains($agua, ['media'])){
+            $agua_id = AguaAtributo::where('name', 'Moderada')->first()->id;
+            $arr = array_merge($arr, [$agua_id]);
+        }
+
+        if(Str::contains($agua, ['resist. seca'])){
+            $agua_id = AguaAtributo::where('name', 'Resistente-seca')->first()->id;
+            $arr = array_merge($arr, [$agua_id]);
+        }
+
+        if(Str::contains($agua, ['muita'])){
+            $agua_id = AguaAtributo::where('name', 'Solo Humido')->first()->id;
+            $arr = array_merge($arr, [$agua_id]);
+        }
+
+        return array_unique($arr);
+
+
+    }
+
+    public static function parseResistencia(mixed $int, mixed $int1, mixed $int2)
+    {
+        return [1];
+    }
+
+    public static function parseTempoCrescimento(mixed $tempo_crescimento)
+    {
+        if(empty($tempo_crescimento)){
+            return 'moderado';
+        }
+
+        else if(Str::contains($tempo_crescimento, '?')){
+            return 'indefinido';
+        }
+        else if(strlen($tempo_crescimento)>255){
+
+            return substr($tempo_crescimento,0,255);
+        }
+
+        else{
+            return $tempo_crescimento;
+        }
+
+    }
+
+    public static function parseDensidade(mixed $densidade)
+    {
+        return DensidadeAtributo::where('name', 'NA')->pluck('id')->toArray();
 
     }
 

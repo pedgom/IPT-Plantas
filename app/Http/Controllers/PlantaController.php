@@ -11,6 +11,7 @@ use App\Models\Planta;
 //use Flash;
 //use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PlantaController extends Controller
@@ -91,15 +92,25 @@ class PlantaController extends Controller
 
         if(($model = Planta::create($validatedAttributes)) ) {
             $model->alturaAtributos()->sync($validatedAttributes['altura']);
+            Log::info($validatedAttributes['altura']);
             $model->categoriaAtributos()->sync($validatedAttributes['categoria']);
+            Log::info($validatedAttributes['categoria']);
             $model->luzAtributos()->sync($validatedAttributes['luz']);
+            Log::info($validatedAttributes['luz']);
             $model->diametroAtributos()->sync($validatedAttributes['diametro']);
+            Log::info($validatedAttributes['diametro']);
             $model->densidadeAtributos()->sync($validatedAttributes['densidade']);
+            Log::info($validatedAttributes['densidade']);
             $model->aguaAtributos()->sync($validatedAttributes['agua']);
+            Log::info($validatedAttributes['agua']);
             $model->resistenciaAtributos()->sync($validatedAttributes['resistencia']);
+            Log::info($validatedAttributes['resistencia']);
             $model->soloAtributos()->sync($validatedAttributes['solo']);
-            $model->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
+            Log::info($validatedAttributes['solo']);
+            //$model->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
             $model->estacaoAtributos()->sync($validatedAttributes['estacao']);
+            Log::info($validatedAttributes['estacao']);
+
 
             if ($request->hasFile('imagem_principal') && $request->file('imagem_principal')->isValid()) {
                 $model->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
