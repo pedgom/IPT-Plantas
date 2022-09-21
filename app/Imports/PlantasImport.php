@@ -2,6 +2,7 @@
 
 namespace App\Imports;
 
+use App\Helpers\Helper;
 use App\Models\Planta;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
@@ -23,23 +24,26 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
         {
             //Log::error($row);
 
-            $abreviatura = $row[0];
-            Log::error($abreviatura);
-
-            $nome_botanico = $row[1];
+            $nome_botanico = Helper::parseNomeBotanico($row[0]);
             Log::error($nome_botanico);
 
-            $curiosidades = $row[2];
-            $notas = $row[3];
-            $tempo_crescimento = $row[4];
-            $nome_comum = $row[5];
-            $cor_sintese = $row[6];
-            $luz = $row[7];
-            $persistencia = $row[8];
-            $estacao = $row[9];
+            $categoria = Helper::parseCategoria($row[1]);
+            $familia = Helper::parseFamilia($row[2]);
+            $altura = Helper::parseAltura($row[3]);
+            $diametro = Helper::parseDiametro($row[4]);;
+            $persistencia = Helper::parsePersistencia($row[5]);
+            $cor_sintese = Helper::parseCorSintese($row[7]);
+            $estacao = Helper::parseEstacao($row[8]);
+            $luz = Helper::parseLuz($row[9]);
+            $solo = Helper::parseSolo($row[12]);
+            $agua = Helper::parseAgua($row[13]);
+            $persistencia = Helper::parsePersistencia($row[14], $row[15], $row[16]);
+            $tempo_crescimento = Helper::parseTempoCrescimento($row[17]);
+            $densidade= Helper::parseDensidade($row[18]);
 
-            if( !empty($abreviatura) &&
-                !empty($nome_botanico) &&
+
+            if( !empty($nome_botanico) &&
+                !empty($categoria) &&
                 !empty($curiosidades) &&
                 !empty($notas) &&
                 !empty($tempo_crescimento) &&

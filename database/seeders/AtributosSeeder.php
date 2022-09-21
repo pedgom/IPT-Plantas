@@ -158,43 +158,44 @@ class AtributosSeeder extends Seeder
         ]);
 
         DB::table('categoria_atributos')->insert([
+
             [
-                'name' => 'Árvores',
+                'name' => 'A-árvore',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Arbustos',
+                'name' => 'B-arbusto',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Herbáceas',
+                'name' => 'D-herbácea',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Trepadeiras',
+                'name' => 'E-trepadeira',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Aquáticas',
+                'name' => 'X-aquática',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Catos/Suculentas',
+                'name' => 'X-cato/suculenta',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Palmeiras',
+                'name' => 'X-palmeira',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Bambus',
+                'name' => 'X-bambu',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -1071,6 +1072,11 @@ class AtributosSeeder extends Seeder
            ]);
         DB::table('densidade_atributos')->insert([
 
+            [
+                'name' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
             [
                 'name' => '1un/m2',
                 'created_at' => date("Y-m-d H:i:s"),

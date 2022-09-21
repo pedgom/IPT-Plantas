@@ -24,10 +24,14 @@ class PlantaDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
-            ->editColumn('persistencia_atributo_id', function($planta){
+            ->editColumn('imagem_principal', function($planta){
+                $hasMedia = $planta->hasMedia('imagem_principal');
 
-                return PersistenciaAtributo::$planta->persistenciaAtributo->persistencia;
+                if($hasMedia){
+                    return '<img src="'.$planta->getFirstMediaUrl('imagem_principal').'" height="40px" />';
+                }
             })
+
 
 
             //->editColumn('descritor', function($planta){
@@ -41,7 +45,8 @@ class PlantaDataTable extends DataTable
                         <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.edit', $planta) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
                         <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $planta->id .'" data-delete-url="'. route('plantas.destroy', $planta) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
             })
-            ->setRowClass('text-gray-600 fw-bold');
+            ->setRowClass('text-gray-600 fw-bold')
+            ->rawColumns(['imagem_principal', 'action']);
         //->editColumn('type', '{{ $this->typeLabel }}')
         /*->editColumn('type', function ($model) {
                           return  $model->typeLabel;
@@ -98,16 +103,17 @@ class PlantaDataTable extends DataTable
     {
         $model = new Planta();
         return [
+            Column::computed('imagem_principal')->title($model->getAttributeLabel('imagem_principal')),
             Column::make('abreviatura')->title($model->getAttributeLabel('abreviatura')),
             Column::make('nome_botanico')->title($model->getAttributeLabel('nome_botanico')),
             Column::make('nome_comum')->title($model->getAttributeLabel('nome_comum')),
             Column::make('tempo_crescimento')->title($model->getAttributeLabel('tempo_crescimento')),
-            Column::make('persistencia_atributo_id')
-                ->attributes(['data-options' => json_encode(PersistenciaAtributo::getPersistenciaArray())])
-                ->title($model->getAttributeLabel('persistencia_atributo_id')),
-            Column::make('ordem_atributo_id')
-                ->attributes(['data-options' => json_encode(OrdemAtributo::getOrdemArray())])
-                ->title($model->getAttributeLabel('ordem_atributo_id')),
+            //Column::make('persistencia_atributo_id')
+                //->attributes(['data-options' => json_encode(PersistenciaAtributo::getPersistenciaArray())])
+                //->title($model->getAttributeLabel('persistencia_atributo_id')),
+            //Column::make('ordem_atributo_id')
+                //->attributes(['data-options' => json_encode(OrdemAtributo::getOrdemArray())])
+                //->title($model->getAttributeLabel('ordem_atributo_id')),
 
             //Column::make('descritor')->title($model->getAttributeLabel('descritor')),
 
