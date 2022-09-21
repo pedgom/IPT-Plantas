@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('colecao_atributos', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('colecao');
+            $table->string('colecao');
             $table->timestamps();
         });
     }

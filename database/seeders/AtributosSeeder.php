@@ -283,37 +283,37 @@ class AtributosSeeder extends Seeder
 
         DB::table('persistencia_atributos')->insert([
             [
-                'persistencia' => 1,
+                'persistencia' => 'Perenifolia',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'persistencia' => 2,
+                'persistencia' => 'Caducifolia',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'persistencia' => 3,
+                'persistencia' => 'Marcescente',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'persistencia' => 4,
+                'persistencia' => 'Perene',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'persistencia' => 5,
+                'persistencia' => 'Vivaz',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'persistencia' => 6,
+                'persistencia' => 'Anual',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'persistencia' => 7,
+                'persistencia' => 'Bianual',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -462,22 +462,22 @@ class AtributosSeeder extends Seeder
 
         DB::table('colecao_atributos')->insert([
             [
-                'colecao' => 1,
+                'colecao' => 'Sombra',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 2,
+                'colecao' => 'Interior',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 3,
+                'colecao' => 'Duna Primária',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'colecao' => 4,
+                'colecao' => 'Duna Secundária',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]

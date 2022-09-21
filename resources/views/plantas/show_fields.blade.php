@@ -186,7 +186,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Persistência') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\PersistenciaAtributo::getPersistenciaArray()[$planta->persistenciaAtributo->persistencia]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->persistenciaAtributo->persistencia??null }}</span>
     </div>
 </div>
 
@@ -258,7 +258,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Coleção') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\ColecaoAtributo::getColecaoArray()[$planta->colecaoAtributo->colecao]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->colecaoAtributo->colecao??null }}</span>
     </div>
 </div>
 

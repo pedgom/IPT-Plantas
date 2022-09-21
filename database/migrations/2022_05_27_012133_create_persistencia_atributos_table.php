@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('persistencia_atributos', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('persistencia');
+            $table->string('persistencia');
             $table->timestamps();
         });
     }

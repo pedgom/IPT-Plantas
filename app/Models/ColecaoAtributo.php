@@ -22,10 +22,7 @@ class ColecaoAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const SOMBRA = 1;
-    const INTERIOR = 2;
-    const DUNA_PRIMARIA = 3;
-    const DUNA_SECUNDARIA = 4;
+
 
 
 
@@ -74,35 +71,7 @@ class ColecaoAtributo extends Model implements Auditable
 
     public static function getColecaoArray(){
 
-        return [
-            self::SOMBRA=>__('SOMBRA'),
-            self::INTERIOR=>__('INTERIOR'),
-            self::DUNA_PRIMARIA=>__('DUNA PRIMARIA'),
-            self::DUNA_SECUNDARIA=>__('DUNA SECUNDARIA'),
-
-        ];
-    }
-
-
-
-    /**
-     * Retorna a familia selecionada
-     * @return array
-     *
-     */
-    public function getColecaoOptions(){
-
-        return static::getColecaoArray();
-    }
-
-
-    /**
-     * Retorna a ordem selecionada
-     * @return
-     */
-    public function getColecaoLabelAttribute(){
-        $array= self::getColecaoOptions();
-        return $array [$this->colecao]??null;
+        return self::all()->pluck('colecao', 'id')->toArray();
     }
 
     /**

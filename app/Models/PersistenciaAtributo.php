@@ -22,13 +22,7 @@ class PersistenciaAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const PERSISTENCIA_PERENIFOLIA = 1;
-    const PERSISTENCIA_CADUCIFOLIA = 2;
-    const PERSISTENCIA_MARCESCENTE = 3;
-    const PERSISTENCIA_PERENE = 4;
-    const PERSISTENCIA_VIVAZ = 5;
-    const PERSISTENCIA_ANUAL = 6;
-    const PERSISTENCIA_BIANUAL = 7;
+
 
 
 
@@ -84,37 +78,7 @@ class PersistenciaAtributo extends Model implements Auditable
      */
     public static function getPersistenciaArray(){
 
-        return [
-            self::PERSISTENCIA_PERENIFOLIA=>__('PERENNIFOLIA PERSISTENCE'),
-            self::PERSISTENCIA_CADUCIFOLIA=>__('CADUCIFOLIA PERSISTENCE'),
-            self::PERSISTENCIA_MARCESCENTE=>__('MARCESCENTE PERSISTENCE'),
-            self::PERSISTENCIA_PERENE=>__('PERENE PERSISTENCE'),
-            self::PERSISTENCIA_VIVAZ=>__('VIVAZ PERSISTENCE'),
-            self::PERSISTENCIA_ANUAL=>__('ANUAL PERSISTENCE'),
-            self::PERSISTENCIA_BIANUAL=>__('BIANUAL PERSISTENCE')
-        ];
-    }
-
-
-
-    /**
-     * Retorna a persistencia selecionada
-     * @return array
-     *
-     */
-    public function getPersistenciaOptions(){
-
-        return static::getPersistenciaArray();
-    }
-
-
-    /**
-     * Retorna a persistencia selecionada
-     * @return
-     */
-    public function getPersistenciaLabelAttribute(){
-        $array= self::getPersistenciaOptions();
-        return $array [$this->persistencia]??null;
+        return self::all()->pluck('persistencia', 'id')->toArray();
     }
 
 

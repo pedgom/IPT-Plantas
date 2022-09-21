@@ -18,7 +18,7 @@ view()->share('hideSubHeader', true);
                 {{ __('Create Colecao Atributo') }}
             </h3>
         </div>
-        {!! Form::model($colecaoAtributo, ['route' => ['colecao-atributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($colecaoAtributo, ['route' => ['colecaoAtributos.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('colecao_atributos.fields')
              </div>

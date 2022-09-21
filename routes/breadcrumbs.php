@@ -189,7 +189,7 @@ Breadcrumbs::for('categoria-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('categoria-atributos.show', function ($trail, $model) {
     $trail->parent('categoria-atributos.index');
-    $trail->push($model->planta_id, route('categoria-atributos.show', $model));
+    $trail->push($model->id, route('categoria-atributos.show', $model));
 });
 Breadcrumbs::for('categoria-atributos.edit', function ($trail, $model) {
     $trail->parent('categoria-atributos.show', $model);
@@ -232,7 +232,7 @@ Breadcrumbs::for('luz-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('luz-atributos.show', function ($trail, $model) {
     $trail->parent('luz-atributos.index');
-    $trail->push($model->planta_id, route('luz-atributos.show', $model));
+    $trail->push($model->id, route('luz-atributos.show', $model));
 });
 Breadcrumbs::for('luz-atributos.edit', function ($trail, $model) {
     $trail->parent('luz-atributos.show', $model);
@@ -275,7 +275,7 @@ Breadcrumbs::for('diametro-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('diametro-atributos.show', function ($trail, $model) {
     $trail->parent('diametro-atributos.index');
-    $trail->push($model->planta_id, route('diametro-atributos.show', $model));
+    $trail->push($model->id, route('diametro-atributos.show', $model));
 });
 Breadcrumbs::for('diametro-atributos.edit', function ($trail, $model) {
     $trail->parent('diametro-atributos.show', $model);
@@ -318,7 +318,7 @@ Breadcrumbs::for('densidade-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('densidade-atributos.show', function ($trail, $model) {
     $trail->parent('densidade-atributos.index');
-    $trail->push($model->planta_id, route('densidade-atributos.show', $model));
+    $trail->push($model->id, route('densidade-atributos.show', $model));
 });
 Breadcrumbs::for('densidade-atributos.edit', function ($trail, $model) {
     $trail->parent('densidade-atributos.show', $model);
@@ -359,7 +359,7 @@ Breadcrumbs::for('agua-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('agua-atributos.show', function ($trail, $model) {
     $trail->parent('agua-atributos.index');
-    $trail->push($model->planta_id, route('agua-atributos.show', $model));
+    $trail->push($model->id, route('agua-atributos.show', $model));
 });
 Breadcrumbs::for('agua-atributos.edit', function ($trail, $model) {
     $trail->parent('agua-atributos.show', $model);
@@ -400,7 +400,7 @@ Breadcrumbs::for('resistencia-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('resistencia-atributos.show', function ($trail, $model) {
     $trail->parent('resistencia-atributos.index');
-    $trail->push($model->planta_id, route('resistencia-atributos.show', $model));
+    $trail->push($model->id, route('resistencia-atributos.show', $model));
 });
 Breadcrumbs::for('resistencia-atributos.edit', function ($trail, $model) {
     $trail->parent('resistencia-atributos.show', $model);
@@ -441,7 +441,7 @@ Breadcrumbs::for('solo-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('solo-atributos.show', function ($trail, $model) {
     $trail->parent('solo-atributos.index');
-    $trail->push($model->planta_id, route('solo-atributos.show', $model));
+    $trail->push($model->id, route('solo-atributos.show', $model));
 });
 Breadcrumbs::for('solo-atributos.edit', function ($trail, $model) {
     $trail->parent('solo-atributos.show', $model);
@@ -481,7 +481,7 @@ Breadcrumbs::for('ph-solo-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('ph-solo-atributos.show', function ($trail, $model) {
     $trail->parent('ph-solo-atributos.index');
-    $trail->push($model->planta_id, route('ph-solo-atributos.show', $model));
+    $trail->push($model->id, route('ph-solo-atributos.show', $model));
 });
 Breadcrumbs::for('ph-solo-atributos.edit', function ($trail, $model) {
     $trail->parent('ph-solo-atributos.show', $model);
@@ -526,7 +526,7 @@ Breadcrumbs::for('estacao-atributos.create', function ($trail) {
 });
 Breadcrumbs::for('estacao-atributos.show', function ($trail, $model) {
     $trail->parent('estacao-atributos.index');
-    $trail->push($model->planta_id, route('estacao-atributos.show', $model));
+    $trail->push($model->id, route('estacao-atributos.show', $model));
 });
 Breadcrumbs::for('estacao-atributos.edit', function ($trail, $model) {
     $trail->parent('estacao-atributos.show', $model);
@@ -738,7 +738,7 @@ Breadcrumbs::for('persistenciaAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('persistenciaAtributos.show', function ($trail, $model) {
     $trail->parent('persistenciaAtributos.index');
-    $trail->push($model->planta_id, route('persistenciaAtributos.show', $model));
+    $trail->push($model->persistencia, route('persistenciaAtributos.show', $model));
 });
 Breadcrumbs::for('persistenciaAtributos.edit', function ($trail, $model) {
     $trail->parent('persistenciaAtributos.show', $model);

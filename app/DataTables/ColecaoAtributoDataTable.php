@@ -22,6 +22,9 @@ class ColecaoAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('colecao', function($colecaoAtributo){
+                return $colecaoAtributo->colecao;
+            })
             ->addColumn('action', function ($colecaoAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('colecao-atributos.show', $colecaoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
                         <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('colecao-atributos.edit', $colecaoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>

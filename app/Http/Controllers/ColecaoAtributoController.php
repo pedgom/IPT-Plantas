@@ -49,7 +49,7 @@ class ColecaoAtributoController extends Controller
         if(($model = ColecaoAtributo::create($validatedAttributes)) ) {
             //flash(Colecao Atributo saved successfully.');
             //Flash::success('Colecao Atributo saved successfully.');
-            return redirect(route('colecao-atributos.show', $model));
+            return redirect(route('colecaoAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class ColecaoAtributoController extends Controller
         if($colecaoAtributo->save()) {
             //flash('Colecao Atributo updated successfully.');
             //Flash::success('Colecao Atributo updated successfully.');
-            return redirect(route('colecao-atributos.show', $colecaoAtributo));
+            return redirect(route('colecaoAtributos.show', $colecaoAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class ColecaoAtributoController extends Controller
         $colecaoAtributo->delete();
         //Flash::success('Colecao Atributo deleted successfully.');
 
-        return redirect(route('colecao-atributos.index'));
+        return redirect(route('colecaoAtributos.index'));
     }
 
     /**

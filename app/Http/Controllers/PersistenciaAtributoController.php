@@ -49,7 +49,7 @@ class PersistenciaAtributoController extends Controller
         if(($model = PersistenciaAtributo::create($validatedAttributes)) ) {
             //flash(Persistencia Atributo saved successfully.');
             //Flash::success('Persistencia Atributo saved successfully.');
-            return redirect(route('persistencia-atributos.show', $model));
+            return redirect(route('persistenciaAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class PersistenciaAtributoController extends Controller
         if($persistenciaAtributo->save()) {
             //flash('Persistencia Atributo updated successfully.');
             //Flash::success('Persistencia Atributo updated successfully.');
-            return redirect(route('persistencia-atributos.show', $persistenciaAtributo));
+            return redirect(route('persistenciaAtributos.show', $persistenciaAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class PersistenciaAtributoController extends Controller
         $persistenciaAtributo->delete();
         //Flash::success('Persistencia Atributo deleted successfully.');
 
-        return redirect(route('persistencia-atributos.index'));
+        return redirect(route('persistenciaAtributos.index'));
     }
 
     /**
