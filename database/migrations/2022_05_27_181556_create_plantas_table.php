@@ -30,14 +30,14 @@ return new class extends Migration {
 
             //IDENTIFICAÇÃO
 
-            $table->string('abreviatura');       //
-            $table->string('nome_botanico');    //nome botanico
+            $table->string('abreviatura')->nullable();
+            $table->string('nome_botanico');
 
-            $table->string('nome_comum');
+            $table->string('nome_comum')->nullable();
 
             $table->string('tempo_crescimento');
-            $table->string('notas');
-            $table->string('curiosidades');
+            $table->string('notas')->nullable();
+            $table->string('curiosidades')->nullable();
 
             $table->foreignId('persistencia_atributo_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('ordem_atributo_id')->nullable()->constrained()->onDelete('set null');

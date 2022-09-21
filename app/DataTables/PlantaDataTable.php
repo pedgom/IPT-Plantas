@@ -26,7 +26,7 @@ class PlantaDataTable extends DataTable
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->editColumn('persistencia_atributo_id', function($planta){
 
-                return PersistenciaAtributo::getPersistenciaArray()[$planta->persistenciaAtributo->persistencia];
+                return PersistenciaAtributo::$planta->persistenciaAtributo->persistencia;
             })
 
 

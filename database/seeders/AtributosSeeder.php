@@ -277,6 +277,12 @@ class AtributosSeeder extends Seeder
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
+            [
+                'name' => '30.00+',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
 
         ]);
 
@@ -340,6 +346,11 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('situacao_ecologica_atributos')->insert([
             [
+                'situacao_ecologica' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
                 'situacao_ecologica' => 'Dunas e areais litorais, frequentemente em cristas dunares e dominando a duna primária',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
@@ -355,11 +366,17 @@ class AtributosSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
+
         ]);
 
 
 
         DB::table('origem_relacao_atributos')->insert([
+            [
+                'origem_relacao' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
             [
                 'origem_relacao' => 'Autotocnes',
                 'created_at' => date("Y-m-d H:i:s"),
@@ -384,11 +401,17 @@ class AtributosSeeder extends Seeder
                 'origem_relacao' => 'Infraestrantes',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
-            ]
+            ],
+
 
 
         ]);
         DB::table('uso_atributos')->insert([
+            [
+                'uso' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
             [
                 'uso' => 'Medicinal',
                 'created_at' => date("Y-m-d H:i:s"),
@@ -428,7 +451,8 @@ class AtributosSeeder extends Seeder
                 'uso' => 'Social',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
-            ]
+            ],
+
 
         ]);
         DB::table('aplicacao_atributos')->insert([
@@ -462,6 +486,11 @@ class AtributosSeeder extends Seeder
 
         DB::table('colecao_atributos')->insert([
             [
+                'colecao' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
                 'colecao' => 'Sombra',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
@@ -480,7 +509,8 @@ class AtributosSeeder extends Seeder
                 'colecao' => 'Duna Secundária',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
-            ]
+            ],
+
         ]);
         DB::table('especie_zona_atributos')->insert([
             [
@@ -879,6 +909,11 @@ class AtributosSeeder extends Seeder
 
         DB::table('ordem_atributos')->insert([
             [
+                'ordem' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
                 'ordem' => 'Brassicales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
@@ -913,6 +948,7 @@ class AtributosSeeder extends Seeder
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
+
 
 
         ]);
@@ -958,6 +994,11 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('genero_atributos')->insert([
             [
+                'genero' => 'NA',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
                 'genero' => 'Abarema',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
@@ -991,7 +1032,8 @@ class AtributosSeeder extends Seeder
                 'genero' => 'Euphorbia',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
-            ]
+            ],
+
         ]);
 
 
@@ -1000,7 +1042,11 @@ class AtributosSeeder extends Seeder
 
 
         DB::table('diametro_atributos')->insert([
-
+            [
+                'name' => '0.50-',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
             [
                 'name' => '0.50 - 0.80',
                 'created_at' => date("Y-m-d H:i:s"),
@@ -1015,7 +1061,13 @@ class AtributosSeeder extends Seeder
                 'name' => '3.00 - 7.00',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
-            ]
+            ],
+            [
+                'name' => '7.00+',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
            ]);
         DB::table('densidade_atributos')->insert([
 
