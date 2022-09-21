@@ -49,7 +49,7 @@ class OrigemRelacaoAtributoController extends Controller
         if(($model = OrigemRelacaoAtributo::create($validatedAttributes)) ) {
             //flash(Origem Relacao Atributo saved successfully.');
             //Flash::success('Origem Relacao Atributo saved successfully.');
-            return redirect(route('origem-relacao-atributos.show', $model));
+            return redirect(route('origemRelacaoAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class OrigemRelacaoAtributoController extends Controller
         if($origemRelacaoAtributo->save()) {
             //flash('Origem Relacao Atributo updated successfully.');
             //Flash::success('Origem Relacao Atributo updated successfully.');
-            return redirect(route('origem-relacao-atributos.show', $origemRelacaoAtributo));
+            return redirect(route('origemRelacaoAtributos.show', $origemRelacaoAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class OrigemRelacaoAtributoController extends Controller
         $origemRelacaoAtributo->delete();
         //Flash::success('Origem Relacao Atributo deleted successfully.');
 
-        return redirect(route('origem-relacao-atributos.index'));
+        return redirect(route('origemRelacaoAtributos.index'));
     }
 
     /**

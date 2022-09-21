@@ -22,6 +22,8 @@ class OrigemRelacaoAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('origem_relacao', function($origemRelacaoAtributo){
+                return $origemRelacaoAtributo->origem_relacao;})
             ->addColumn('action', function ($origemRelacaoAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('origemRelacaoAtributos.show', $origemRelacaoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
                         <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('origemRelacaoAtributos.edit', $origemRelacaoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>

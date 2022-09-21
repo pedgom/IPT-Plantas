@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('forma_arvore_atributos', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('forma_arvore');
+            $table->string('forma_arvore');
             $table->timestamps();
         });
     }

@@ -49,7 +49,7 @@ class OrdemAtributoController extends Controller
         if(($model = OrdemAtributo::create($validatedAttributes)) ) {
             //flash(Ordem Atributo saved successfully.');
             //Flash::success('Ordem Atributo saved successfully.');
-            return redirect(route('ordem-atributos.show', $model));
+            return redirect(route('ordemAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class OrdemAtributoController extends Controller
         if($ordemAtributo->save()) {
             //flash('Ordem Atributo updated successfully.');
             //Flash::success('Ordem Atributo updated successfully.');
-            return redirect(route('ordem-atributos.show', $ordemAtributo));
+            return redirect(route('ordemAtributos.show', $ordemAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class OrdemAtributoController extends Controller
         $ordemAtributo->delete();
         //Flash::success('Ordem Atributo deleted successfully.');
 
-        return redirect(route('ordem-atributos.index'));
+        return redirect(route('ordemAtributos.index'));
     }
 
     /**

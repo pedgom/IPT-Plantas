@@ -23,7 +23,7 @@ class OrdemAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->editColumn('ordem', function($ordemAtributo){
-                return $ordemAtributo->getOrdemLabelAttribute();
+                return $ordemAtributo->ordem;
             })
             ->addColumn('action', function ($ordemAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('ordemAtributos.show', $ordemAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>

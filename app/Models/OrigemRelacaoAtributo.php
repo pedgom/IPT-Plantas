@@ -22,11 +22,7 @@ class OrigemRelacaoAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const AUTOTOCNES = 1;
-    const EXOTICAS = 2;
-    const NATURALIZADA = 3;
-    const INVASORA = 4;
-    const INFRAESTRANTES = 5;
+
 
 
 
@@ -81,37 +77,7 @@ class OrigemRelacaoAtributo extends Model implements Auditable
      */
     public static function getOrigemRelacaoArray(){
 
-        return [
-
-            self::AUTOTOCNES=>__('AUTOTOCNES'),
-            self::EXOTICAS=>__('EXOTICAS'),
-            self::NATURALIZADA=>__('NATURALIZADA'),
-            self::INVASORA=>__('INVASORA'),
-            self::INFRAESTRANTES=>__('INFRAESTRANTES')
-
-        ];
-    }
-
-
-
-    /**
-     * Retorna a familia selecionada
-     * @return array
-     *
-     */
-    public function getOrigemRelacaoOptions(){
-
-        return static::getOrigemRelacaoArray();
-    }
-
-
-    /**
-     * Retorna a ordem selecionada
-     * @return
-     */
-    public function getOrigemRelacaoLabelAttribute(){
-        $array= self::getOrigemRelacaoOptions();
-        return $array [$this->origem_relacao]??null;
+        return self::all()->pluck('origem_relacao', 'id')->toArray();
     }
 
     /**

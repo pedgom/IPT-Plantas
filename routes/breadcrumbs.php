@@ -631,7 +631,7 @@ Breadcrumbs::for('formaArvoreAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('formaArvoreAtributos.show', function ($trail, $model) {
     $trail->parent('formaArvoreAtributos.index');
-    $trail->push($model->planta_id, route('formaArvoreAtributos.show', $model));
+    $trail->push($model->forma_arvore, route('formaArvoreAtributos.show', $model));
 });
 Breadcrumbs::for('formaArvoreAtributos.edit', function ($trail, $model) {
     $trail->parent('formaArvoreAtributos.show', $model);
@@ -652,7 +652,7 @@ Breadcrumbs::for('formaHerbaceaAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('formaHerbaceaAtributos.show', function ($trail, $model) {
     $trail->parent('formaHerbaceaAtributos.index');
-    $trail->push($model->planta_id, route('formaHerbaceaAtributos.show', $model));
+    $trail->push($model->forma_herbacea, route('formaHerbaceaAtributos.show', $model));
 });
 Breadcrumbs::for('formaHerbaceaAtributos.edit', function ($trail, $model) {
     $trail->parent('formaHerbaceaAtributos.show', $model);
@@ -674,7 +674,7 @@ Breadcrumbs::for('generoAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('generoAtributos.show', function ($trail, $model) {
     $trail->parent('generoAtributos.index');
-    $trail->push($model->planta_id, route('generoAtributos.show', $model));
+    $trail->push($model->genero, route('generoAtributos.show', $model));
 });
 Breadcrumbs::for('generoAtributos.edit', function ($trail, $model) {
     $trail->parent('generoAtributos.show', $model);
@@ -684,7 +684,7 @@ Breadcrumbs::for('generoAtributos.edit', function ($trail, $model) {
 
 
 //**************************************************************************************
-//Genero         ************************************************************************
+//Ordem         ************************************************************************
 //**************************************************************************************
 Breadcrumbs::for('ordemAtributos.index', function ($trail) {
     $trail->parent('home');
@@ -696,7 +696,7 @@ Breadcrumbs::for('ordemAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('ordemAtributos.show', function ($trail, $model) {
     $trail->parent('ordemAtributos.index');
-    $trail->push($model->planta_id, route('ordemAtributos.show', $model));
+    $trail->push($model->ordem, route('ordemAtributos.show', $model));
 });
 Breadcrumbs::for('ordemAtributos.edit', function ($trail, $model) {
     $trail->parent('ordemAtributos.show', $model);
@@ -717,7 +717,7 @@ Breadcrumbs::for('origemRelacaoAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('origemRelacaoAtributos.show', function ($trail, $model) {
     $trail->parent('origemRelacaoAtributos.index');
-    $trail->push($model->planta_id, route('origemRelacaoAtributos.show', $model));
+    $trail->push($model->origem_relacao, route('origemRelacaoAtributos.show', $model));
 });
 Breadcrumbs::for('origemRelacaoAtributos.edit', function ($trail, $model) {
     $trail->parent('origemRelacaoAtributos.show', $model);
@@ -759,7 +759,7 @@ Breadcrumbs::for('situacaoEcologicaAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('situacaoEcologicaAtributos.show', function ($trail, $model) {
     $trail->parent('situacaoEcologicaAtributos.index');
-    $trail->push($model->planta_id, route('situacaoEcologicaAtributos.show', $model));
+    $trail->push($model->situacao_ecologica, route('situacaoEcologicaAtributos.show', $model));
 });
 Breadcrumbs::for('situacaoEcologicaAtributos.edit', function ($trail, $model) {
     $trail->parent('situacaoEcologicaAtributos.show', $model);
@@ -768,7 +768,7 @@ Breadcrumbs::for('situacaoEcologicaAtributos.edit', function ($trail, $model) {
 
 
 //**************************************************************************************
-//Situaçao Ecologica        ************************************************************************
+//Uso        ************************************************************************
 //**************************************************************************************
 Breadcrumbs::for('usoAtributos.index', function ($trail) {
     $trail->parent('home');
@@ -780,7 +780,7 @@ Breadcrumbs::for('usoAtributos.create', function ($trail) {
 });
 Breadcrumbs::for('usoAtributos.show', function ($trail, $model) {
     $trail->parent('usoAtributos.index');
-    $trail->push($model->planta_id, route('usoAtributos.show', $model));
+    $trail->push($model->uso, route('usoAtributos.show', $model));
 });
 Breadcrumbs::for('usoAtributos.edit', function ($trail, $model) {
     $trail->parent('usoAtributos.show', $model);

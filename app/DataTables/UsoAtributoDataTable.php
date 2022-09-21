@@ -22,6 +22,9 @@ class UsoAtributoDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
+            ->editColumn('uso', function($usoAtributo){
+                return $usoAtributo->uso;
+            })
             ->addColumn('action', function ($usoAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('usoAtributos.show', $usoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
                         <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('usoAtributos.edit', $usoAtributo) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>

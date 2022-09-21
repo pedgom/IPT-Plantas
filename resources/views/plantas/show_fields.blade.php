@@ -194,7 +194,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Ordem') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrdemAtributo::getOrdemArray()[$planta->ordemAtributo->ordem]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->ordemAtributo->ordem??null }}</span>
     </div>
 </div>
 
@@ -213,7 +213,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Género') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\GeneroAtributo::getGeneroArray()[$planta->generoAtributo->genero]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->generoAtributo->genero??null }}</span>
     </div>
 </div>
 
@@ -230,7 +230,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Uso') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\UsoAtributo::getUsoArray()[$planta->usoAtributo->uso]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->usoAtributo->uso??null }}</span>
     </div>
 </div>
 
@@ -239,7 +239,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Origem Relação') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray()[$planta->origemRelacaoAtributo->origem_relacao]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->origemRelacaoAtributo->origem_relacao??null }}</span>
     </div>
 </div>
 
@@ -248,7 +248,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Forma Árvore') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaArvoreAtributo::getFormaArvoreArray()[$planta->formaArvoreAtributo->forma_arvore]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->formaArvoreAtributo->forma_arvore??null }}</span>
     </div>
 </div>
 

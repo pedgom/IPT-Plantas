@@ -23,7 +23,7 @@ class FormaArvoreAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->editColumn('forma_arvore', function($formaArvoreAtributo){
-                return $formaArvoreAtributo->getFormaArvoreLabelAttribute();
+                return $formaArvoreAtributo->forma_arvore;
             })
             ->addColumn('action', function ($formaArvoreAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('formaArvoreAtributos.show', $formaArvoreAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>

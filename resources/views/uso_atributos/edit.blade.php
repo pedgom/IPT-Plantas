@@ -9,7 +9,7 @@ view()->share('hideSubHeader', true);
 ?>
 <x-base-layout>
     @section('breadcrumbs')
-        {{ Breadcrumbs::render('uso-atributos.edit', $usoAtributo) }}
+        {{ Breadcrumbs::render('usoAtributos.edit', $usoAtributo) }}
     @endsection
     <div class="card">
         <div class="card-header">
@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $usoAtributo->id }}
             </h3>
         </div>
-        {!! Form::model($usoAtributo, ['route' => ['uso-atributos.update', $usoAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($usoAtributo, ['route' => ['usoAtributos.update', $usoAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('uso_atributos.fields')
              </div>

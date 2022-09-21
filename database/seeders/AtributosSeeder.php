@@ -361,70 +361,71 @@ class AtributosSeeder extends Seeder
 
         DB::table('origem_relacao_atributos')->insert([
             [
-                'origem_relacao' => '1',
+                'origem_relacao' => 'Autotocnes',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => '2',
+                'origem_relacao' => 'Exoticas',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => '3',
+                'origem_relacao' => 'Naturalizadas',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => '4',
+                'origem_relacao' => 'Invasoras',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'origem_relacao' => '5',
+                'origem_relacao' => 'Infraestrantes',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
 
+
         ]);
         DB::table('uso_atributos')->insert([
             [
-                'uso' => '1',
+                'uso' => 'Medicinal',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '2',
+                'uso' => 'Alimentar',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '3',
+                'uso' => 'Essências/Industriais',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '4',
+                'uso' => 'Venenosas/Tóxicas',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '5',
+                'uso' => 'Materiais/Infraestruturas',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '6',
+                'uso' => 'Forrageiras',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '7',
+                'uso' => 'Melidera',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'uso' => '8',
+                'uso' => 'Social',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -543,73 +544,73 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('forma_arvore_atributos')->insert([
             [
-                'forma_arvore' => '1',
+                'forma_arvore' => 'NA',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '2',
+                'forma_arvore' => 'Colunar',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '3',
+                'forma_arvore' => 'Fastigiata',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '4',
+                'forma_arvore' => 'Oval',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '5',
+                'forma_arvore' => 'Conica',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '6',
+                'forma_arvore' => 'Esférica',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_arvore' => '7',
+                'forma_arvore' => 'Eliptica',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '8',
+                'forma_arvore' => 'Umbela',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '9',
+                'forma_arvore' => 'Estendida',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '10',
+                'forma_arvore' => 'Pendular',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '11',
+                'forma_arvore' => 'Irregular',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '12',
+                'forma_arvore' => 'Semi-Ovoide',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '13',
+                'forma_arvore' => 'Palmiforme',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_arvore' => '14',
+                'forma_arvore' => 'Abanico',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
@@ -685,64 +686,65 @@ class AtributosSeeder extends Seeder
 
         DB::table('forma_herbacea_atributos')->insert([
             [
-                'forma_herbacea' => 1,
+                'forma_herbacea' => 'NA',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_herbacea' => 2,
+                'forma_herbacea' => 'Floração Alta',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_herbacea' => 3,
+                'forma_herbacea' => 'Cespitosa',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_herbacea' => 4,
+                'forma_herbacea' => 'Curvada/Pendula/Erva',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_herbacea' => 5,
+                'forma_herbacea' => 'Floração Topo',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_herbacea' => 6,
+                'forma_herbacea' => 'Tufo Rasteiro',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'forma_herbacea' => 7,
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
-            ],
-
-            [
-                'forma_herbacea' => 8,
+                'forma_herbacea' => 'Composta',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_herbacea' => 9,
+                'forma_herbacea' => 'Delicada',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_herbacea' => 10,
+                'forma_herbacea' => 'Floração Exterior',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
 
             [
-                'forma_herbacea' => 12,
+                'forma_herbacea' => 'Pendente',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+
+            [
+                'forma_herbacea' => 'Espinhosa',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
+
 
 
 
@@ -877,40 +879,41 @@ class AtributosSeeder extends Seeder
 
         DB::table('ordem_atributos')->insert([
             [
-                'ordem' => 1,
+                'ordem' => 'Brassicales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'ordem' => 2,
+                'ordem' => 'Celastrales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'ordem' => 3,
+                'ordem' => 'Crossosomatales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'ordem' => 4,
+                'ordem' => 'Fabales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'ordem' => 5,
+                'ordem' => 'Geraniales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'ordem' => 6,
+                'ordem' => 'Huerteales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'ordem' => 7,
+                'ordem' => 'Myrtales',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
+
 
         ]);
 
@@ -955,37 +958,37 @@ class AtributosSeeder extends Seeder
         ]);
         DB::table('genero_atributos')->insert([
             [
-                'genero' => 1,
+                'genero' => 'Abarema',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'genero' => 2,
+                'genero' => 'Abelia',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'genero' => 3,
+                'genero' => 'Acaena',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'genero' => 4,
+                'genero' => 'Achetaria',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'genero' => 5,
+                'genero' => 'Agrocharis',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'genero' => 6,
+                'genero' => 'Agonis',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'genero' => 7,
+                'genero' => 'Euphorbia',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]

@@ -49,7 +49,7 @@ class SituacaoEcologicaAtributoController extends Controller
         if(($model = SituacaoEcologicaAtributo::create($validatedAttributes)) ) {
             //flash(Situacao Ecologica Atributo saved successfully.');
             //Flash::success('Situacao Ecologica Atributo saved successfully.');
-            return redirect(route('situacao-ecologica-atributos.show', $model));
+            return redirect(route('situacaoEcologicaAtributos.show', $model));
         }else
             return redirect()->back();
     }

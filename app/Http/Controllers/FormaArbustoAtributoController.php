@@ -90,7 +90,7 @@ class FormaArbustoAtributoController extends Controller
         if($formaArbustoAtributo->save()) {
             //flash('Forma Arbusto Atributo updated successfully.');
             //Flash::success('Forma Arbusto Atributo updated successfully.');
-            return redirect(route('forma-arbusto-atributos.show', $formaArbustoAtributo));
+            return redirect(route('formaArbustoAtributos.show', $formaArbustoAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class FormaArbustoAtributoController extends Controller
         $formaArbustoAtributo->delete();
         //Flash::success('Forma Arbusto Atributo deleted successfully.');
 
-        return redirect(route('forma-arbusto-atributos.index'));
+        return redirect(route('formaArbustoAtributos.index'));
     }
 
     /**

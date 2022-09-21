@@ -1,4 +1,4 @@
-{!! Form::open(['route' => ['forma-herbacea-atributos.destroy', $id], 'method' => 'delete']) !!}
+{!! Form::open(['route' => ['formaHerbaceaAtributos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
     <a href="{{ route('formaHerbaceaAtributos.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>

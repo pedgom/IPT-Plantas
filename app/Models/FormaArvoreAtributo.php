@@ -22,20 +22,7 @@ class FormaArvoreAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const NA = 1;
-    const COLUNAR = 2;
-    const FASTIGIATA = 3;
-    const OVAL = 4;
-    const CONICA = 5;
-    const ESFERICA = 6;
-    const ELIPTICA = 7;
-    const UMBELA = 8;
-    const ESTENDIDA = 9;
-    const PENDULAR = 10;
-    const IRREGULAR = 11;
-    const SEMIOVOIDE = 12;
-    const PALMIFORME = 13;
-    const ABANICO = 14;
+
 
 
 
@@ -87,46 +74,10 @@ class FormaArvoreAtributo extends Model implements Auditable
      * @return array
      *
      */
-    public static function getFormaArvoreArray(){
+    public static function getFormaArvoreArray()
+    {
 
-        return [
-            self::NA=>__('NA'),
-            self::COLUNAR=>__('COLUNAR'),
-            self::FASTIGIATA=>__('FASTIGIATA'),
-            self::OVAL=>__('OVAL'),
-            self::CONICA=>__('CONICA'),
-            self::ESFERICA=>__('ESFERICA'),
-            self::ELIPTICA=>__('ELIPTICA'),
-            self::UMBELA=>__('UMBELA'),
-            self::ESTENDIDA=>__('ESTENDIDA'),
-            self::PENDULAR=>__('PENDULAR'),
-            self::IRREGULAR=>__('IRREGULAR'),
-            self::SEMIOVOIDE=>__('SEMIOVOIDE'),
-            self::PALMIFORME=>__('PALMIFORME'),
-            self::ABANICO=>__('ABANICO')
-        ];
-    }
-
-
-
-    /**
-     * Retorna a familia selecionada
-     * @return array
-     *
-     */
-    public function getFormaArvoreOptions(){
-
-        return static::getFormaArvoreArray();
-    }
-
-
-    /**
-     * Retorna a ordem selecionada
-     * @return
-     */
-    public function getFormaArvoreLabelAttribute(){
-        $array= self::getFormaArvoreOptions();
-        return $array [$this->forma_arvore]??null;
+        return self::all()->pluck('forma_arvore', 'id')->toArray();
     }
 
     /**

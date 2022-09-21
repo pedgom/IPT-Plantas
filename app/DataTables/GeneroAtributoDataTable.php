@@ -23,7 +23,7 @@ class GeneroAtributoDataTable extends DataTable
             ->eloquent($query)
             ->editColumn('created_at', '{!! date(\'d-m-Y H:i:s\', strtotime($created_at)) !!}')
             ->editColumn('genero', function($generoAtributo){
-                return $generoAtributo->getgeneroLabelAttribute();
+                return $generoAtributo->genero;
             })
             ->addColumn('action', function ($generoAtributo) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('generoAtributos.show', $generoAtributo) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>

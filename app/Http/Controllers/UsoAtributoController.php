@@ -49,7 +49,7 @@ class UsoAtributoController extends Controller
         if(($model = UsoAtributo::create($validatedAttributes)) ) {
             //flash(Uso Atributo saved successfully.');
             //Flash::success('Uso Atributo saved successfully.');
-            return redirect(route('uso-atributos.show', $model));
+            return redirect(route('usoAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class UsoAtributoController extends Controller
         if($usoAtributo->save()) {
             //flash('Uso Atributo updated successfully.');
             //Flash::success('Uso Atributo updated successfully.');
-            return redirect(route('uso-atributos.show', $usoAtributo));
+            return redirect(route('usoAtributos.show', $usoAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class UsoAtributoController extends Controller
         $usoAtributo->delete();
         //Flash::success('Uso Atributo deleted successfully.');
 
-        return redirect(route('uso-atributos.index'));
+        return redirect(route('usoAtributos.index'));
     }
 
     /**

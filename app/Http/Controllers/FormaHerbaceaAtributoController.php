@@ -49,7 +49,7 @@ class FormaHerbaceaAtributoController extends Controller
         if(($model = FormaHerbaceaAtributo::create($validatedAttributes)) ) {
             //flash(Forma Herbacea Atributo saved successfully.');
             //Flash::success('Forma Herbacea Atributo saved successfully.');
-            return redirect(route('forma-herbacea-atributos.show', $model));
+            return redirect(route('formaHerbaceaAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class FormaHerbaceaAtributoController extends Controller
         if($formaHerbaceaAtributo->save()) {
             //flash('Forma Herbacea Atributo updated successfully.');
             //Flash::success('Forma Herbacea Atributo updated successfully.');
-            return redirect(route('forma-herbacea-atributos.show', $formaHerbaceaAtributo));
+            return redirect(route('formaHerbaceaAtributos.show', $formaHerbaceaAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class FormaHerbaceaAtributoController extends Controller
         $formaHerbaceaAtributo->delete();
         //Flash::success('Forma Herbacea Atributo deleted successfully.');
 
-        return redirect(route('forma-herbacea-atributos.index'));
+        return redirect(route('formaHerbaceaAtributos.index'));
     }
 
     /**

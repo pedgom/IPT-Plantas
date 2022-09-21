@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $formaArbustoAtributo->id }}
             </h3>
         </div>
-        {!! Form::model($formaArbustoAtributo, ['route' => ['forma-arbusto-atributos.update', $formaArbustoAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
+        {!! Form::model($formaArbustoAtributo, ['route' => ['formaArbustoAtributos.update', $formaArbustoAtributo], 'method' => 'patch', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}
             <div class="card-body">
                 @include('forma_arbusto_atributos.fields')
              </div>

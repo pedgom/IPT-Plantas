@@ -22,17 +22,8 @@ class FormaHerbaceaAtributo extends Model implements Auditable
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    const NA = 1;
-    const FLORACAO_ALTA = 2;
-    const CESPITOSA = 3;
-    const CURVADA_PENDULA_ERVA = 4;
-    const FLORACAO_TOPO = 5;
-    const TUFO_RASTEIRO = 6;
-    const COMPOSTA = 7;
-    const DELICADA = 8;
-    const FLORACAO_EXTERIOR = 9;
-    const PENDENTE = 10;
-    const ESPINHOSA = 11;
+
+
 
 
 
@@ -81,42 +72,7 @@ class FormaHerbaceaAtributo extends Model implements Auditable
 
     public static function getFormaHerbaceaArray(){
 
-        return [
-            self::NA=>__('NA'),
-            self::FLORACAO_ALTA=>__('FLORACAO ALTA'),
-            self::CESPITOSA=>__('CESPITOSA'),
-            self::CURVADA_PENDULA_ERVA=>__('CURVADA PENDULA ERVA'),
-            self::FLORACAO_TOPO=>__('FLORACAO TOPO'),
-            self::TUFO_RASTEIRO=>__('TUFO RASTEIRO'),
-            self::COMPOSTA=>__('COMPOSTA'),
-            self::DELICADA=>__('DELICADA'),
-            self::FLORACAO_EXTERIOR=>__('FLORACAO EXTERIOR'),
-            self::PENDENTE=>__('PENDENTE'),
-            self::ESPINHOSA=>__('ESPINHOSA')
-
-        ];
-    }
-
-
-
-    /**
-     * Retorna a familia selecionada
-     * @return array
-     *
-     */
-    public function getFormaHerbaceaOptions(){
-
-        return static::getFormaHerbaceaArray();
-    }
-
-
-    /**
-     * Retorna a ordem selecionada
-     * @return
-     */
-    public function getFormaHerbaceaLabelAttribute(){
-        $array= self::getFormaHerbaceaOptions();
-        return $array [$this->forma_herbacea]??null;
+        return self::all()->pluck('forma_herbacea', 'id')->toArray();
     }
 
     /**

@@ -28,10 +28,7 @@ class PlantaDataTable extends DataTable
 
                 return PersistenciaAtributo::getPersistenciaArray()[$planta->persistenciaAtributo->persistencia];
             })
-            ->editColumn('ordem_atributo_id', function($planta){
 
-                return OrdemAtributo::getOrdemArray()[$planta->ordemAtributo->ordem];
-            })
 
             //->editColumn('descritor', function($planta){
 

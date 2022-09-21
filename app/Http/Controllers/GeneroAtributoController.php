@@ -49,7 +49,7 @@ class GeneroAtributoController extends Controller
         if(($model = GeneroAtributo::create($validatedAttributes)) ) {
             //flash(Genero Atributo saved successfully.');
             //Flash::success('Genero Atributo saved successfully.');
-            return redirect(route('genero-atributos.show', $model));
+            return redirect(route('generoAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class GeneroAtributoController extends Controller
         if($generoAtributo->save()) {
             //flash('Genero Atributo updated successfully.');
             //Flash::success('Genero Atributo updated successfully.');
-            return redirect(route('genero-atributos.show', $generoAtributo));
+            return redirect(route('generoAtributos.show', $generoAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class GeneroAtributoController extends Controller
         $generoAtributo->delete();
         //Flash::success('Genero Atributo deleted successfully.');
 
-        return redirect(route('genero-atributos.index'));
+        return redirect(route('generoAtributos.index'));
     }
 
     /**

@@ -17,7 +17,7 @@ view()->share('hideSubHeader', true);
                 {{ $situacaoEcologicaAtributo->id }}
             </h3>
             <div class="card-toolbar">
-                <a href="{{ route('situacao-ecologica-atributos.edit', $situacaoEcologicaAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
+                <a href="{{ route('situacaoEcologicaAtributos.edit', $situacaoEcologicaAtributo) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
                     {!! theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-3") !!}
                     {{ __('Update') }}
                 </a>
@@ -25,7 +25,7 @@ view()->share('hideSubHeader', true);
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
                 </button>
-                {!! Form::open(['route' => ['situacao-ecologica-atributos.destroy', $situacaoEcologicaAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
+                {!! Form::open(['route' => ['situacaoEcologicaAtributos.destroy', $situacaoEcologicaAtributo], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

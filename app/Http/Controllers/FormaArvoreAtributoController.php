@@ -49,7 +49,7 @@ class FormaArvoreAtributoController extends Controller
         if(($model = FormaArvoreAtributo::create($validatedAttributes)) ) {
             //flash(Forma Arvore Atributo saved successfully.');
             //Flash::success('Forma Arvore Atributo saved successfully.');
-            return redirect(route('forma-arvore-atributos.show', $model));
+            return redirect(route('formaArvoreAtributos.show', $model));
         }else
             return redirect()->back();
     }
@@ -90,7 +90,7 @@ class FormaArvoreAtributoController extends Controller
         if($formaArvoreAtributo->save()) {
             //flash('Forma Arvore Atributo updated successfully.');
             //Flash::success('Forma Arvore Atributo updated successfully.');
-            return redirect(route('forma-arvore-atributos.show', $formaArvoreAtributo));
+            return redirect(route('formaArvoreAtributos.show', $formaArvoreAtributo));
         }else{
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class FormaArvoreAtributoController extends Controller
         $formaArvoreAtributo->delete();
         //Flash::success('Forma Arvore Atributo deleted successfully.');
 
-        return redirect(route('forma-arvore-atributos.index'));
+        return redirect(route('formaArvoreAtributos.index'));
     }
 
     /**
