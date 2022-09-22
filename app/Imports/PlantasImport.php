@@ -157,7 +157,8 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
                 $validatedAttributes['cor_sintese_atributo_id']= $validatedAttributes['cor_sintese'];
                 unset($validatedAttributes['cor_sintese']);
 
-                $arr = self::parseValues($request);
+                $arr = self::parseValues($validatedAttributes);
+                Log::info($arr);
 
                 if(($model = Planta::updateOrCreate(['nome_botanico'=>$validatedAttributes['nome_botanico']], $arr)) ) {
 
@@ -190,9 +191,9 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
         }
     }
 
-    private function parseValues(Request $request){
+    private function parseValues( $validatedAttributes){
 
-        $request_values = $request->all();
+
 
         $array = [];
         $validKeys = [
@@ -217,7 +218,7 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
             'familia_atributo_id',
             'cor_sintese_atributo_id'
         ];
-        foreach($request_values as $key => $value){
+        foreach($validatedAttributes as $key => $value){
             if(in_array($key, $validKeys) && !empty($value)){
                 $array[$key] = $value;
             }
