@@ -80,67 +80,67 @@ class Helper
     public static function parseAltura(mixed $altura)
     {
         if($altura<0.10){
-            return AlturaAtributo::where('name', '0 - 0.10')->first()->id;
+            return [AlturaAtributo::where('name', '0 - 0.10')->first()->id];
         }
 
         else if($altura>=0.10 && $altura<0.30){
-            return AlturaAtributo::where('name', '0.10 - 0.30')->first()->id;
+            return [AlturaAtributo::where('name', '0.10 - 0.30')->first()->id];
         }
 
         else if($altura>=0.30 && $altura<0.45){
-            return AlturaAtributo::where('name', '0.30 - 0.45')->first()->id;
+            return [AlturaAtributo::where('name', '0.30 - 0.45')->first()->id];
         }
 
         else if($altura>=0.45 && $altura<0.60){
-            return AlturaAtributo::where('name', '0.45 - 0.60')->first()->id;
+            return [AlturaAtributo::where('name', '0.45 - 0.60')->first()->id];
         }
 
         else if($altura>=0.60 && $altura<0.75){
-            return AlturaAtributo::where('name', '0.60 - 0.75')->first()->id;
+            return [AlturaAtributo::where('name', '0.60 - 0.75')->first()->id];
         }
 
         else if($altura>=0.75 && $altura<0.90){
-            return AlturaAtributo::where('name', '0.75 - 0.90')->first()->id;
+            return [AlturaAtributo::where('name', '0.75 - 0.90')->first()->id];
         }
 
         else if($altura>=0.90 && $altura<1.50){
-            return AlturaAtributo::where('name', '0.90 - 1.50')->first()->id;
+            return [AlturaAtributo::where('name', '0.90 - 1.50')->first()->id];
         }
 
         else if($altura>=1.50 && $altura<3.00){
-            return AlturaAtributo::where('name', '1.50 - 3.00')->first()->id;
+            return [AlturaAtributo::where('name', '1.50 - 3.00')->first()->id];
         }
 
         else if($altura>=3.00 && $altura<4.00){
-            return AlturaAtributo::where('name', '3.00 - 4.00')->first()->id;
+            return [AlturaAtributo::where('name', '3.00 - 4.00')->first()->id];
         }
 
         else if($altura>=4.00 && $altura<8.00){
-            return AlturaAtributo::where('name', '4.00 - 8.00')->first()->id;
+            return [AlturaAtributo::where('name', '4.00 - 8.00')->first()->id];
         }
 
         else if($altura>=8.00 && $altura<12.00){
-            return AlturaAtributo::where('name', '8.00 - 12.00')->first()->id;
+            return [AlturaAtributo::where('name', '8.00 - 12.00')->first()->id];
         }
 
         else if($altura>=12.00 && $altura<16.00){
-            return AlturaAtributo::where('name', '12.00 - 16.00')->first()->id;
+            return [AlturaAtributo::where('name', '12.00 - 16.00')->first()->id];
         }
 
         else if($altura>=16.00 && $altura<20.00){
-            return AlturaAtributo::where('name', '16.00 - 20.00')->first()->id;
+            return [AlturaAtributo::where('name', '16.00 - 20.00')->first()->id];
         }
 
         else if($altura>=20.00 && $altura<25.00){
-            return AlturaAtributo::where('name', '20.00 - 25.00')->first()->id;
+            return [AlturaAtributo::where('name', '20.00 - 25.00')->first()->id];
         }
 
         else if($altura>=25.00 && $altura<30.00){
-            return AlturaAtributo::where('name', '25.00 - 30.00')->first()->id;
+            return [AlturaAtributo::where('name', '25.00 - 30.00')->first()->id];
         }
 
         else if($altura>=30.00){
-            return AlturaAtributo::where('name', '30.00+')->first()->id;
+            return [AlturaAtributo::where('name', '30.00+')->first()->id];
         }
 
         else{
@@ -152,32 +152,32 @@ class Helper
     public static function parseDiametro(mixed $diametro)
     {
         if($diametro<0.50){
-            return DiametroAtributo::where('name', '0.50-')->first()->id;
+            return [DiametroAtributo::where('name', '0.50-')->first()->id];
         }
 
         else if($diametro>=0.50 && $diametro<0.80){
-            return DiametroAtributo::where('name', '0.50 - 0.80')->first()->id;
+            return [DiametroAtributo::where('name', '0.50 - 0.80')->first()->id];
         }
 
         else if($diametro>=0.80 && $diametro<1.20){
-            return DiametroAtributo::where('name', '0.80 - 1.20')->first()->id;
+            return [DiametroAtributo::where('name', '0.80 - 1.20')->first()->id];
         }
 
         else if($diametro>=1.20 && $diametro<1.50){
-            return DiametroAtributo::where('name', '1.20 - 1.50')->first()->id;
+            return [DiametroAtributo::where('name', '1.20 - 1.50')->first()->id];
         }
 
         else if($diametro>=1.50 && $diametro<3.00){
-            return DiametroAtributo::where('name', '1.50 - 3.00')->first()->id;
+            return [DiametroAtributo::where('name', '1.50 - 3.00')->first()->id];
         }
 
         else if($diametro>=3.00 && $diametro<7.00){
-            return DiametroAtributo::where('name', '3.00 - 7.00')->first()->id;
+            return [DiametroAtributo::where('name', '3.00 - 7.00')->first()->id];
         }
 
 
         else if($diametro>=7.00){
-            return DiametroAtributo::where('name', '7.00+')->first()->id;
+            return [DiametroAtributo::where('name', '7.00+')->first()->id];
         }
 
         else{

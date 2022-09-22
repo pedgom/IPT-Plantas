@@ -4,6 +4,9 @@ namespace App\Imports;
 
 use App\Helpers\Helper;
 use App\Models\FamiliaAtributo;
+use App\Models\FormaArbustoAtributo;
+use App\Models\FormaArvoreAtributo;
+use App\Models\FormaHerbaceaAtributo;
 use App\Models\Planta;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
@@ -28,8 +31,8 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
             'nome_botanico'=>'required|string|min:3|max:255',
             'categoria'=> 'required|integer|exists:categoria_atributos,id',
             'familia'=>'required|string|min:3|max:255',
-            'altura'=>'required|integer|exists:altura_atributos,id',
-            'diametro'=>'required|integer|exists:diametro_atributos,id',
+            'altura'=>'required|array|min:1',
+            'diametro'=>'required|array|min:1',
             'persistencia' => 'required|integer|exists:persistencia_atributos,id',
             'cor_sintese'=> 'required|integer|exists:cor_sintese_atributos,id',
             'estacao'=>'required|array|min:4',
@@ -104,6 +107,54 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
                 else {
                    $familia = FamiliaAtributo::where('familia', $validatedAttributes['familia'])->first();
                 }
+
+                $forma_herbacea_atributo_id = FormaHerbaceaAtributo::where('forma_herbacea', 'NA')->first()->id;
+                $forma_arvore_atributo_id = FormaArvoreAtributo::where('forma_arvore', 'NA')->first()->id;
+                $forma_arbusto_atributo_id = FormaArbustoAtributo::where('forma_arbusto', 'NA')->first()->id;
+
+
+                $validatedAttributes['forma_herbacea_atributo_id'] = $forma_herbacea_atributo_id;
+
+                $validatedAttributes['forma_arvore_atributo_id'] = $forma_arvore_atributo_id;
+
+                $validatedAttributes['forma_arbusto_atributo_id'] = $forma_arbusto_atributo_id;
+
+                $validatedAttributes['persistencia_atributo_id']= $validatedAttributes['persistencia'];
+                unset($validatedAttributes['persistencia']);
+
+                //$validatedAttributes['ordem_atributo_id']= $validatedAttributes['ordem'];
+                //unset($validatedAttributes['ordem']);
+
+                $validatedAttributes['familia_atributo_id'] = $familia->id;
+                unset($validatedAttributes['familia']);
+
+
+                //$validatedAttributes['genero_atributo_id']= $validatedAttributes['genero'];
+                //unset($validatedAttributes['genero']);
+
+               // $validatedAttributes['forma_arbusto_atributo_id']= $validatedAttributes['forma_arbusto'];
+                //unset($validatedAttributes['forma_arbusto']);
+
+                //$validatedAttributes['uso_atributo_id']= $validatedAttributes['uso'];
+                //unset($validatedAttributes['uso']);
+
+                //$validatedAttributes['origem_relacao_atributo_id']= $validatedAttributes['origem_relacao'];
+                //unset($validatedAttributes['origem_relacao']);
+
+                //$validatedAttributes['forma_arvore_atributo_id']= $validatedAttributes['forma_arvore'];
+                //unset($validatedAttributes['forma_arvore']);
+
+                //$validatedAttributes['colecao_atributo_id']= $validatedAttributes['colecao'];
+                //unset($validatedAttributes['colecao']);
+
+
+                //$validatedAttributes['forma_herbacea_atributo_id']= $validatedAttributes['forma_herbacea'];
+                //unset($validatedAttributes['forma_herbacea']);
+
+                $validatedAttributes['cor_sintese_atributo_id']= $validatedAttributes['cor_sintese'];
+                unset($validatedAttributes['cor_sintese']);
+
+
 
                 if(($model = Planta::create($validatedAttributes)) ) {
                     $model->alturaAtributos()->sync($validatedAttributes['altura']);

@@ -266,7 +266,7 @@
 <div  class="col-12 col-md-4">
     <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Forma Herbácea') }}</label>
     <div class="col-lg-8">
-        <span class="fw-bolder fs-6 text-gray-800">{{ \App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray()[$planta->formaHerbaceaAtributo->forma_herbacea]??null }}</span>
+        <span class="fw-bolder fs-6 text-gray-800">{{ $planta->formaHerbaceaAtributo->forma_herbacea??null }}</span>
     </div>
 </div>
 
