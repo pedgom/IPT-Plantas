@@ -202,6 +202,112 @@
                 </div>
 
 
+
+                <!-- Diametro -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('diametro[]', $planta->getAttributeLabel('Diâmetro'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('diametro[]',\App\Models\DiametroAtributo::valoresArray(), null , ['id' => 'diametro','class' => 'form-select form-select-solid ' .($errors->has('diametro') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('diametro')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#diametro").select2({
+                                        placeholder: '{{ __('Selecione um ou mais tipos de Diâmetro') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+
+
+                <!-- Densidade -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('densidade[]', $planta->getAttributeLabel('Densidade'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('densidade[]',\App\Models\DensidadeAtributo::valoresArray(), null , ['id' => 'densidade','class' => 'form-select form-select-solid ' .($errors->has('densidade') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('densidade')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#densidade").select2({
+                                        placeholder: '{{ __('Selecione um ou mais tipos de Densidade') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+
+                <!-- Resistencia -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('resistencia[]', $planta->getAttributeLabel('Resistência'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('resistencia[]',\App\Models\ResistenciaAtributo::valoresArray(), null , ['id' => 'resistencia','class' => 'form-select form-select-solid ' .($errors->has('resistencia') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('resistencia')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#resistencia").select2({
+                                        placeholder: '{{ __('Selecione um ou mais tipos de Resistência') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+
+                <!-- Resistencia -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('ph_solo[]', $planta->getAttributeLabel('Ph Solo'), ['class' => 'form-label']) !!}
+
+                        {!! Form::select('ph_solo[]',\App\Models\PhSoloAtributo::valoresArray(), null , ['id' => 'ph_solo','class' => 'form-select form-select-solid ' .($errors->has('ph_solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
+
+                        @error('ph_solo')
+                        <div class="error invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        @push('scripts')
+                            <script>
+                                jQuery(document).ready(function() {
+                                    $("#ph_solo").select2({
+                                        placeholder: '{{ __('Selecione um ou mais tipos de Ph') }}',
+                                        allowClear: true,
+                                        minimumInputLength: 0,
+                                    });
+                                });
+                            </script>
+                        @endpush
+                    </div>
+
+                </div>
+
+
                 <!-- Estacao -->
                 <div class="col-12 col-md-4">
                     <div class="mb-10">
@@ -226,6 +332,100 @@
                     </div>
 
                 </div>
+
+
+                <!-- Persistencia -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('persistencia', $planta->getAttributeLabel('Persistência'), ['class' => 'form-label']) !!}
+                        {!! Form::select('persistencia',\App\Models\PersistenciaAtributo::getPersistenciaArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('persistencia') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha um tipo de Persistência']) !!}
+                        @error('persistencia')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+
+                <!-- Forma Arbusto -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('forma_arbusto', $planta->getAttributeLabel('Forma Arbusto'), ['class' => 'form-label']) !!}
+                        {!! Form::select('forma_arbusto',\App\Models\FormaArbustoAtributo::getFormaArbustoArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('forma_arbusto') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha a forma do Arbusto']) !!}
+                        @error('forma_arbusto')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <!-- Forma Arvore -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('forma_arvore', $planta->getAttributeLabel('Forma Árvore'), ['class' => 'form-label']) !!}
+                        {!! Form::select('forma_arvore',\App\Models\FormaArvoreAtributo::getFormaArvoreArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('forma_arvore') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha a forma da Árvore']) !!}
+                        @error('forma_arvore')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <!-- Forma Herbacea -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('forma_herbacea', $planta->getAttributeLabel('Forma Herbácea'), ['class' => 'form-label']) !!}
+                        {!! Form::select('forma_herbacea',\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('forma_herbacea') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha a forma da Herbácea']) !!}
+                        @error('forma_herbacea')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <!-- Colecao -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('colecao', $planta->getAttributeLabel('Coleção'), ['class' => 'form-label']) !!}
+                        {!! Form::select('colecao',\App\Models\ColecaoAtributo::getColecaoArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('colecao') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha um tipo de Coleção']) !!}
+                        @error('colecao')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <!-- Uso -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('uso', $planta->getAttributeLabel('Uso'), ['class' => 'form-label']) !!}
+                        {!! Form::select('uso',\App\Models\UsoAtributo::getUsoArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('uso') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha um tipo de Uso']) !!}
+                        @error('uso')
+                        <div class="inv1alid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- Origem Relacao -->
+                <div class="col-12 col-md-4">
+                    <div class="mb-10">
+                        {!! Form::label('origem_relacao', $planta->getAttributeLabel('Origem Relação'), ['class' => 'form-label']) !!}
+                        {!! Form::select('origem_relacao',\App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray(), null, ['class' => 'form-select form-select-solid  '.($errors->has('origem_relacao') ? 'is-invalid' : ''),
+"placeholder"=>'Escolha um tipo de Origem Relação']) !!}
+                        @error('origem_relacao')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+
+
 
 
 

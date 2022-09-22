@@ -119,6 +119,18 @@ class HomeController extends Controller
         $familia=$request->familia ?? null;
         $genero=$request->genero ?? null;
         $ordem=$request->ordem ?? null;
+        $persistencia=$request->persistencia ?? null;
+        $forma_arbusto=$request->forma_arbusto ?? null;
+        $forma_arvore=$request->forma_arvore ?? null;
+        $forma_herbacea=$request->forma_herbacea ?? null;
+        $colecao=$request->colecao ?? null;
+        $uso=$request->uso ?? null;
+        $origem_relacao=$request->origem_relacao ?? null;
+        $diametro=$request->diametro ?? null;
+        $densidade=$request->densidade ?? null;
+        $resistencia=$request->resistencia ?? null;
+        $ph_solo=$request->ph_solo ?? null;
+
         $plantas = [];
         $planta = new Planta();
         $planta->loadDefaultValues();
@@ -163,6 +175,31 @@ class HomeController extends Controller
             });
         }
 
+        if(!empty($diametro)){
+            $query=$query->whereHas('diametroAtributos',function($q) use($diametro){
+                $q->whereIn('diametro_atributos.id',$diametro);
+            });
+        }
+
+        if(!empty($densidade)){
+            $query=$query->whereHas('densidadeAtributos',function($q) use($densidade){
+                $q->whereIn('densidade_atributos.id',$densidade);
+            });
+        }
+
+        if(!empty($resistencia)){
+            $query=$query->whereHas('resistenciaAtributos',function($q) use($resistencia){
+                $q->whereIn('resistencia_atributos.id',$resistencia);
+            });
+        }
+
+        if(!empty($ph_solo)){
+            $query=$query->whereHas('phSoloAtributos',function($q) use($ph_solo){
+                $q->whereIn('ph_solo_atributos.id',$ph_solo);
+            });
+        }
+
+
         if(!empty($estacao)){
             $query=$query->whereHas('estacaoAtributos',function($q) use($estacao){
                 $q->whereIn('estacao_atributos.id',$estacao);
@@ -184,14 +221,56 @@ class HomeController extends Controller
 
         if(!empty($genero)){
             $query=$query->whereHas('generoAtributo',function($q) use($genero){
-                $q->where('genero',$genero);
+                $q->where('id',$genero);
             });
         }
 
 
         if(!empty($ordem)){
             $query=$query->whereHas('ordemAtributo',function($q) use($ordem){
-                $q->where('ordem',$ordem);
+                $q->where('id',$ordem);
+            });
+        }
+
+        if(!empty($persistencia)){
+            $query=$query->whereHas('persistenciaAtributo',function($q) use($persistencia){
+                $q->where('id',$persistencia);
+            });
+        }
+
+        if(!empty($forma_arbusto)){
+            $query=$query->whereHas('formaArbustoAtributo',function($q) use($forma_arbusto){
+                $q->where('id',$forma_arbusto);
+            });
+        }
+
+        if(!empty($forma_arvore)){
+            $query=$query->whereHas('formaArvoreAtributo',function($q) use($forma_arvore){
+                $q->where('id',$forma_arvore);
+            });
+        }
+
+        if(!empty($forma_herbacea)){
+            $query=$query->whereHas('formaHerbaceaAtributo',function($q) use($forma_herbacea){
+                $q->where('id',$forma_herbacea);
+            });
+        }
+
+        if(!empty($colecao)){
+            $query=$query->whereHas('colecaoAtributo',function($q) use($colecao){
+                $q->where('id',$colecao);
+            });
+        }
+
+        if(!empty($uso)){
+            $query=$query->whereHas('usoAtributo',function($q) use($uso){
+                $q->where('id',$uso);
+            });
+        }
+
+        if(!empty($origem_relacao)){
+            $query=$query->whereHas('origemRelacaoAtributo',function($q) use($origem_relacao){
+                $q->where('id',$origem_relacao);
             });
         }
 
