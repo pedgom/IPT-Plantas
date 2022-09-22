@@ -353,4 +353,6 @@ class PlantaController extends Controller
         return redirect(route('plantas.index'));
     }
 
+    
+
 }

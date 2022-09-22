@@ -2,27 +2,174 @@
 
     <style>
 
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .column img:hover {
+            opacity: 1;
+        }
+
+        /* Clear floats after the columns */
+        .gallery-image:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The expanding image container (positioning is needed to position the close button and the text) */
+        .contentor {
+            position: relative;
+            display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Closable button inside the image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
     </style>
 
 </head>
 
+<div class="contentor">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
 
+    <!-- Expanded image -->
+    <img id="expandedImg" style="width:700px ; height: 400px;display:block; margin-left:auto; margin-right:auto;">
 
-<div>
-    @if($planta->hasMedia('imagem_principal'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_principal')}}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
+    <!-- Image text -->
+    <div id="imgtext"></div>
 </div>
+
+<div class="gallery-image">
+    <div class="column">
+        @if($planta->hasMedia('imagem_principal'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_principal')}}"
+                width="200px"
+                height="200px"
+                alt="Principal" onclick="myFunction(this);"
+            />
+        @else
+            <img
+                src="{{ asset('images/default-img.png') }}"
+                width="200px"
+                height="200px"
+                alt="Default" onclick="myFunction(this);"
+            />
+        @endif
+    </div>
+    <div class="column">
+        @if($planta->hasMedia('imagem_zoomin'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_zoomin') }}"
+                width="200px"
+                height="200px"
+                alt="Zoom In" onclick="myFunction(this);"
+            />
+        @else
+
+        @endif
+    </div>
+    <div class="column">
+        @if($planta->hasMedia('imagem_zoomout'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_zoomout') }}"
+                width="200px"
+                height="200px"
+                alt="Zoom Out" onclick="myFunction(this);"
+            />
+        @else
+
+        @endif
+    </div>
+    <div class="column">
+        @if($planta->hasMedia('imagem_tronco'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_tronco') }}"
+                width="200px"
+                height="200px"
+                alt="Tronco" onclick="myFunction(this);"
+            />
+        @else
+
+        @endif
+    </div>
+    <div class="column">
+        @if($planta->hasMedia('imagem_folha'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_folha') }}"
+                width="200px"
+                height="200px"
+                alt="Folha" onclick="myFunction(this);"
+            />
+        @else
+
+        @endif
+    </div>
+    <div class="column">
+        @if($planta->hasMedia('imagem_flor'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_flor') }}"
+                width="200px"
+                height="200px"
+                alt="Flor" onclick="myFunction(this); "
+            />
+        @else
+
+        @endif
+    </div>
+
+    <div class="column">
+        @if($planta->hasMedia('imagem_fruto'))
+            <img
+                src="{{ $planta->getFirstMediaUrl('imagem_fruto') }}"
+                width="200px"
+                height="200px"
+                alt="Fruto" onclick="myFunction(this);"
+            />
+        @else
+
+        @endif
+    </div>
+
+</div>
+
+
+
+
+<script>
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
 
 <!-- Abreviatura Field -->
 
@@ -39,25 +186,25 @@
 </div>
 
 <div class="row g-5 g-xl-10">
-<div  style="background-color: #00b300" class="card h-lg-100">
-    <div class="card-body d-flex justify-content-between align-items-start flex-column">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Nome Botânico') }}</label>
-    <h5 class="col-lg-8">
-    <span class="fw-bolder fs-6 text-gray-800" margin-left="50px">{{ $planta->nome_botanico }}</span>
-    </h5>
+    <div  style="background-color: #00b300" class="card h-lg-100">
+        <div class="card-body d-flex justify-content-between align-items-start flex-column">
+        <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Nome Botânico') }}</label>
+        <h5 class="col-lg-8">
+        <span class="fw-bolder fs-6 text-gray-800" margin-left="50px">{{ $planta->nome_botanico }}</span>
+        </h5>
+        </div>
     </div>
-</div>
 
 
 
 <div  style="background-color: #00b300" class="card h-lg-100">
 <!-- Nome Comum Field -->
     <div class="card-body d-flex justify-content-between align-items-start flex-column">
-    <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('nome_comum') }}</label>
-    <div class="col-lg-8">
+        <label class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('nome_comum') }}</label>
+        <div class="col-lg-8">
         <span class="fw-bolder fs-6 text-gray-800">{{ $planta->nome_comum }}</span>
+        </div>
     </div>
-</div>
 </div>
 
 
@@ -272,111 +419,10 @@
 
 
 
-<!-- Imagens -->
-
-
-    <div class="slider">
-
-<div>
-    @if($planta->hasMedia('imagem_zoomin'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_zoomin') }}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
-</div>
 
 
 
-<div>
-    @if($planta->hasMedia('imagem_zoomout'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_zoomout') }}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
-</div>
 
-
-<div>
-    @if($planta->hasMedia('imagem_tronco'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_tronco') }}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
-</div>
-
-<div>
-    @if($planta->hasMedia('imagem_folha'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_folha') }}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
-</div>
-
-
-<div>
-    @if($planta->hasMedia('imagem_fruto'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_fruto') }}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
-</div>
-
-
-<div>
-    @if($planta->hasMedia('imagem_flor'))
-        <img
-            src="{{ $planta->getFirstMediaUrl('imagem_flor') }}"
-            width="600px"
-            height="600px"
-        />
-    @else
-        <img
-            src="{{ asset('images/default-img.png') }}"
-            width="600px"
-            height="600px"
-        />
-    @endif
-</div>
 
 </div>
 
