@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 
 class Helper
 {
+    //validar dados vindos do excel
     public static function validateFakeRequest(Request $request, $rules){
         $validator = Validator::make($request->all(), $rules);
 
@@ -62,6 +63,7 @@ class Helper
         }
     }
 
+    //função parse que irá inserir os dados da familia, caso não exista na base de dados, é inserido
     public static function parseFamilia(mixed $familia)
     {
         if(empty($familia)){
@@ -77,6 +79,8 @@ class Helper
         }
     }
 
+
+    //função parse da Altura, onde os dados inseridos do excel são convertidos em intervalos num array
     public static function parseAltura(mixed $altura)
     {
         if($altura<0.10){
@@ -149,6 +153,8 @@ class Helper
 
     }
 
+
+    //função parse do Diametro, onde os dados inseridos do excel são convertidos em intervalos num array
     public static function parseDiametro(mixed $diametro)
     {
         if($diametro<0.50){
@@ -185,6 +191,7 @@ class Helper
         }
     }
 
+    //função parse da Persistencia
     public static function parsePersistencia(mixed $persistencia)
     {
         if(str_starts_with($persistencia, 'marces')){

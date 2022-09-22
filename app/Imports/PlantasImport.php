@@ -25,7 +25,7 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
 
 
 
-
+    //rules criadas para cada atributo
     private static function plantaRules(){
         $rules = [
             'nome_botanico'=>'required|string|min:3|max:255',
@@ -55,7 +55,7 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
     {
         foreach ($rows as $row)
         {
-
+            //variáveis que irão chamar a função parse de cada atributo
 
             $nome_botanico = Helper::parseNomeBotanico($row[0]);
             $categoria = Helper::parseCategoria($row[1]);
@@ -72,7 +72,7 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
             $tempo_crescimento = Helper::parseTempoCrescimento($row[17]);
             $densidade= Helper::parseDensidade($row[18]);
 
-
+            //variavel que irá criar um novo request
             $request = new Request();
             $request->merge([
                 'nome_botanico'=>$nome_botanico,
@@ -92,9 +92,11 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
 
 
             ]);
-
+            //variavel que ira chamar a funçao validateFakeRequest para assim validar os dados vindo do excel
             $result=Helper::validateFakeRequest($request, self::plantaRules());
 
+
+            //if utilizado para caso nao exista o atributo na tabela Familia, este é adicionado à tabela
             if($result['success']){
                 $validatedAttributes = $result['validated'];
                 $exists=FamiliaAtributo::where('familia', $validatedAttributes['familia'])->exists();
@@ -108,6 +110,7 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
                    $familia = FamiliaAtributo::where('familia', $validatedAttributes['familia'])->first();
                 }
 
+                //atribuição de 'Na' por default em todas as formas
                 $forma_herbacea_atributo_id = FormaHerbaceaAtributo::where('forma_herbacea', 'NA')->first()->id;
                 $forma_arvore_atributo_id = FormaArvoreAtributo::where('forma_arvore', 'NA')->first()->id;
                 $forma_arbusto_atributo_id = FormaArbustoAtributo::where('forma_arbusto', 'NA')->first()->id;
@@ -154,9 +157,11 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
                 $validatedAttributes['cor_sintese_atributo_id']= $validatedAttributes['cor_sintese'];
                 unset($validatedAttributes['cor_sintese']);
 
+                $arr = self::parseValues($request);
+
+                if(($model = Planta::updateOrCreate(['nome_botanico'=>$validatedAttributes['nome_botanico']], $arr)) ) {
 
 
-                if(($model = Planta::create($validatedAttributes)) ) {
                     $model->alturaAtributos()->sync($validatedAttributes['altura']);
                     Log::info($validatedAttributes['altura']);
                     $model->categoriaAtributos()->sync($validatedAttributes['categoria']);
@@ -183,6 +188,42 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
 
 
         }
+    }
+
+    private function parseValues(Request $request){
+
+        $request_values = $request->all();
+
+        $array = [];
+        $validKeys = [
+
+            'categoria',
+            'familia',
+            'altura',
+            'diametro',
+            'persistencia',
+            'cor_sintese',
+            'estacao',
+            'luz',
+            'solo',
+            'agua',
+            'resistencia',
+            'tempo_crescimento',
+            'densidade',
+            'forma_herbacea_atributo_id',
+            'forma_arvore_atributo_id',
+            'forma_arbusto_atributo_id',
+            'persistencia_atributo_id',
+            'familia_atributo_id',
+            'cor_sintese_atributo_id'
+        ];
+        foreach($request_values as $key => $value){
+            if(in_array($key, $validKeys) && !empty($value)){
+                $array[$key] = $value;
+            }
+        }
+        return $array;
+
     }
 
     public function startRow(): int
