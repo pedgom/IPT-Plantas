@@ -200,11 +200,11 @@ Route::post('submitPlantas', [App\Http\Controllers\PlantaController::class, 'sub
 
 
 Route::get('/download', function(){
-    $file = public_path()."/excel.xlsx";
+    $file = public_path()."/arbustos.xlsx";
     $headers = array (
         'Content-Type: application/xlsx',
     );
-    return Response::download($file, "Excel.xlsx", $headers);
+    return Response::download($file, "Arbustos.xlsx", $headers);
 });
 
 
