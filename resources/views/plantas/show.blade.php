@@ -16,15 +16,21 @@ view()->share('hideSubHeader', true);
             <h3 class="card-title">
                 {{ $planta->nome_comum }}
             </h3>
+
+
             <div class="card-toolbar">
+                @can('manageApp')
                 <a href="{{ route('plantas.edit', $planta) }}" class="btn btn-sm btn-flex btn-light-primary me-2">
                     {!! theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-3") !!}
                     {{ __('Update') }}
                 </a>
+                @endcan
+                @can('adminApp')
                 <button class="btn btn-sm btn-flex btn-light-danger" onclick="destroyConfirmation(this)">
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
                 </button>
+               @endcan
                 {!! Form::open(['route' => ['plantas.destroy', $planta], 'method' => 'delete', 'class'=>"d-none", 'id' => 'delete-form']) !!}
                 {!! Form::close() !!}
             </div>

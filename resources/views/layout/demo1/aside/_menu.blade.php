@@ -34,7 +34,9 @@
                 <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{ __('General') }}</span>
             </div>
         </div>
-        @can('manageUsers')
+
+
+        @can('manageApp')
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('users.*') ? "active" : "" }}" href="{{ route('users.index') }}">
                     <span class="menu-icon">
@@ -62,7 +64,7 @@
             </a>
         </div>
 
-
+        @can('manageApp')
         <div class="menu-item">
             <a class="menu-link {{ request()->routeIs('base_dados') ? "active" : "" }}" href="{{ route('base_dados.layout') }}">
                     <span class="menu-icon">
@@ -73,8 +75,9 @@
                 <span style="font-size:18px" class="menu-title">{{ __('Base de Dados') }}</span>
             </a>
         </div>
+        @endcan
 
-
+            @can('manageApp')
         <div class="menu-item">
             <a class="menu-link {{ request()->routeIs('import_plantas') ? "active" : "" }}" href="{{ route('plantas.import_plantas') }}">
                     <span class="menu-icon">
@@ -85,13 +88,14 @@
                 <span style="font-size:18px" class="menu-title">{{ __('Importar Plantas') }}</span>
             </a>
         </div>
+            @endcan
 
 
 
 
 
 
-        @can('adminFullApp')
+        @can('manageApp')
 
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('plantas.*') ? "active" : "" }}" href="{{ route('plantas.index') }}">

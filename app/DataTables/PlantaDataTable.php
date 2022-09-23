@@ -28,7 +28,7 @@ class PlantaDataTable extends DataTable
                 $hasMedia = $planta->hasMedia('imagem_principal');
 
                 if($hasMedia){
-                    return '<img src="'.$planta->getFirstMediaUrl('imagem_principal').'" height="40px" />';
+                    return '<img src="'.$planta->getFirstMediaUrl('imagem_principal').'" height="90px" />';
                 }
             })
 
@@ -43,7 +43,9 @@ class PlantaDataTable extends DataTable
             ->addColumn('action', function ($planta) {
                 return '<a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.show', $planta) .'" title="'. __('View') .'">'. theme()->getSvgIcon("icons/duotune/general/gen004.svg", "svg-icon-2") .'</a>
                         <a class="btn btn-sm btn-bg-light btn-color-primary btn-icon" href="'. route('plantas.edit', $planta) .'" title="'. __('Edit') .'">'. theme()->getSvgIcon("icons/duotune/art/art005.svg", "svg-icon-2") .'</a>
+
                         <button class="btn btn-sm btn-bg-light btn-color-primary btn-icon delete-confirmation" data-destroy-form-id="destroy-form-'. $planta->id .'" data-delete-url="'. route('plantas.destroy', $planta) .'" onclick="destroyConfirmation(this)" title="'. __('Delete') .'">'. theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-2") .'</button>';
+
             })
             ->setRowClass('text-gray-600 fw-bold')
             ->rawColumns(['imagem_principal', 'action']);

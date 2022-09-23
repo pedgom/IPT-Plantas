@@ -197,7 +197,44 @@ class PlantaController extends Controller
     public function update(Request $request, Planta $planta)
     {
         $validatedAttributes = $this->validateForm($request, $planta);
+
+        $validatedAttributes['persistencia_atributo_id'] = $validatedAttributes['persistencia'];
+        unset($validatedAttributes['persistencia']);
+
+        $validatedAttributes['ordem_atributo_id']= $validatedAttributes['ordem'];
+        unset($validatedAttributes['ordem']);
+
+        $validatedAttributes['familia_atributo_id']= $validatedAttributes['familia'];
+        unset($validatedAttributes['familia']);
+
+
+        $validatedAttributes['genero_atributo_id']= $validatedAttributes['genero'];
+        unset($validatedAttributes['genero']);
+
+        $validatedAttributes['forma_arbusto_atributo_id']= $validatedAttributes['forma_arbusto'];
+        unset($validatedAttributes['forma_arbusto']);
+
+        $validatedAttributes['uso_atributo_id']= $validatedAttributes['uso'];
+        unset($validatedAttributes['uso']);
+
+        $validatedAttributes['origem_relacao_atributo_id']= $validatedAttributes['origem_relacao'];
+        unset($validatedAttributes['origem_relacao']);
+
+        $validatedAttributes['forma_arvore_atributo_id']= $validatedAttributes['forma_arvore'];
+        unset($validatedAttributes['forma_arvore']);
+
+        $validatedAttributes['colecao_atributo_id']= $validatedAttributes['colecao'];
+        unset($validatedAttributes['colecao']);
+
+
+        $validatedAttributes['forma_herbacea_atributo_id']= $validatedAttributes['forma_herbacea'];
+        unset($validatedAttributes['forma_herbacea']);
+
+        $validatedAttributes['cor_sintese_atributo_id']= $validatedAttributes['cor_sintese'];
+        unset($validatedAttributes['cor_sintese']);
+
         $planta->fill($validatedAttributes);
+
         if($planta->save()) {
             //flash('Planta updated successfully.');
             //Flash::success('Planta updated successfully.');
@@ -212,6 +249,9 @@ class PlantaController extends Controller
             $planta->soloAtributos()->sync($validatedAttributes['solo']);
             $planta->phSoloAtributos()->sync($validatedAttributes['ph_solo']);
             $planta->estacaoAtributos()->sync($validatedAttributes['estacao']);
+
+
+
 
             if($request->hasFile('imagem_principal') && $request->file('imagem_principal')->isValid()){
                 $planta->addMediaFromRequest('imagem_principal')->toMediaCollection('imagem_principal');
@@ -353,6 +393,6 @@ class PlantaController extends Controller
         return redirect(route('plantas.index'));
     }
 
-    
+
 
 }

@@ -16,8 +16,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             background: rgba(0, 0, 0, 0.6);
             color: #ffffff;
             font-family: 'Quicksand', sans-serif;
@@ -34,7 +34,7 @@
         }
 
         .image__overlay--primary {
-            background: #009578;
+            background: #FFF5EE;
         }
 
         .image__overlay > * {
@@ -115,16 +115,16 @@
                             <div class="image__overlay image__overlay--primary">
                                 <div>
                                     <p class="image__description">
-                                        <img alt="Solo" src="{{asset('images/sol.png')}}" class="h-25px logo"/><b style="color:black">Luz:</b>{{$planta->luzToString()}}
+                                        <img alt="Solo" src="{{asset('images/sol.png')}}" class="h-25px logo"/><b style="color:#5F9EA0">Luz:</b><b style="color:black">{{$planta->luzToString()}}</b>
                                     </p>
                                     <p class="image__description">
-                                        <img alt="Solo" src="{{asset('images/solo.png')}}" class="h-15px logo"/><b style="color:black">Solo:</b>{{$planta->soloToString()}}
+                                        <img alt="Solo" src="{{asset('images/solo.png')}}" class="h-15px logo"/><b style="color:#5F9EA0">Solo:</b><b style="color:black">{{$planta->soloToString()}}</b>
                                     </p>
                                     <p class="image__description">
-                                        <img alt="Agua" src="{{asset('images/agua.png')}}" class="h-25px logo"/><b style="color:black">Água:</b>{{$planta->aguaToString()}}
+                                        <img alt="Agua" src="{{asset('images/agua.png')}}" class="h-25px logo"/><b style="color:#5F9EA0">Água:</b><b style="color:black">{{$planta->aguaToString()}}</b>
                                     </p>
                                     <p class="image__description">
-                                        <img alt="Altura" src="{{asset('images/altura.png')}}" class="h-25px logo"/><b style="color:black">Altura(m):</b>{{$planta->alturasToString()}}
+                                        <img alt="Altura" src="{{asset('images/altura.png')}}" class="h-25px logo"/><b style="color:#5F9EA0">Altura(m):</b><b style="color:black">{{$planta->alturasToString()}}</b>
                                     </p>
                                 </div>
 

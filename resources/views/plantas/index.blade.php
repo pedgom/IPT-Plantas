@@ -10,7 +10,7 @@ view()->share('hideSubHeader', true);
         <link href="{{ assetCustom('/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
     @endpush
     <!--begin::Card-->
-    <div class="card">
+    <div  class="card">
         <div class="card-header">
             <div class="card-title">
                 <!--begin::Search-->
@@ -26,7 +26,7 @@ view()->share('hideSubHeader', true);
                     <!--begin::Export-->
                     <div id="datatable-buttons"></div>
                     <!--end::Export-->
-                    @can('adminApp')
+                    @can('manageApp')
                     <a href="{{ route('plantas.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
                         {{ __('New Planta') }}
@@ -49,7 +49,8 @@ view()->share('hideSubHeader', true);
         <script src="{{ assetCustom('plugins/custom/datatables/datatables.bundle.js') }}" type="text/javascript"></script>
         <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
         {{ $dataTable->scripts() }}
-        <script>
+
+            <script>
 
             $(function(){
                 $.fn.dataTable.Buttons.defaults.dom.container.className = '';
