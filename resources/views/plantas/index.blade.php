@@ -29,7 +29,7 @@ view()->share('hideSubHeader', true);
                     @can('manageApp')
                     <a href="{{ route('plantas.create') }}" class="btn btn-primary">
                         {!! theme()->getSvgIcon("icons/duotune/arrows/arr075.svg", "svg-icon-2") !!}
-                        {{ __('New Planta') }}
+                        {{ __('Nova Planta') }}
                     </a>
                     @endcan
 

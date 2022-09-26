@@ -98,28 +98,11 @@ view()->share('hideToolbar', true);
             </div>
 
 
-            <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('especieQuercusAtributos') ? "active" : "index" }}" href="{{ route('especie-quercus-atributos.index') }}">
-                    <span class="menu-icon">
-                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-
-                        <!--end::Svg Icon-->
-                    </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Espécie-Quercus') }}</span>
-                </a>
-            </div>
 
 
-            <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('especieZonaAtributos') ? "active" : "index" }}" href="{{ route('especie-zona-atributos.index') }}">
-                    <span class="menu-icon">
-                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
 
-                        <!--end::Svg Icon-->
-                    </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Espécie-Zona') }}</span>
-                </a>
-            </div>
+
+
 
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('estacaoAtributos') ? "active" : "index" }}" href="{{ route('estacao-atributos.index') }}">
@@ -214,16 +197,6 @@ view()->share('hideToolbar', true);
             </div>
 
 
-            <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('origemAtributos') ? "active" : "index" }}" href="{{ route('origem-atributos.index') }}">
-                    <span class="menu-icon">
-                        <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-
-                        <!--end::Svg Icon-->
-                    </span>
-                    <span style="color:white; font-size:30px" class="menu-title">{{ __('Origem') }}</span>
-                </a>
-            </div>
 
 
             <div class="menu-item">

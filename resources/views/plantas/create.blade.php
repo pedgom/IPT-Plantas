@@ -15,7 +15,7 @@ view()->share('hideSubHeader', true);
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
-                {{ __('Create Planta') }}
+                {{ __('Criar Planta') }}
             </h3>
         </div>
         {!! Form::model($planta, ['route' => ['plantas.store'], 'method' => 'post', 'enctype'=>"multipart/form-data", 'class' => "form"]) !!}

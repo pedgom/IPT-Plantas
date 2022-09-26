@@ -1,6 +1,6 @@
 <!-- Abreviatura Field -->
 <div class="mb-10">
-    {!! Form::label('abreviatura', $planta->getAttributeLabel('abreviatura'), ['class' => 'form-label ']) !!}
+    {!! Form::label('abreviatura', $planta->getAttributeLabel('Abreviatura'), ['class' => 'form-label ']) !!}
     {!! Form::text('abreviatura', null, ['class' => 'form-control form-control-solid '.($errors->has('abreviatura') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('abreviatura')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -9,7 +9,7 @@
 
 <!-- Nome Botanico Field -->
 <div class="mb-10">
-    {!! Form::label('nome_botanico', $planta->getAttributeLabel('nome_botanico'), ['class' => 'form-label ']) !!}
+    {!! Form::label('nome_botanico', $planta->getAttributeLabel('Nome Botânico'), ['class' => 'form-label ']) !!}
     {!! Form::text('nome_botanico', null, ['class' => 'form-control form-control-solid '.($errors->has('nome_botanico') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('nome_botanico')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -19,7 +19,7 @@
 
 <!-- Nome Comum Field -->
 <div class="mb-10">
-    {!! Form::label('nome_comum', $planta->getAttributeLabel('nome_comum'), ['class' => 'form-label ']) !!}
+    {!! Form::label('nome_comum', $planta->getAttributeLabel('Nome Comum'), ['class' => 'form-label ']) !!}
     {!! Form::text('nome_comum', null, ['class' => 'form-control form-control-solid '.($errors->has('nome_comum') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('nome_comum')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -29,7 +29,7 @@
 
 <!-- Tempo Crescimento Field -->
 <div class="mb-10">
-    {!! Form::label('tempo_crescimento', $planta->getAttributeLabel('tempo_crescimento'), ['class' => 'form-label ']) !!}
+    {!! Form::label('tempo_crescimento', $planta->getAttributeLabel('Tempo de Crescimento'), ['class' => 'form-label ']) !!}
     {!! Form::text('tempo_crescimento', null, ['class' => 'form-control form-control-solid '.($errors->has('tempo_crescimento') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('tempo_crescimento')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -39,7 +39,7 @@
 
 <!-- Notas Field -->
 <div class="mb-10">
-    {!! Form::label('notas', $planta->getAttributeLabel('notas'), ['class' => 'form-label ']) !!}
+    {!! Form::label('notas', $planta->getAttributeLabel('Notas'), ['class' => 'form-label ']) !!}
     {!! Form::text('notas', null, ['class' => 'form-control form-control-solid '.($errors->has('notas') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('notas')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -49,7 +49,7 @@
 
 <!-- Curiosidades Field -->
 <div class="mb-10">
-    {!! Form::label('curiosidades', $planta->getAttributeLabel('curiosidades'), ['class' => 'form-label ']) !!}
+    {!! Form::label('curiosidades', $planta->getAttributeLabel('Curiosidades'), ['class' => 'form-label ']) !!}
     {!! Form::text('curiosidades', null, ['class' => 'form-control form-control-solid '.($errors->has('curiosidades') ? 'is-invalid' : ''),'maxlength' => 255]) !!}
     @error('curiosidades')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -58,7 +58,7 @@
 
 <!-- User Id Field -->
 <div class="mb-10">
-    {!! Form::label('altura[]', $planta->getAttributeLabel('altura'), ['class' => 'form-label']) !!}
+    {!! Form::label('altura[]', $planta->getAttributeLabel('Altura'), ['class' => 'form-label']) !!}
 
     {!! Form::select('altura[]',\App\Models\AlturaAtributo::valoresArray(), null , ['id' => 'altura','class' => 'form-select form-select-solid ' .($errors->has('altura') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -80,7 +80,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('categoria[]', $planta->getAttributeLabel('categoria'), ['class' => 'form-label']) !!}
+    {!! Form::label('categoria[]', $planta->getAttributeLabel('Categoria'), ['class' => 'form-label']) !!}
 
     {!! Form::select('categoria[]',\App\Models\CategoriaAtributo::valoresArray(), null , ['id' => 'categoria','class' => 'form-select form-select-solid ' .($errors->has('categoria') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -103,7 +103,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('luz[]', $planta->getAttributeLabel('luz'), ['class' => 'form-label']) !!}
+    {!! Form::label('luz[]', $planta->getAttributeLabel('Luz'), ['class' => 'form-label']) !!}
 
     {!! Form::select('luz[]',\App\Models\LuzAtributo::valoresArray(), null , ['id' => 'luz','class' => 'form-select form-select-solid ' .($errors->has('luz') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -127,7 +127,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('diametro[]', $planta->getAttributeLabel('diametro'), ['class' => 'form-label']) !!}
+    {!! Form::label('diametro[]', $planta->getAttributeLabel('Diâmetro'), ['class' => 'form-label']) !!}
 
     {!! Form::select('diametro[]',\App\Models\DiametroAtributo::valoresArray(), null , ['id' => 'diametro','class' => 'form-select form-select-solid ' .($errors->has('diametro') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -150,7 +150,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('densidade[]', $planta->getAttributeLabel('densidade'), ['class' => 'form-label']) !!}
+    {!! Form::label('densidade[]', $planta->getAttributeLabel('Densidade'), ['class' => 'form-label']) !!}
 
     {!! Form::select('densidade[]',\App\Models\DensidadeAtributo::valoresArray(), null , ['id' => 'densidade','class' => 'form-select form-select-solid ' .($errors->has('densidade') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -174,7 +174,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('agua[]', $planta->getAttributeLabel('agua'), ['class' => 'form-label']) !!}
+    {!! Form::label('agua[]', $planta->getAttributeLabel('Água'), ['class' => 'form-label']) !!}
 
     {!! Form::select('agua[]',\App\Models\AguaAtributo::valoresArray(), null , ['id' => 'agua','class' => 'form-select form-select-solid ' .($errors->has('agua') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -196,7 +196,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('resistencia[]', $planta->getAttributeLabel('resistencia'), ['class' => 'form-label']) !!}
+    {!! Form::label('resistencia[]', $planta->getAttributeLabel('Resistência'), ['class' => 'form-label']) !!}
 
     {!! Form::select('resistencia[]',\App\Models\ResistenciaAtributo::valoresArray(), null , ['id' => 'resistencia','class' => 'form-select form-select-solid ' .($errors->has('resistencia') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -217,7 +217,7 @@
 </div>
 
 <div class="mb-10">
-    {!! Form::label('solo[]', $planta->getAttributeLabel('solo'), ['class' => 'form-label']) !!}
+    {!! Form::label('solo[]', $planta->getAttributeLabel('Solo'), ['class' => 'form-label']) !!}
 
     {!! Form::select('solo[]',\App\Models\SoloAtributo::valoresArray(), null , ['id' => 'solo','class' => 'form-select form-select-solid ' .($errors->has('solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -240,7 +240,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('ph_solo[]', $planta->getAttributeLabel('ph_solo'), ['class' => 'form-label']) !!}
+    {!! Form::label('ph_solo[]', $planta->getAttributeLabel('Ph Solo'), ['class' => 'form-label']) !!}
 
     {!! Form::select('ph_solo[]',\App\Models\PhSoloAtributo::valoresArray(), null , ['id' => 'ph_solo','class' => 'form-select form-select-solid ' .($errors->has('ph_solo') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -262,7 +262,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('estacao[]', $planta->getAttributeLabel('estacao'), ['class' => 'form-label']) !!}
+    {!! Form::label('estacao[]', $planta->getAttributeLabel('Estação'), ['class' => 'form-label']) !!}
 
     {!! Form::select('estacao[]',\App\Models\EstacaoAtributo::valoresArray(), null , ['id' => 'estacao','class' => 'form-select form-select-solid ' .($errors->has('estacao') ? 'is-invalid' : '') ,'multiple'=>true]) !!}
 
@@ -283,7 +283,7 @@
 </div>
 
 <div class="mb-10">
-    {!! Form::label('cor_sintese', $planta->getAttributeLabel('cor_sintese'), ['class' => 'form-label']) !!}
+    {!! Form::label('cor_sintese', $planta->getAttributeLabel('Cor'), ['class' => 'form-label']) !!}
 
     {!! Form::select('cor_sintese',\App\Models\CorSinteseAtributo::getCorSinteseArray(), null , ['id' => 'cor_sintese','class' => 'form-select form-select-solid ' .($errors->has('cor_sintese') ? 'is-invalid' : '')]) !!}
 
@@ -295,7 +295,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('persistencia', $planta->getAttributeLabel('persistencia'), ['class' => 'form-label']) !!}
+    {!! Form::label('persistencia', $planta->getAttributeLabel('Persistência'), ['class' => 'form-label']) !!}
 
     {!! Form::select('persistencia',\App\Models\PersistenciaAtributo::getPersistenciaArray(), null , ['id' => 'persistencia','class' => 'form-select form-select-solid ' .($errors->has('persistencia') ? 'is-invalid' : '')]) !!}
 
@@ -307,7 +307,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('ordem', $planta->getAttributeLabel('ordem'), ['class' => 'form-label']) !!}
+    {!! Form::label('ordem', $planta->getAttributeLabel('Ordem'), ['class' => 'form-label']) !!}
 
     {!! Form::select('ordem',\App\Models\OrdemAtributo::getOrdemArray(), null , ['id' => 'ordem','class' => 'form-select form-select-solid ' .($errors->has('ordem') ? 'is-invalid' : '')]) !!}
 
@@ -319,7 +319,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('familia', $planta->getAttributeLabel('familia'), ['class' => 'form-label']) !!}
+    {!! Form::label('familia', $planta->getAttributeLabel('Família'), ['class' => 'form-label']) !!}
 
     {!! Form::select('familia',\App\Models\FamiliaAtributo::getFamiliaArray(), null , ['id' => 'familia','class' => 'form-select form-select-solid ' .($errors->has('familia') ? 'is-invalid' : '')]) !!}
 
@@ -332,7 +332,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('genero', $planta->getAttributeLabel('genero'), ['class' => 'form-label']) !!}
+    {!! Form::label('genero', $planta->getAttributeLabel('Género'), ['class' => 'form-label']) !!}
 
     {!! Form::select('genero',\App\Models\GeneroAtributo::getGeneroArray(), null , ['id' => 'genero','class' => 'form-select form-select-solid ' .($errors->has('genero') ? 'is-invalid' : '')]) !!}
 
@@ -344,7 +344,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('forma_arbusto', $planta->getAttributeLabel('forma_arbusto'), ['class' => 'form-label']) !!}
+    {!! Form::label('forma_arbusto', $planta->getAttributeLabel('Forma Arbusto'), ['class' => 'form-label']) !!}
 
     {!! Form::select('forma_arbusto',\App\Models\FormaArbustoAtributo::getFormaArbustoArray(), null , ['id' => 'forma_arbusto','class' => 'form-select form-select-solid ' .($errors->has('forma_arbusto') ? 'is-invalid' : '')]) !!}
 
@@ -357,7 +357,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('uso', $planta->getAttributeLabel('uso'), ['class' => 'form-label']) !!}
+    {!! Form::label('uso', $planta->getAttributeLabel('Uso'), ['class' => 'form-label']) !!}
 
     {!! Form::select('uso',\App\Models\UsoAtributo::getUsoArray(), null , ['id' => 'uso','class' => 'form-select form-select-solid ' .($errors->has('uso') ? 'is-invalid' : '')]) !!}
 
@@ -368,7 +368,7 @@
 </div>
 
 <div class="mb-10">
-    {!! Form::label('origem_relacao', $planta->getAttributeLabel('origem_relacao'), ['class' => 'form-label']) !!}
+    {!! Form::label('origem_relacao', $planta->getAttributeLabel('Origem Relação'), ['class' => 'form-label']) !!}
 
     {!! Form::select('origem_relacao',\App\Models\OrigemRelacaoAtributo::getOrigemRelacaoArray(), null , ['id' => 'origem_relacao','class' => 'form-select form-select-solid ' .($errors->has('origem_relacao') ? 'is-invalid' : '')]) !!}
 
@@ -381,7 +381,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('forma_arvore', $planta->getAttributeLabel('forma_arvore'), ['class' => 'form-label']) !!}
+    {!! Form::label('forma_arvore', $planta->getAttributeLabel('Forma Árvore'), ['class' => 'form-label']) !!}
 
     {!! Form::select('forma_arvore',\App\Models\FormaArvoreAtributo::getFormaArvoreArray(), null , ['id' => 'forma_arvore','class' => 'form-select form-select-solid ' .($errors->has('forma_arvore') ? 'is-invalid' : '')]) !!}
 
@@ -393,7 +393,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('colecao', $planta->getAttributeLabel('colecao'), ['class' => 'form-label']) !!}
+    {!! Form::label('colecao', $planta->getAttributeLabel('Coleção'), ['class' => 'form-label']) !!}
 
     {!! Form::select('colecao',\App\Models\ColecaoAtributo::getColecaoArray(), null , ['id' => 'colecao','class' => 'form-select form-select-solid ' .($errors->has('colecao') ? 'is-invalid' : '')]) !!}
 
@@ -407,7 +407,7 @@
 
 
 <div class="mb-10">
-    {!! Form::label('forma_herbacea', $planta->getAttributeLabel('forma_herbacea'), ['class' => 'form-label']) !!}
+    {!! Form::label('forma_herbacea', $planta->getAttributeLabel('Forma Herbácea'), ['class' => 'form-label']) !!}
 
     {!! Form::select('forma_herbacea',\App\Models\FormaHerbaceaAtributo::getFormaHerbaceaArray(), null , ['id' => 'forma_herbacea','class' => 'form-select form-select-solid ' .($errors->has('forma_herbacea') ? 'is-invalid' : '')]) !!}
 

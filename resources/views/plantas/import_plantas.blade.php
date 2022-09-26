@@ -3,7 +3,7 @@
 
     <div style="margin-top:40px; background-color: #ffffff" class="mb-10 rounded border p-10">
         <p>Para efetuar a importação de plantas através de Excel, por favor, faça o download deste ficheiro.</p>
-        <a href="/download" style="background: #333ab7; color: #fff; padding:12px; display: block; text-decoration: none;width: 150px">Download Now</a>
+        <a href="/download" style="background: #333ab7; border-radius: 10px;color: #fff; padding:12px; display: block; text-decoration: none;width: 150px">Download Now</a>
     </div>
 
 <form action="{{ route("plantas.submit_plantas") }}" method="post" enctype="multipart/form-data">
@@ -225,7 +225,7 @@
     </script>
 @endpush
 
-    <input type="submit" value="submit">
+    <input style="background: #333ab7; color: #fff; padding:12px; display: block; text-decoration: none;width: 150px; border-radius: 10px;" type="submit" value="Submeter">
 
 
 </form>

@@ -1,5 +1,5 @@
 <?php
-view()->share('pageTitle', __('Dashboard'));
+view()->share('pageTitle', __('Início'));
 view()->share('hideToolbar', true);
 ?>
 <x-base-layout>
@@ -162,7 +162,11 @@ view()->share('hideToolbar', true);
             })
 
         </script>
+
+
     </div>
+
+    <div style="text-align: center;margin-top:80px;margin-left:120px;border-radius:10px;font-size: 52px;background-color:white;width:1000px;font-family: Lucida Handwriting, cursive;">Todo jardim começa com uma simples semente.</div>
 
 
 
