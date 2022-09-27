@@ -36,7 +36,7 @@
         </div>
 
 
-        @can('manageApp')
+        @can('adminFullApp')
             <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('users.*') ? "active" : "" }}" href="{{ route('users.index') }}">
                     <span class="menu-icon">
