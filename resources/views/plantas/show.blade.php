@@ -25,7 +25,7 @@ view()->share('hideSubHeader', true);
                     {{ __('Update') }}
                 </a>
                 @endcan
-                @can('adminApp')
+                @can('manageApp')
                 <button class="btn btn-sm btn-flex btn-light-danger" onclick="destroyConfirmation(this)">
                     {!! theme()->getSvgIcon("icons/duotune/general/gen027.svg", "svg-icon-3") !!}
                     {{ __('Delete') }}
