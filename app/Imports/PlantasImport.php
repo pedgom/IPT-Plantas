@@ -53,7 +53,7 @@ class PlantasImport implements ToCollection, WithUpserts, WithUpsertColumns, Wit
 
     public function collection(Collection $rows)
     {
-        ini_set('memory_limit', '512M');
+        //ini_set('memory_limit', '512M');
 
         foreach ($rows as $row)
         {
