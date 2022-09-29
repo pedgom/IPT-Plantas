@@ -17,7 +17,7 @@
             top: 0;
             left: 0;
             width: 220px;
-            height: 220px;
+            height: 240px;
             background: rgba(0, 0, 0, 0.6);
             color: #ffffff;
             font-family: 'Quicksand', sans-serif;
@@ -111,7 +111,7 @@
                     <div class="card-rounded position-relative mb-5">
                         <!--begin::Img-->
                         <div class="image">
-                            <div class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded" @if($planta->hasMedia('imagem_principal')) style=" display:block;width: 200px; background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}') " @else style="display:block; width: 200px; background-image: url('{{ asset('images/default-img.png') }}')" @endif></div>
+                            <div class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded" @if($planta->hasMedia('imagem_principal')) style=" display:block;width: 220px; background-image: url('{{ $planta->getFirstMediaUrl('imagem_principal') }}') " @else style="display:block; width: 200px; background-image: url('{{ asset('images/default-img.png') }}')" @endif></div>
                             <div class="image__overlay image__overlay--primary">
                                 <div>
                                     <p class="image__description">
@@ -132,6 +132,9 @@
                         </div>
 
                         <!--end::Img-->
+                        <br />
+                        <br />
+
                         <!--begin::Play-->
                         <button class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0" data-kt-element="list-play-button">
                             <i class="fonticon-play text-white fs-2x" data-kt-element="list-play-icon"></i>

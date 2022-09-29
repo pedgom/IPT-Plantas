@@ -274,9 +274,9 @@
 <br />
 <br />
 
-<div style="border-style:double; border-color: #00b300">
+<div style="border-style:double;width:1200px;height:500px;  border-color: #00b300">
 <!-- Tempo Crescimento Field -->
-<div  style=" margin-top:20px; "class="col-12 col-md-4">
+<div  style="margin-top:20px; "class="col-12 col-md-4">
     <label style="margin-left: 20px;font-size: 20px; width: 300px; float: left;" class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('tempo_crescimento') }}</label>
     <div style="margin-left: 200px;" class="col-lg-8">
         <span style="font-size:20px;color:black;font-weight: bold;">{{ $planta->tempo_crescimento }}</span>
@@ -285,16 +285,16 @@
 
 
 <!-- Notas Field -->
-<div  style=" margin-top:20px;" class="col-12 col-md-4">
+<div  style=" margin-top:50px;" class="col-12 col-md-4">
     <label style="margin-left: 20px;font-size: 20px; width: 300px; float: left;" class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Notas') }}</label>
     <div style="margin-left: 200px;width :800px;" class="col-lg-8">
         <span style="font-size:20px;color:black;font-weight: bold;">{{ $planta->notas }}</span>
     </div>
 </div>
 
-
+    <br />
 <!-- Curiosidades Field -->
-<div  style=" margin-top:20px;margin-bottom:20px;" class="col-12 col-md-4">
+<div  style="margin-top:20px;margin-bottom:20px;" class="col-12 col-md-4">
     <label style="margin-left: 20px;font-size: 20px; width: 300px; float: left;" class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Curiosidades') }}</label>
     <div style="margin-left: 200px;width :800px;" class="col-lg-8">
         <span style="font-size:20px;color:black;font-weight: bold;">{{ $planta->curiosidades }}</span>
@@ -307,7 +307,7 @@
 
 
 
-    <div style="margin-bottom:20px;float:left;border-style:double; border-color: #00b300; width:450px; height:230px"  >
+    <div style="margin-bottom:20px;float:left;border-style:double; border-color: #00b300; width:450px; height:350px"  >
         <div>
             <img
                 src="{{asset('images/altura.png')}}"
@@ -333,7 +333,7 @@
         </div>
 
         <!-- Diametro Atributo -->
-        <div  style="margin-left:20px;float:left" class="col-12 col-md-4">
+        <div  style="margin-left:50px;float:left" class="col-12 col-md-4">
             <label style="font-size:16px; width:150px" class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Diâmetro(m)') }}</label>
             <div class="col-lg-8">
                 <span style="font-size:16px;color:black;font-weight: bold;">{{ $planta->diametroToString() }}</span>
@@ -342,7 +342,7 @@
 
 
         <!-- Densidade Atributo -->
-        <div  style="margin-left: 20px; margin-bottom: 20px;" class="col-12 col-md-4">
+        <div  style="margin-left: 20px; margin-top:100px; margin-bottom: 20px;" class="col-12 col-md-4">
             <label style="font-size:16px; width:100px" class="col-lg-4 fw-bold text-muted">{{ $planta->getAttributeLabel('Densidade') }}</label>
             <div class="col-lg-8">
                 <span style="font-size:16px;color:black;font-weight: bold;">{{ $planta->densidadeToString() }}</span>
@@ -352,9 +352,9 @@
 
 
 
-    <div style="margin-bottom:20px;margin-left:20px; float:left;display:flex;border-style:double; border-color: #00b300; width:730px; height:230px"  >
+    <div style="margin-bottom:20px;margin-left:20px; float:left;display:flex;border-style:double; border-color: #00b300; width:730px; height:350px"  >
     <!-- Luz Atributo -->
-        <div  style="margin-top:30px;margin-left:150px;float:left" class="col-12 col-md-4">
+        <div  style="margin-top:30px;margin-left:100px;float:left" class="col-12 col-md-4">
             <img
                 src="{{asset('images/sol.png')}}"
                 width="50px"
@@ -371,7 +371,7 @@
         </div>
 
         <!-- Agua Atributo -->
-        <div  style="margin-bottom: 40px;margin-top:40px;float:left" class="col-12 col-md-4">
+        <div  style="margin-bottom: 40px;margin-left:40px;margin-top:40px;float:left" class="col-12 col-md-4">
             <img
                 src="{{asset('images/agua.png')}}"
                 width="40px"
@@ -388,7 +388,7 @@
         </div>
 
         <!-- Solo Atributo -->
-        <div  style="position: absolute;margin-bottom: 20px;margin-left: 150px;margin-top:150px;" class="col-12 col-md-4">
+        <div  style="position: absolute;margin-bottom: 20px;margin-left: 100px;margin-top:150px;" class="col-12 col-md-4">
             <img
                 src="{{asset('images/solo.png')}}"
                 width="40px"
