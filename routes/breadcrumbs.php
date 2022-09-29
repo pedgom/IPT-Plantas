@@ -7,6 +7,7 @@ use Diglactic\Breadcrumbs\Breadcrumbs;
 // This import is also not required, and you could replace `BreadcrumbTrail $trail`
 //  with `$trail`. This is nice for IDE type checking and completion.
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
+use Illuminate\Support\Facades\Auth;
 
 // Home
 Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
@@ -122,7 +123,12 @@ Breadcrumbs::for('plantas.create', function ($trail) {
     $trail->push(__('Create'), route('plantas.create'));
 });
 Breadcrumbs::for('plantas.show', function ($trail, $model) {
-    $trail->parent('plantas.index');
+    if(Auth::user()->can('manageApp')){
+        $trail->parent('plantas.index');
+    }
+    else if(Auth::user()->can('accessAsUser')){
+        $trail->parent('home');
+    }
     $trail->push($model->nome_botanico, route('plantas.show', $model));
 });
 Breadcrumbs::for('plantas.edit', function ($trail, $model) {
