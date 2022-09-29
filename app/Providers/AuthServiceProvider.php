@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Planta;
+use App\Models\Policies\PlantaPolicy;
 use App\Models\Policies\SettingPolicy;
+use App\Models\Policies\UserPolicy;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -17,7 +20,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
-        Setting::class => SettingPolicy::class
+        Setting::class => SettingPolicy::class,
+        Planta::class => PlantaPolicy::class,
+        User::class => UserPolicy::class
     ];
 
     /**

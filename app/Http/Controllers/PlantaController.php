@@ -16,6 +16,10 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class PlantaController extends Controller
 {
+    public function __construct(){
+        $this->authorizeResource(Planta::class, 'planta');
+    }
+
     /**
      * Display a listing of the Planta.
      *
